@@ -125,3 +125,38 @@ body {
     }
   }
 }
+
+
+
+
+.about {
+  padding: 80px 0 60px;
+
+  & .container {
+    max-width: 896px;
+    padding: 0 50px;
+  }
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-content {
+    &__title {
+      @include title-style;
+    }
+    &__text {
+      @include subTitle-style;
+      max-width: 470px;
+      margin: 50px 0;
+    }
+    &__btn {
+      @include btn-style;
+    }
+  }
+  &-img {
+    text-align: center;
+  }
+}
+
+
+@import 'mediaQueries';

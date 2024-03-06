@@ -3,7 +3,7 @@
 @media (max-width: 840px) {
   .header-nav {
     & ul {
-      display: none !important;
+      display: none;
     }
 
     .burger {
@@ -45,7 +45,29 @@
     }
   }
 
+  
   .intro {
     background-size: cover !important;
   }
+
+
+  .about {
+    &-inner {
+      flex-wrap: wrap-reverse;
+      text-align: center;
+    }
+    &-content {
+      width: 100%;
+      &__text {
+        margin: 50px auto 50px;
+        display: block;
+      }
+    }
+    &-img {
+      width: 100%;
+      margin-bottom: 60px;
+    }
+  }
+
+
 }
