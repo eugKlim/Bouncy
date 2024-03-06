@@ -1,0 +1,127 @@
+@import 'stylereset';
+@import 'vars';
+@import 'fonts';
+
+html,
+body {
+  height: 100%; 
+  font-family: $font-OpenSans-Regular;
+  color: $color-lightGray;
+}
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  flex: 1 1 auto;
+}
+
+.container {
+  max-width: 1174px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+.header {
+  padding: 44px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 990;
+
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: $font-big-john;
+    font-size: 25px;
+    color: $color-white;
+  }
+  &-nav {
+    & ul {
+      display: flex;
+      align-items: center;
+    }
+    & a {
+      padding: 6px 18px;
+      color: $color-white;
+      font-size: 16px;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        background-color: $color-green;
+        transition: width 0.35s;
+      }
+      &:hover:before {
+        width: 100%;
+      }
+      &.active {
+        border: 1px solid $color-white;
+        border-radius: 40px;
+        &:hover:before {
+          width: 0;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+.intro {
+  @include center-block;
+  background: url('../media/image/intro/intro-bg.jpg');
+  background-size: 100% 100%;
+  width: 100%;
+  min-height: 737px;
+  text-align: center;
+  color: $color-white;
+  position: relative;
+
+  &-title {
+    @include title-style;
+    font-size: 35px;
+    color: $color-white;
+    letter-spacing: 15px;
+    margin-top: 200px;
+    line-height: 50px;
+  }
+  &-subTitle {
+    @include subTitle-style;
+    max-width: 600px;
+    margin: 42px auto 200px;
+    color: $color-white;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 28px;
+  }
+
+  &-btn__down {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $color-green;
+    @include center-block;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    &:hover {
+      background-color: $color-darkGreen;
+    }
+  }
+}

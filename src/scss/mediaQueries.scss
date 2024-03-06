@@ -1,0 +1,51 @@
+@import 'vars';
+
+@media (max-width: 840px) {
+  .header-nav {
+    & ul {
+      display: none !important;
+    }
+
+    .burger {
+      position: relative;
+      right: 30px;
+      top: -10px;
+      display: block;
+      z-index: 999;
+      & span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30px;
+        height: 2px;
+        background-color: $color-white;
+        transition: .2s linear;
+      }
+      &.active span:nth-child(1) {
+        transform: rotate(-135deg);
+        background-color: red;
+        top: 10px;
+      }
+      & span:nth-child(2) {
+        top: 10px;
+      }
+      &.active span:nth-child(2) {
+        transform: rotate(-46deg);
+        background-color: red;
+      }
+      & span:last-child {
+        top: 20px;
+      }
+      &.active span:nth-child(3) {
+        transform: rotate(-135deg);
+        background-color: red;
+        top: 10px;
+        opacity: 0;
+      }
+    }
+  }
+
+  .intro {
+    background-size: cover !important;
+  }
+}
