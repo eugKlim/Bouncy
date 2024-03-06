@@ -71,3 +71,26 @@
 
 
 }
+
+
+
+@media(max-width: 700px) {
+  .services {
+    padding-bottom: 20px;
+
+    &-tab {
+      &__content {
+        display: block;
+        text-align: center;
+      }
+      &__block1 {
+        margin: 0 auto;
+        width: 100%;
+      }
+      &__block2 {
+        margin: 30px auto 30px;
+        width: 100%;
+      }
+    }
+  }
+}
