@@ -151,6 +151,7 @@ function addCodeToProd() {
   .pipe(dest('dist/js'))
 }
 function watching() {
+  watch(['src/scss/vars.scss'], styles);
   watch(['src/scss/style.scss'], styles);
   watch(['src/scss/mediaQueries.scss'], styles);
   watch(['src/js/main.js'], scripts);
