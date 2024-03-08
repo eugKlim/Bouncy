@@ -43,6 +43,8 @@ body {
     color: $color-white;
   }
   &-nav {
+    display: flex;
+    align-items: center;
     & ul {
       display: flex;
       align-items: center;
@@ -80,11 +82,14 @@ body {
   @include center-block;
   background: url('../media/image/intro/intro-bg.jpg');
   background-size: 100% 100%;
+  background-repeat: no-repeat;
   width: 100%;
   min-height: 737px;
   text-align: center;
   color: $color-white;
   position: relative;
+  max-width: 1900px;
+  margin: 0 auto;
 
   &-title {
     @include title-style;
@@ -222,7 +227,7 @@ body {
 }
 
 .featured {
-  padding-top: 72px;
+  padding: 72px 0;
 
   & .container {
     max-width: 1366px;
@@ -259,6 +264,32 @@ body {
   }
 }
 
+
+.news {
+  background: url('../media/image/news/news-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+  }
+  &-title {
+    @include title-style;
+    color: $color-white;
+    margin: 0;
+  }
+  &-submit {
+    @include btn-style;
+    border-color: $color-white;
+    color: $color-white;
+  }
+  &-bold {
+    font-weight: bold;
+  }
+}
 
 
 
