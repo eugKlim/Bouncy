@@ -19,6 +19,22 @@
       }
     }
   }
+
+  .impressed {
+    &-inner {
+      flex-wrap: wrap-reverse;
+    }
+    &-info {
+      width: 100%;
+    }
+    &-img {
+      text-align: center;
+      width: 100%;
+      & img {
+        max-width: 100%;
+      }
+    }
+  }
 }
 
 @media (max-width: 890px) {
@@ -103,7 +119,6 @@
   }
 
   .details {
-    padding-bottom: 50px;
     &-info {
       justify-content: center;
     }
@@ -136,6 +151,10 @@
         width: 100%;
       }
     }
+  }
+
+  .impressed {
+    background-size: cover;
   }
 }
 
