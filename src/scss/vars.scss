@@ -10,6 +10,18 @@ $font-OpenSans-Regular: 'OpenSans Regular';
 $font-SourceSansPro-Black: 'SourceSansPro Black';
 $font-SourceSansPro-Light: 'SourceSansPro Light';
 
+
+.text-bold {
+  font-weight: bold;
+}
+.link {
+  color: $color-green;
+  font-weight: bold;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 @mixin title-style {
   font-family: $font-SourceSansPro-Light;
   color: $color-blackGray;
@@ -65,4 +77,11 @@ $font-SourceSansPro-Light: 'SourceSansPro Light';
   opacity: 0;
   visibility: hidden;
   transition: 0.2s linear;
+}
+
+
+@mixin leveling {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
