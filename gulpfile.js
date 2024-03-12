@@ -16,6 +16,9 @@ const path = require('path');
 var plumber = require('gulp-plumber'); 
 const fs = require('fs');
 const fileInclude = require('gulp-file-include');
+const webpackStream = require('webpack-stream');
+const sourcemaps = require('gulp-sourcemaps');
+
 
 function convertTTFtoWOFF() {
   return src(['src/fonts/*.ttf', 'src/fonts/*.otf'])
@@ -69,8 +72,33 @@ function styles() {
 }
 function scripts() {
   return src(['src/js/**/*.js', '!src/js/modules/**'])
-    .pipe(gulpIf(file => !file.path.includes('modules'), concat('main.min.js')))
-    .pipe(gulpIf(file => !file.path.includes('modules'), uglify()))
+    .pipe(
+      webpackStream({
+        output: {
+          filename: 'main.min.js',
+        },
+        module: {
+          rules: [
+            {
+              test: /\.(?:js|mjs|cjs)$/,
+              exclude: /node_modules|bower_components/,
+              use: {
+                loader: 'babel-loader',
+                options: {
+                  presets: [
+                    ['@babel/preset-env', { targets: 'defaults' }],
+                  ],
+                },
+              },
+            },
+          ],
+        },
+      })
+    )
+
+    .pipe(sourcemaps.init())
+    .pipe(uglify())
+    .pipe(sourcemaps.write())
     .pipe(dest('dist/js'))
     .pipe(browserSync.stream());
 }

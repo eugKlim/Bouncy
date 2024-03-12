@@ -143,6 +143,35 @@
       columns: 2;
     }
   }
+
+  .team {
+    &-slide {
+      &__titles {
+        text-align: center;
+        margin-top: 20px;
+        &::before {
+          display: none;
+        }
+      }
+      &__title {
+        text-align: center;
+      }
+      &__text {
+        margin: 0 auto;
+        text-align: center;
+      }
+      &__img {
+        margin: 0 auto;
+      }
+      &__info {
+        width: 100%;
+      }
+      &__indicators {
+        max-width: 400px;
+        margin: 30px auto 0;
+      }
+    }
+  }
 }
 
 @media (max-width: 700px) {
