@@ -172,6 +172,11 @@
       }
     }
   }
+  .testimonials {
+    &-slide {
+      padding: 50px 30px 70px;
+    }
+  }
 }
 
 @media (max-width: 700px) {
@@ -202,6 +207,22 @@
       background-size: cover;
     }
   }
+  .testimonials {
+    
+    &-slide {
+      flex-wrap: wrap;
+      &__img {
+        text-align: center;
+        width: 100%;
+      }
+      &__info {
+        margin-top: 30px;
+        &-text {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 620px) {
@@ -227,6 +248,9 @@
       columns: 1;
     }
   }
+  .talk {
+    background-size: cover;
+  }
 }
 
 @media (max-width: 490px) {
@@ -239,6 +263,12 @@
       &__item {
         margin-bottom: 40px;
       }
+    }
+  }
+  .testimonials {
+    
+    &-slide {
+      padding: 50px 10px 80px;
     }
   }
 }
