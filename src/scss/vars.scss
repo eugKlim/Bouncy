@@ -85,3 +85,11 @@ $font-SourceSansPro-Light: 'SourceSansPro Light';
   justify-content: space-between;
   align-items: center;
 }
+
+@mixin logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: $font-big-john;
+  font-size: 25px;
+  color: $color-white;
+}
