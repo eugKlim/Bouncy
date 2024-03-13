@@ -1107,4 +1107,15 @@ body {
   }
 }
 
+.map {
+  .container {
+    max-width: 1366px;
+    padding: 0;
+  }
+  & iframe {
+    width: 100%;
+    height: 490px;
+  }
+}
+
 @import 'mediaQueries';
