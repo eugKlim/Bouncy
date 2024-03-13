@@ -208,7 +208,6 @@
     }
   }
   .testimonials {
-    
     &-slide {
       flex-wrap: wrap;
       &__img {
@@ -251,6 +250,16 @@
   .talk {
     background-size: cover;
   }
+  .blog {
+    background-size: cover;
+    &-slide {
+      &__populars {
+        & span {
+          display: block;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 490px) {
@@ -266,9 +275,14 @@
     }
   }
   .testimonials {
-    
     &-slide {
       padding: 50px 10px 80px;
+    }
+  }
+
+  .blog {
+    &-slide {
+      padding: 0 30px;
     }
   }
 }
