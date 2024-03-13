@@ -992,4 +992,40 @@ body {
   }
 }
 
+.subscribe {
+  padding: 70px 0;
+  background: url('../media/image/subscribe/subscribe-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  &-title {
+    @include title-style;
+    color: $color-white;
+  }
+  &-subtitle {
+    @include subTitle-style;
+    color: $color-white;
+    margin-bottom: 40px;
+  }
+  &-form {
+    text-align: center;
+    &__input {
+      border: 1px solid $color-lightGray;
+      background-color: transparent;
+      width: 360px;
+      height: 44px;
+      padding: 10px;
+      color: $color-white;
+    }
+    &__btn {
+      height: 44px;
+      width: 150px;
+      background-color: $color-green;
+      color: $color-white;
+      &:hover {
+        background-color: $color-darkGreen;
+      }
+    }
+  }
+}
+
 @import 'mediaQueries';
