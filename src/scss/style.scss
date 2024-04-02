@@ -36,12 +36,18 @@ body.noScroll {
 .main {
   flex: 1 1 auto;
 }
-
 .container {
   max-width: 1174px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.about-hidden-text {
+  display: none;
+}
+.show {
+  display: inline-block;
 }
 
 .popup {
@@ -79,7 +85,7 @@ body.noScroll {
       }
     }
   }
-  &.popup-active{
+  &.popup-active {
     opacity: 1;
     visibility: visible;
   }
@@ -89,7 +95,6 @@ body.noScroll {
   margin-top: 50px;
   line-height: 25px;
 }
-
 
 .header {
   padding: 44px 0;
@@ -318,7 +323,7 @@ body.noScroll {
 .news {
   background: url('../media/image/news/news-bg.jpg');
   background-repeat: no-repeat;
-  background-position: 100% 100%;
+  background-position: center;
   &-inner {
     @include leveling;
     flex-wrap: wrap;
