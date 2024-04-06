@@ -27,6 +27,9 @@ body.noScroll {
 ::-webkit-scrollbar-thumb:hover {
   background: $color-darkGreen;
 }
+.burger {
+  display: none;
+}
 
 .tab {
   &-btn {
@@ -89,7 +92,7 @@ body.noScroll {
       position: absolute;
       top: 0;
       right: 5px;
-      color: red;
+      color: $color-red;
       font-size: 30px;
       font-weight: bold;
       cursor: pointer;
@@ -162,8 +165,7 @@ body.noScroll {
     left: 0;
     right: 0;
     z-index: 998;
-    background-color: $color-darkGreen;
-    opacity: 0.9;
+    background-color: rgb(13, 120, 125, 0.9);
     padding: 16px 0;
     animation: slideDown 0.3s ease;
   }

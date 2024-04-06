@@ -1,12 +1,16 @@
 import * as PopupModule from './modules/popup.js';
 import hideText from './modules/hiddenText.js';
 import tabMechanism from './modules/tab.js';
+import burgerMenu from './modules/burgerMenu.js';
 
 // slider
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', function () {
+  const body = document.querySelector('body');
+
+  // добавление слайдеров
   const swiper1 = new Swiper('.team-swiper', {
     modules: [Navigation, Pagination],
     pagination: {
@@ -88,10 +92,13 @@ document.addEventListener('DOMContentLoaded', function () {
   smoothScroll();
   // /
 
-
   // таб
   tabMechanism();
   // /
 
+
+  // burger menu
+  burgerMenu()
+  // /
 
 });
