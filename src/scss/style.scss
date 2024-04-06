@@ -126,8 +126,6 @@ body.noScroll {
     @include logo;
   }
   &-nav {
-    display: flex;
-    align-items: center;
     & ul {
       display: flex;
       align-items: center;

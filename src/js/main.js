@@ -96,9 +96,9 @@ document.addEventListener('DOMContentLoaded', function () {
   tabMechanism();
   // /
 
-
   // burger menu
-  burgerMenu()
+  burgerMenu();
   // /
+
 
 });

@@ -101,9 +101,9 @@ function scripts() {
       })
     )
 
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     .pipe(uglify())
-    .pipe(sourcemaps.write())
+    // .pipe(sourcemaps.write())
     .pipe(dest('dist/js'))
     .pipe(browserSync.stream());
 }
@@ -203,9 +203,9 @@ function addCodeToProd() {
     })
   )
 
-  .pipe(sourcemaps.init())
+  // .pipe(sourcemaps.init())
   .pipe(uglify())
-  .pipe(sourcemaps.write())
+  // .pipe(sourcemaps.write())
   .pipe(dest('dist/js'))
   .pipe(browserSync.stream());
 }
