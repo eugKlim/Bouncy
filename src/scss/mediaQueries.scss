@@ -18,6 +18,11 @@
         grid-column: 2/2;
       }
     }
+    &-item .featured-item__hover {
+      @include hoverBlock;
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   .impressed {
@@ -121,7 +126,7 @@
       text-align: center;
     }
     &-submit {
-      margin-top: 10px;
+      margin-top: 30px;
     }
   }
 

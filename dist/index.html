@@ -29,12 +29,13 @@
       <h1 class="header-logo">Bouncy</h1>
       <nav class="header-nav">
         <ul>
-          <li><a href="#" class="header-nav__link active">Hello</a></li>
-          <li><a href="#" class="header-nav__link">About</a></li>
-          <li><a href="#" class="header-nav__link">Services</a></li>
-          <li><a href="#" class="header-nav__link">Portfolio</a></li>
-          <li><a href="#" class="header-nav__link">Team</a></li>
-          <li><a href="#" class="header-nav__link">Contact</a></li>
+          <!-- <li><a href="#intro" class="header-nav__link active">Hello</a></li> -->
+          <li><a href="#intro" class="header-nav__link yankor">Hello</a></li>
+          <li><a href="#about" class="header-nav__link yankor">About</a></li>
+          <li><a href="#services" class="header-nav__link yankor">Services</a></li>
+          <li><a href="#portfolio" class="header-nav__link yankor">Portfolio</a></li>
+          <li><a href="#team" class="header-nav__link yankor">Team</a></li>
+          <li><a href="#contact" class="header-nav__link yankor">Contact</a></li>
         </ul>
 
         <button class="burger active">
@@ -47,7 +48,7 @@
 </header>
   <main class="main">
     <article>
-      <section class="intro">
+      <section class="intro" id="intro">
   <div class="container">
     <div class="intro-inner">
       <h2 class="intro-title">We Are Code Cafe</h2>
@@ -56,13 +57,13 @@
         blanditiis praesentium voluptatum
       </p>
     </div>
-    <button class="intro-btn__down">
+    <a href="#about" class="intro-btn__down yankor">
       <img src="./media/image/global-icons/arrow.png" alt="Button" />
-    </button>
+    </a>
   </div>
 </section>
 
-      <section class="about">
+      <section class="about" id="about">
   <div class="container">
     <div class="about-inner">
       <div class="about-content">
@@ -101,7 +102,7 @@
   </div>
 </section>
 
-      <section class="services">
+      <section class="services" id="services">
   <div class="container">
     <div class="services-inner">
       <h2 class="services-title">SERVICES ABOUT BOUNCY</h2>
@@ -110,42 +111,104 @@
         blanditiis praesentium
       </h3>
 
-      <div class="services-tab">
-        <div class="services-tab__btns">
-          <button class="services-tab__btn active">
-            <img src="./media/image/services/heart.png" alt="Image" />
+      <div class="services-tab tab" id="tab-1">
+        <div class="services-tab__btns tab-nav">
+          <button
+            class="services-tab__btn tab-btn active tab-btn-active"
+            data-target-id="0"
+          >
+            <img
+              src="../media/image/global-icons/heart-icon.svg"
+              alt="icon heart"
+            />
           </button>
-          <button class="services-tab__btn">
-            <img src="./media/image/services/mouse.png" alt="Image" />
+          <button class="services-tab__btn tab-btn" data-target-id="1">
+            <img src="../media/image/global-icons/mouse.svg" alt="icon mouse" />
           </button>
-          <button class="services-tab__btn">
-            <img src="./media/image/services/bulb.png" alt="Image" />
+          <button class="services-tab__btn tab-btn" data-target-id="2">
+            <img src="../media/image/global-icons/bulb.svg" alt="icon bulb" />
           </button>
         </div>
 
-        <div class="services-tab__content">
-          <div class="services-tab__block1">
-            <h4 class="services-tab__content-title">Creative Ideas</h4>
-            <p class="services-tab__block">
-              At <a href="#" class="link">vero</a> eos et accusamus et iusto
-              odio dignissimos <span class="text-bold">ducimus</span> qui
-              blanditiis praesentium voluptatum deleniti atque corrupti quos
-              dolores
-            </p>
-          </div>
+        <div class="tab-content">
+          <!-- 1 -->
+          <div class="services-tab__content tab-pane tab-pane-show" data-id="0">
+            <div class="services-tab__block1">
+              <h4 class="services-tab__content-title">Creative Ideas</h4>
+              <p class="services-tab__block">
+                At <a href="#" class="link">vero</a> eos et accusamus et iusto
+                odio dignissimos <span class="text-bold">ducimus</span> qui
+                blanditiis praesentium voluptatum deleniti atque corrupti quos
+                dolores
+              </p>
+            </div>
 
-          <div class="services-tab__block2">
-            <p>
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui
-              blanditiis praesentium voluptatum deleniti atque
-              <span class="text-bold">corrupti quos</span> dolores et quas
-              molestias <a href="#" class="link">excepturi</a> sint occaecati
-              cupiditate non provident,
-              <span class="text-bold">similique</span> sunt in culpa qui officia
-              deserunt mollitia animi, id est laborum et dolorum fuga. Et harum
-              quidem
-            </p>
+            <div class="services-tab__block2">
+              <p>
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                blanditiis praesentium voluptatum deleniti atque
+                <span class="text-bold">corrupti quos</span> dolores et quas
+                molestias <a href="#" class="link">excepturi</a> sint occaecati
+                cupiditate non provident,
+                <span class="text-bold">similique</span> sunt in culpa qui
+                officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                Et harum quidem
+              </p>
+            </div>
           </div>
+          <!-- 2 -->
+          <div class="services-tab__content tab-pane" data-id="1">
+            <div class="services-tab__block1">
+              <h4 class="services-tab__content-title">Creative Ideas 2</h4>
+              <p class="services-tab__block">
+                At <a href="#" class="link">vero</a> eos et accusamus et iusto
+                odio dignissimos <span class="text-bold">ducimus</span> Lorem
+                ipsum, dolor sit amet consectetur adipisicing elit. At qui
+                accusantium temporibus pariatur quaerat dignissimos similique
+                iusto et, quae molestias aliquam facilis libero, quisquam ullam
+                porro voluptatum non totam repellat. dolores
+              </p>
+            </div>
+
+            <div class="services-tab__block2">
+              <p>
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                blanditiis praesentium voluptatum deleniti atque
+                <span class="text-bold">corrupti quos</span> dolores et quas
+                molestias <a href="#" class="link">excepturi</a> sint occaecati
+                cupiditate non provident,
+                <span class="text-bold">similique</span> sunt in culpa qui
+                officia deserunt mollitia animi. Et harum quidem deserunt
+                mollitia animi, id est laborum et dolorum fuga. Et harum quidem
+              </p>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="services-tab__content tab-pane" data-id="2">
+            <div class="services-tab__block1">
+              <h4 class="services-tab__content-title">Creative Ideas 3</h4>
+              <p class="services-tab__block">
+                At <a href="#" class="link">vero</a> eos et accusamus et iusto
+                odio dignissimos <span class="text-bold">ducimus</span> Lorem
+                ipsum, dolor sit amet consectetur adipisicing elit. dolores
+              </p>
+            </div>
+
+            <div class="services-tab__block2">
+              <p>
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                blanditiis praesentium voluptatum deleniti atque
+                <span class="text-bold">corrupti quos</span> dolores et quas
+                molestias <a href="#" class="link">excepturi</a> sint occaecati
+                cupiditate non provident,
+                <span class="text-bold">similique</span> sunt in culpa qui
+                officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                Et harum quidem deserunt mollitia animi, id est laborum et
+                dolorum fuga. Et harum quidem
+              </p>
+            </div>
+          </div>
+          <!-- / -->
         </div>
       </div>
     </div>
@@ -196,7 +259,7 @@
     <div class="news-inner">
 
       <h3 class="news-title">At vero eos et <span class="news-bold">accusamus</span>  et iusto odio dignissimos ducimus qui blanditiis </h3>
-      <button class="news-submit">Submit Now</button>
+      <a href="#contactform" class="news-submit yankor">Submit Now</a>
 
     </div>
   </div>
@@ -285,7 +348,7 @@
   </div>
 </section>
 
-      <section class="portfolio">
+      <section class="portfolio" id="portfolio">
   <div class="container">
     <h2 class="portfolio-title">THE PORTFOLIO</h2>
     <h3 class="portfolio-subtitle">
@@ -315,15 +378,15 @@
             blanditiis praesentium
           </p>
           <p class="portfolio-item__hover-btns">
-            <button class="portfolio-item__hover-btn-link">
-              <img
-                src="../media/image/portfolio/icons/link.png"
+            <button title="Share" class="portfolio-item__hover-btn-link">
+              <img 
+                src="../media/image/global-icons/link-icon.svg"
                 alt="Icon link"
               />
             </button>
-            <button class="portfolio-item__hover-btn-like">
-              <img
-                src="../media/image/portfolio/icons/like.png"
+            <button title="Like" class="portfolio-item__hover-btn-like">
+              <img 
+                src="../media/image/global-icons/heart-icon.svg"
                 alt="Icon like"
               />
             </button>
@@ -342,15 +405,15 @@
             blanditiis praesentium
           </p>
           <p class="portfolio-item__hover-btns">
-            <button class="portfolio-item__hover-btn-link">
-              <img
-                src="../media/image/portfolio/icons/link.png"
+            <button title="Share" class="portfolio-item__hover-btn-link">
+              <img 
+                src="../media/image/global-icons/link-icon.svg"
                 alt="Icon link"
               />
             </button>
-            <button class="portfolio-item__hover-btn-like">
-              <img
-                src="../media/image/portfolio/icons/like.png"
+            <button title="Like" class="portfolio-item__hover-btn-like">
+              <img 
+                src="../media/image/global-icons/heart-icon.svg"
                 alt="Icon like"
               />
             </button>
@@ -369,15 +432,15 @@
             blanditiis praesentium
           </p>
           <p class="portfolio-item__hover-btns">
-            <button class="portfolio-item__hover-btn-link">
-              <img
-                src="../media/image/portfolio/icons/link.png"
+            <button title="Share" class="portfolio-item__hover-btn-link">
+              <img 
+                src="../media/image/global-icons/link-icon.svg"
                 alt="Icon link"
               />
             </button>
-            <button class="portfolio-item__hover-btn-like">
-              <img
-                src="../media/image/portfolio/icons/like.png"
+            <button title="Like" class="portfolio-item__hover-btn-like">
+              <img 
+                src="../media/image/global-icons/heart-icon.svg"
                 alt="Icon like"
               />
             </button>
@@ -396,15 +459,15 @@
             blanditiis praesentium
           </p>
           <p class="portfolio-item__hover-btns">
-            <button class="portfolio-item__hover-btn-link">
-              <img
-                src="../media/image/portfolio/icons/link.png"
+            <button title="Share" class="portfolio-item__hover-btn-link">
+              <img 
+                src="../media/image/global-icons/link-icon.svg"
                 alt="Icon link"
               />
             </button>
-            <button class="portfolio-item__hover-btn-like">
-              <img
-                src="../media/image/portfolio/icons/like.png"
+            <button title="Like" class="portfolio-item__hover-btn-like">
+              <img 
+                src="../media/image/global-icons/heart-icon.svg"
                 alt="Icon like"
               />
             </button>
@@ -423,15 +486,15 @@
             blanditiis praesentium
           </p>
           <p class="portfolio-item__hover-btns">
-            <button class="portfolio-item__hover-btn-link">
-              <img
-                src="../media/image/portfolio/icons/link.png"
+            <button title="Share" class="portfolio-item__hover-btn-link">
+              <img 
+                src="../media/image/global-icons/link-icon.svg"
                 alt="Icon link"
               />
             </button>
-            <button class="portfolio-item__hover-btn-like">
-              <img
-                src="../media/image/portfolio/icons/like.png"
+            <button title="Like" class="portfolio-item__hover-btn-like">
+              <img 
+                src="../media/image/global-icons/heart-icon.svg"
                 alt="Icon like"
               />
             </button>
@@ -450,15 +513,15 @@
             blanditiis praesentium
           </p>
           <p class="portfolio-item__hover-btns">
-            <button class="portfolio-item__hover-btn-link">
-              <img
-                src="../media/image/portfolio/icons/link.png"
+            <button title="Share" class="portfolio-item__hover-btn-link">
+              <img 
+                src="../media/image/global-icons/link-icon.svg"
                 alt="Icon link"
               />
             </button>
-            <button class="portfolio-item__hover-btn-like">
-              <img
-                src="../media/image/portfolio/icons/like.png"
+            <button title="Like" class="portfolio-item__hover-btn-like">
+              <img 
+                src="../media/image/global-icons/heart-icon.svg"
                 alt="Icon like"
               />
             </button>
@@ -477,15 +540,15 @@
             blanditiis praesentium
           </p>
           <p class="portfolio-item__hover-btns">
-            <button class="portfolio-item__hover-btn-link">
-              <img
-                src="../media/image/portfolio/icons/link.png"
+            <button title="Share" class="portfolio-item__hover-btn-link">
+              <img 
+                src="../media/image/global-icons/link-icon.svg"
                 alt="Icon link"
               />
             </button>
-            <button class="portfolio-item__hover-btn-like">
-              <img
-                src="../media/image/portfolio/icons/like.png"
+            <button title="Like" class="portfolio-item__hover-btn-like">
+              <img 
+                src="../media/image/global-icons/heart-icon.svg"
                 alt="Icon like"
               />
             </button>
@@ -504,15 +567,15 @@
             blanditiis praesentium
           </p>
           <p class="portfolio-item__hover-btns">
-            <button class="portfolio-item__hover-btn-link">
-              <img
-                src="../media/image/portfolio/icons/link.png"
+            <button title="Share" class="portfolio-item__hover-btn-link">
+              <img 
+                src="../media/image/global-icons/link-icon.svg"
                 alt="Icon link"
               />
             </button>
-            <button class="portfolio-item__hover-btn-like">
-              <img
-                src="../media/image/portfolio/icons/like.png"
+            <button title="Like" class="portfolio-item__hover-btn-like">
+              <img 
+                src="../media/image/global-icons/heart-icon.svg"
                 alt="Icon like"
               />
             </button>
@@ -531,15 +594,15 @@
             blanditiis praesentium
           </p>
           <p class="portfolio-item__hover-btns">
-            <button class="portfolio-item__hover-btn-link">
-              <img
-                src="../media/image/portfolio/icons/link.png"
+            <button title="Share" class="portfolio-item__hover-btn-link">
+              <img 
+                src="../media/image/global-icons/link-icon.svg"
                 alt="Icon link"
               />
             </button>
-            <button class="portfolio-item__hover-btn-like">
-              <img
-                src="../media/image/portfolio/icons/like.png"
+            <button title="Like" class="portfolio-item__hover-btn-like">
+              <img 
+                src="../media/image/global-icons/heart-icon.svg"
                 alt="Icon like"
               />
             </button>
@@ -558,15 +621,15 @@
             blanditiis praesentium
           </p>
           <p class="portfolio-item__hover-btns">
-            <button class="portfolio-item__hover-btn-link">
-              <img
-                src="../media/image/portfolio/icons/link.png"
+            <button title="Share" class="portfolio-item__hover-btn-link">
+              <img 
+                src="../media/image/global-icons/link-icon.svg"
                 alt="Icon link"
               />
             </button>
-            <button class="portfolio-item__hover-btn-like">
-              <img
-                src="../media/image/portfolio/icons/like.png"
+            <button title="Like" class="portfolio-item__hover-btn-like">
+              <img 
+                src="../media/image/global-icons/heart-icon.svg"
                 alt="Icon like"
               />
             </button>
@@ -585,15 +648,15 @@
             blanditiis praesentium
           </p>
           <p class="portfolio-item__hover-btns">
-            <button class="portfolio-item__hover-btn-link">
-              <img
-                src="../media/image/portfolio/icons/link.png"
+            <button title="Share" class="portfolio-item__hover-btn-link">
+              <img 
+                src="../media/image/global-icons/link-icon.svg"
                 alt="Icon link"
               />
             </button>
-            <button class="portfolio-item__hover-btn-like">
-              <img
-                src="../media/image/portfolio/icons/like.png"
+            <button title="Like" class="portfolio-item__hover-btn-like">
+              <img 
+                src="../media/image/global-icons/heart-icon.svg"
                 alt="Icon like"
               />
             </button>
@@ -612,15 +675,15 @@
             blanditiis praesentium
           </p>
           <p class="portfolio-item__hover-btns">
-            <button class="portfolio-item__hover-btn-link">
-              <img
-                src="../media/image/portfolio/icons/link.png"
+            <button title="Share" class="portfolio-item__hover-btn-link">
+              <img 
+                src="../media/image/global-icons/link-icon.svg"
                 alt="Icon link"
               />
             </button>
-            <button class="portfolio-item__hover-btn-like">
-              <img
-                src="../media/image/portfolio/icons/like.png"
+            <button title="Like" class="portfolio-item__hover-btn-like">
+              <img 
+                src="../media/image/global-icons/heart-icon.svg"
                 alt="Icon like"
               />
             </button>
@@ -634,12 +697,14 @@
         At vero eos et <span class="text-bold">accusamus</span> et iusto odio
         <span class="text-bold">dignissimos</span> ducimus qui blanditiis
       </h4>
-      <button class="portfolio-start__btn" id="portfolio-start__btn">Start Project</button>
+      <button class="portfolio-start__btn" id="portfolio-start__btn">
+        Start Project
+      </button>
     </div>
   </div>
 </section>
 
-      <section class="team">
+      <section class="team" id="team">
   <div class="container">
     <h2 class="team-title">THE TEAM</h2>
     <h3 class="team-subtitle">
@@ -803,7 +868,7 @@
       <section class="talk">
   <div class="container">
     <h2 class="talk-title">Already Loved Us? Let’s talk!</h2>
-    <button class="talk-contact">Contact Us</button>
+    <a href="#contact" class="talk-contact yankor">Contact Us</a>
   </div>
 </section>
 
@@ -918,7 +983,7 @@
           <li>Free Hosting</li>
         </ul>
       </div>
-      <button class="price-card__start">Let’s Start</button>
+      <button class="price-card__start" id="price-card__start">Let’s Start</button>
     </div>
     <!-- 3 -->
     <div class="price-card">
@@ -943,7 +1008,7 @@
     </form>
   </div>
 </section>
-      <section class="contact">
+      <section class="contact" id="contact">
   <div class="container">
     <h2 class="contact-title">Contact Us</h2>
     <h3 class="contact-subtitle">
@@ -1011,7 +1076,7 @@
   </div>
 </section>
 
-      <section class="contactform">
+      <section class="contactform" id="contactform">
   <div class="container">
     <form class="contactform-form">
       <div class="contactform-form__info">

@@ -1,4 +1,4 @@
-<section class="services">
+<section class="services" id="services">
   <div class="container">
     <div class="services-inner">
       <h2 class="services-title">SERVICES ABOUT BOUNCY</h2>
@@ -7,42 +7,104 @@
         blanditiis praesentium
       </h3>
 
-      <div class="services-tab">
-        <div class="services-tab__btns">
-          <button class="services-tab__btn active">
-            <img src="./media/image/services/heart.png" alt="Image" />
+      <div class="services-tab tab" id="tab-1">
+        <div class="services-tab__btns tab-nav">
+          <button
+            class="services-tab__btn tab-btn active tab-btn-active"
+            data-target-id="0"
+          >
+            <img
+              src="../media/image/global-icons/heart-icon.svg"
+              alt="icon heart"
+            />
           </button>
-          <button class="services-tab__btn">
-            <img src="./media/image/services/mouse.png" alt="Image" />
+          <button class="services-tab__btn tab-btn" data-target-id="1">
+            <img src="../media/image/global-icons/mouse.svg" alt="icon mouse" />
           </button>
-          <button class="services-tab__btn">
-            <img src="./media/image/services/bulb.png" alt="Image" />
+          <button class="services-tab__btn tab-btn" data-target-id="2">
+            <img src="../media/image/global-icons/bulb.svg" alt="icon bulb" />
           </button>
         </div>
 
-        <div class="services-tab__content">
-          <div class="services-tab__block1">
-            <h4 class="services-tab__content-title">Creative Ideas</h4>
-            <p class="services-tab__block">
-              At <a href="#" class="link">vero</a> eos et accusamus et iusto
-              odio dignissimos <span class="text-bold">ducimus</span> qui
-              blanditiis praesentium voluptatum deleniti atque corrupti quos
-              dolores
-            </p>
-          </div>
+        <div class="tab-content">
+          <!-- 1 -->
+          <div class="services-tab__content tab-pane tab-pane-show" data-id="0">
+            <div class="services-tab__block1">
+              <h4 class="services-tab__content-title">Creative Ideas</h4>
+              <p class="services-tab__block">
+                At <a href="#" class="link">vero</a> eos et accusamus et iusto
+                odio dignissimos <span class="text-bold">ducimus</span> qui
+                blanditiis praesentium voluptatum deleniti atque corrupti quos
+                dolores
+              </p>
+            </div>
 
-          <div class="services-tab__block2">
-            <p>
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui
-              blanditiis praesentium voluptatum deleniti atque
-              <span class="text-bold">corrupti quos</span> dolores et quas
-              molestias <a href="#" class="link">excepturi</a> sint occaecati
-              cupiditate non provident,
-              <span class="text-bold">similique</span> sunt in culpa qui officia
-              deserunt mollitia animi, id est laborum et dolorum fuga. Et harum
-              quidem
-            </p>
+            <div class="services-tab__block2">
+              <p>
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                blanditiis praesentium voluptatum deleniti atque
+                <span class="text-bold">corrupti quos</span> dolores et quas
+                molestias <a href="#" class="link">excepturi</a> sint occaecati
+                cupiditate non provident,
+                <span class="text-bold">similique</span> sunt in culpa qui
+                officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                Et harum quidem
+              </p>
+            </div>
           </div>
+          <!-- 2 -->
+          <div class="services-tab__content tab-pane" data-id="1">
+            <div class="services-tab__block1">
+              <h4 class="services-tab__content-title">Creative Ideas 2</h4>
+              <p class="services-tab__block">
+                At <a href="#" class="link">vero</a> eos et accusamus et iusto
+                odio dignissimos <span class="text-bold">ducimus</span> Lorem
+                ipsum, dolor sit amet consectetur adipisicing elit. At qui
+                accusantium temporibus pariatur quaerat dignissimos similique
+                iusto et, quae molestias aliquam facilis libero, quisquam ullam
+                porro voluptatum non totam repellat. dolores
+              </p>
+            </div>
+
+            <div class="services-tab__block2">
+              <p>
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                blanditiis praesentium voluptatum deleniti atque
+                <span class="text-bold">corrupti quos</span> dolores et quas
+                molestias <a href="#" class="link">excepturi</a> sint occaecati
+                cupiditate non provident,
+                <span class="text-bold">similique</span> sunt in culpa qui
+                officia deserunt mollitia animi. Et harum quidem deserunt
+                mollitia animi, id est laborum et dolorum fuga. Et harum quidem
+              </p>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="services-tab__content tab-pane" data-id="2">
+            <div class="services-tab__block1">
+              <h4 class="services-tab__content-title">Creative Ideas 3</h4>
+              <p class="services-tab__block">
+                At <a href="#" class="link">vero</a> eos et accusamus et iusto
+                odio dignissimos <span class="text-bold">ducimus</span> Lorem
+                ipsum, dolor sit amet consectetur adipisicing elit. dolores
+              </p>
+            </div>
+
+            <div class="services-tab__block2">
+              <p>
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                blanditiis praesentium voluptatum deleniti atque
+                <span class="text-bold">corrupti quos</span> dolores et quas
+                molestias <a href="#" class="link">excepturi</a> sint occaecati
+                cupiditate non provident,
+                <span class="text-bold">similique</span> sunt in culpa qui
+                officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                Et harum quidem deserunt mollitia animi, id est laborum et
+                dolorum fuga. Et harum quidem
+              </p>
+            </div>
+          </div>
+          <!-- / -->
         </div>
       </div>
     </div>

@@ -28,6 +28,20 @@ body.noScroll {
   background: $color-darkGreen;
 }
 
+.tab {
+  &-btn {
+    &-active {
+      pointer-events: none;
+    }
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  &-pane:not(.tab-pane-show) {
+    display: none;
+  }
+}
+
 .wrapper {
   min-height: 100vh;
   display: flex;
@@ -142,6 +156,26 @@ body.noScroll {
       }
     }
   }
+  &.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    background-color: $color-darkGreen;
+    opacity: 0.9;
+    padding: 16px 0;
+    animation: slideDown 0.3s ease;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
 }
 
 .intro {
@@ -241,6 +275,9 @@ body.noScroll {
       display: flex;
       justify-content: center;
       align-items: center;
+      & img {
+        width: 25px;
+      }
     }
     &__btn {
       width: 40px;
@@ -254,7 +291,7 @@ body.noScroll {
       & + .services-tab__btn {
         margin-left: 14px;
       }
-      &.active {
+      &.tab-btn-active {
         background-color: $color-green;
       }
     }
@@ -338,6 +375,8 @@ body.noScroll {
     @include btn-style;
     border-color: $color-white;
     color: $color-white;
+    padding: 10px 25px;
+    display: inline-block;
   }
   &-bold {
     font-weight: bold;
@@ -611,6 +650,9 @@ body.noScroll {
           line-height: 0;
           padding: 10px;
           text-align: left;
+          & img {
+            width: 20px;
+          }
           &:hover {
             background-color: $color-darkGreen;
           }
