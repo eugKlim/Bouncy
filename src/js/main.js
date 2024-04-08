@@ -44,11 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // /
 
   // Скрытие текста.
-  const aboutHiddenText = document.querySelector('.about-hidden-text');
-  const aboutContentBtn = document.getElementById('about-content__btn');
-  const aboutThreeDots = document.querySelector('.about-three-dots');
-
-  hideText(aboutHiddenText, aboutContentBtn, aboutThreeDots);
+  hideText('about', 'about-content__btn', 'three-dots');
   // /
 
   // scroll fixed header
