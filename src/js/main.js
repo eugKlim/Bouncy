@@ -1,4 +1,5 @@
 import * as PopupModule from './modules/popup.js';
+import * as hiddenBlocksModule from './modules/hiddenBlocks.js';
 import hideText from './modules/hiddenText.js';
 import tabMechanism from './modules/tab.js';
 import burgerMenu from './modules/burgerMenu.js';
@@ -8,8 +9,6 @@ import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', function () {
-  const body = document.querySelector('body');
-
   // добавление слайдеров
   const swiper1 = new Swiper('.team-swiper', {
     modules: [Navigation, Pagination],
@@ -66,9 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
   scrollFixedHeader();
-  window.addEventListener('scroll', function () {
-    scrollFixedHeader();
-  });
   // /
 
   // smooth scroll
@@ -100,5 +96,28 @@ document.addEventListener('DOMContentLoaded', function () {
   burgerMenu();
   // /
 
+  // hiddenBlocks
+  function setupHiddenBlocks(blocks) {
+    blocks.forEach((block) => hiddenBlocksModule.hiddenBlocks(...block));
+  }
+  const hiddenBlocksData = [
+    ['portfolioItems', 'portfolio-items', 'portfolio-item', 2, 890],
+    ['featuredItems', 'featured-items', 'featured-item', 2, 620],
+  ];
+  setupHiddenBlocks(hiddenBlocksData);
+  // /
 
+  // resize event
+  window.addEventListener('resize', function () {
+    setupHiddenBlocks(hiddenBlocksData);
+  });
+  // /
+
+  // scroll event
+  window.addEventListener('scroll', function () {
+    scrollFixedHeader();
+  });
+  // /
+
+  // /DOMContentLoaded
 });
