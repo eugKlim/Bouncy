@@ -30,7 +30,9 @@ body.noScroll {
 .burger {
   display: none;
 }
-
+[data-filter] {
+  user-select: none
+}
 .tab {
   &-btn {
     &-active {
@@ -63,8 +65,14 @@ body.noScroll {
 .hidden-text {
   display: none;
 }
-.show {
+.show-inline {
   display: inline-block;
+}
+.show-block {
+  display: block;
+}
+.hidden {
+  display: none !important;
 }
 
 .hidden-block {
@@ -159,6 +167,7 @@ body.noScroll {
     & ul {
       display: flex;
       align-items: center;
+      user-select: none;
     }
     & a {
       padding: 6px 18px;
@@ -193,7 +202,7 @@ body.noScroll {
     left: 0;
     right: 0;
     z-index: 998;
-    background-color: rgb(13, 120, 125, 0.9);
+    background-color: $color-darkGreen;
     padding: 16px 0;
     animation: slideDown 0.3s ease;
   }
@@ -610,7 +619,7 @@ body.noScroll {
   &-subtitle {
     @include subTitle-style;
   }
-  &-tab {
+  &-menu__filter {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -644,7 +653,7 @@ body.noScroll {
   }
   &-item {
     width: 268px;
-    margin: 0 auto 10px;
+    margin: 0 auto 17px;
     position: relative;
     & img {
       width: 100%;
@@ -1110,8 +1119,8 @@ body.noScroll {
         max-width: 100%;
         min-width: 100%;
         min-height: 186px;
-        max-height: 340px; /* Максимальная высота */
-        resize: both; /* Позволяет изменять размеры в обе стороны */
+        max-height: 340px;
+        resize: both;
       }
     }
   }

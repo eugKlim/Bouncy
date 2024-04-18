@@ -5,12 +5,12 @@ export default function hideText(mainBlock, btn, threeDots) {
   let getThreeDots = getMainBlock.querySelector('.'+threeDots)
 
   getBtn.addEventListener('click', function () {
-    if (getHidenText.classList.contains('show')) {
-      getHidenText.classList.remove('show');
+    if (getHidenText.classList.contains('show-inline')) {
+      getHidenText.classList.remove('show-inline');
       getThreeDots.style.display = 'inline-block';
       getBtn.textContent = 'Read More';
     } else {
-      getHidenText.classList.add('show');
+      getHidenText.classList.add('show-inline');
       getThreeDots.style.display = 'none';
       getBtn.textContent = 'Hide Text';
     }

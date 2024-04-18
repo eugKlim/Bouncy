@@ -3,13 +3,19 @@ import * as hiddenBlocksModule from './modules/hiddenBlocks.js';
 import hideText from './modules/hiddenText.js';
 import tabMechanism from './modules/tab.js';
 import burgerMenu from './modules/burgerMenu.js';
+import { filterContent, filterObjects, createFilterOptions, callItems } from './modules/filter.js';
 
 // slider
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
+// Variables for filtering and hiding blocks.
+let filterDataHiddenBlock;
+let dataHiddenBlock;
+//
+
 document.addEventListener('DOMContentLoaded', function () {
-  // добавление слайдеров
+  // add slider
   const swiper1 = new Swiper('.team-swiper', {
     modules: [Navigation, Pagination],
     pagination: {
@@ -27,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   // /
 
-  // Добавление попапов.
+  // add popups.
   PopupModule.addPopups(
     'portfolio',
     'portfolio-start__btn',
@@ -43,16 +49,14 @@ document.addEventListener('DOMContentLoaded', function () {
   PopupModule.addPopups('price', 'price-card__start', `Lets start...`);
   // /
 
-  // Скрытие текста.
+  // hidden text.
   hideText('about', 'about-content__btn', 'three-dots');
   // /
 
   // scroll fixed header
   const header = document.querySelector('.header');
   function scrollFixedHeader() {
-    const intro = document
-      .querySelector('.intro')
-      .getBoundingClientRect().bottom;
+    const intro = document.querySelector('.intro').getBoundingClientRect().bottom;
 
     if (intro <= 100) {
       header.classList.add('header-fixed');
@@ -70,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         const href = this.getAttribute('href').substring(1);
         const scrollTarget = document.getElementById(href);
-        const topOffset = header.getBoundingClientRect().height;
+        const topOffset = header.getBoundingClientRect().height / 2;
         const elementPosition = scrollTarget.getBoundingClientRect().top;
         const offsetPosition = elementPosition - topOffset;
 
@@ -84,36 +88,42 @@ document.addEventListener('DOMContentLoaded', function () {
   smoothScroll();
   // /
 
-  // таб
   tabMechanism();
-  // /
 
-  // burger menu
   burgerMenu();
-  // /
 
-  // hiddenBlocks
-  function setupHiddenBlocks(blocks) {
-    blocks.forEach((block) => hiddenBlocksModule.hiddenBlocks(...block));
+  // filtering and calling the block hiding function for it.
+  filterDataHiddenBlock = [['portfolio', [2, 890, true, 'portfolioItems', '.portfolio-items']]];
+  filterContent('.portfolio', '.portfolio-menu__filter', '.portfolio-menu__filter-btn', '.portfolio-items', '.portfolio-item', 0);
+
+  // hiding blocks without filtering.
+  dataHiddenBlock = [[1, 620, false, 'featuredItems', '.featured-items', '.featured-item']];
+  function addArgumentsAndCallFunc(blocks, func) {
+    blocks.forEach((block) => func(...block));
   }
-  const hiddenBlocksData = [
-    ['portfolioItems', 'portfolio-items', 'portfolio-item', 2, 890],
-    ['featuredItems', 'featured-items', 'featured-item', 2, 620],
-  ];
-  setupHiddenBlocks(hiddenBlocksData);
+  addArgumentsAndCallFunc(dataHiddenBlock, hiddenBlocksModule.hiddenBlocks);
   // /
 
-  // resize event
   window.addEventListener('resize', function () {
-    setupHiddenBlocks(hiddenBlocksData);
-  });
-  // /
+    // hidden blocks
+    addArgumentsAndCallFunc(dataHiddenBlock, hiddenBlocksModule.hiddenBlocks);
+    // /
 
-  // scroll event
+    // hidden block for filter.
+    let getCurrentBlocks = Array.from(filterObjects.stateMainBlock);
+    for (let blocks of getCurrentBlocks) {
+      if (blocks) {
+        createFilterOptions(blocks);
+        callItems(blocks);
+      }
+    }
+    // /
+  });
+
   window.addEventListener('scroll', function () {
     scrollFixedHeader();
   });
-  // /
 
   // /DOMContentLoaded
 });
+export { filterDataHiddenBlock, dataHiddenBlock };
