@@ -6,13 +6,13 @@ export default function burgerMenu() {
 
   function openBurgerMenu() {
     burger.classList.add('active');
-    headerNavUl.style.transform = 'translateX(0)';
+    headerNavUl.style.cssText = 'transform: translateX(0) !important;';
     body.classList.add('noScroll');
     headerNav.classList.add('active');
   }
   function closeBurgerMenu() {
     burger.classList.remove('active');
-    headerNavUl.style.transform = 'translateX(-100%)';
+    headerNavUl.style.cssText = 'transform: translateX(-100%) !important;';
     body.classList.remove('noScroll');
     headerNav.classList.remove('active');
   }
