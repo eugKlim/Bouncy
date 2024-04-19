@@ -10,13 +10,6 @@ export default function smoothScroll() {
       const elementPosition = scrollTarget.getBoundingClientRect().top;
       const offsetPosition = elementPosition - topOffset;
 
-      if (scrollTarget.id === href) {
-        for (let i = 0; i < allLinkYankor.length; i++) {
-          allLinkYankor[i].classList.remove('active');
-        }
-        link.classList.add('active');
-      }
-
       window.scrollBy({
         top: offsetPosition,
         behavior: 'smooth',
