@@ -7,6 +7,7 @@ import { filterContent, filterObjects, createFilterOptions, callItems } from './
 import scrollFixedHeader from './modules/fixedHeader.js';
 import smoothScroll from './modules/smoothScroll.js';
 import getActiveLinkOnScroll from './modules/addActiveScrollInNav.js';
+import changePortfolioHover from './modules/changePortfolioHover.js';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
@@ -63,6 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
   tabMechanism();
 
   burgerMenu();
+
+  changePortfolioHover();
 
   // filtering and calling the block hiding function for it.
   filterDataHiddenBlock = [['portfolio', [2, 890, true, 'portfolioItems', '.portfolio-items']]];

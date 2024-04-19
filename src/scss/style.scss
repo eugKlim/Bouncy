@@ -31,7 +31,7 @@ body.noScroll {
   display: none;
 }
 [data-filter] {
-  user-select: none
+  user-select: none;
 }
 .tab {
   &-btn {
@@ -174,6 +174,7 @@ body.noScroll {
       color: $color-white;
       font-size: 16px;
       position: relative;
+      border: 1px solid transparent;
       &::before {
         content: '';
         position: absolute;
@@ -655,17 +656,51 @@ body.noScroll {
     width: 268px;
     margin: 0 auto 17px;
     position: relative;
+    @include center-block;
     & img {
       width: 100%;
     }
+    & .portfolio-showBlockHover {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 6px;
+      background-color: $color-green;
+      display: none;
+    }
+    & .portfolio-close {
+      display: none;
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      color: $color-red;
+      font-size: 36px;
+      line-height: 0;
+      z-index: 100;
+    }
     &__hover {
-      @include hoverBlock;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgb(12, 12, 12, 0.8);
+      position: absolute;
       padding: 30px;
-      align-items: flex-start;
+      display: grid;
+      place-self: center;
+      align-items: flex-end;
+      opacity: 0 !important;
+      visibility: hidden !important;
       &-title {
         @include title-style;
+        text-align: left !important;
         color: $color-green;
         position: relative;
+        width: 100%;
+
         &::before {
           content: '';
           width: 40px;
@@ -700,10 +735,6 @@ body.noScroll {
           margin-right: 10px;
         }
       }
-    }
-    &:hover .portfolio-item__hover {
-      visibility: visible;
-      opacity: 1;
     }
   }
   &-start {
