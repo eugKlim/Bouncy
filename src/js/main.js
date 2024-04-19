@@ -4,8 +4,9 @@ import hideText from './modules/hiddenText.js';
 import tabMechanism from './modules/tab.js';
 import burgerMenu from './modules/burgerMenu.js';
 import { filterContent, filterObjects, createFilterOptions, callItems } from './modules/filter.js';
-
-// slider
+import scrollFixedHeader from './modules/fixedHeader.js';
+import smoothScroll from './modules/smoothScroll.js';
+import getActiveLinkOnScroll from './modules/addActiveScrollInNav.js';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
@@ -53,40 +54,11 @@ document.addEventListener('DOMContentLoaded', function () {
   hideText('about', 'about-content__btn', 'three-dots');
   // /
 
-  // scroll fixed header
-  const header = document.querySelector('.header');
-  function scrollFixedHeader() {
-    const intro = document.querySelector('.intro').getBoundingClientRect().bottom;
-
-    if (intro <= 100) {
-      header.classList.add('header-fixed');
-    } else {
-      header.classList.remove('header-fixed');
-    }
-  }
   scrollFixedHeader();
-  // /
 
-  // smooth scroll
-  function smoothScroll() {
-    document.querySelectorAll('a.yankor').forEach((link) => {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const href = this.getAttribute('href').substring(1);
-        const scrollTarget = document.getElementById(href);
-        const topOffset = header.getBoundingClientRect().height / 2;
-        const elementPosition = scrollTarget.getBoundingClientRect().top;
-        const offsetPosition = elementPosition - topOffset;
+  getActiveLinkOnScroll();
 
-        window.scrollBy({
-          top: offsetPosition,
-          behavior: 'smooth',
-        });
-      });
-    });
-  }
   smoothScroll();
-  // /
 
   tabMechanism();
 
@@ -122,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('scroll', function () {
     scrollFixedHeader();
+    getActiveLinkOnScroll();
   });
 
   // /DOMContentLoaded

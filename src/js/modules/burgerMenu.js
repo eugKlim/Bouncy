@@ -12,7 +12,7 @@ export default function burgerMenu() {
   }
   function closeBurgerMenu() {
     burger.classList.remove('active');
-    headerNavUl.style.cssText = 'transform: translateX(-100%) !important;';
+    headerNavUl.style.cssText = 'transform: translateX(-100%);';
     body.classList.remove('noScroll');
     headerNav.classList.remove('active');
   }
