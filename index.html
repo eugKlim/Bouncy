@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.min.css" />
-    <script async src="js/format_check.js"></script>
     <title>Bouncy</title>
     <meta name="description" content="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos doloreset">
     <meta name="keywords" content="bouncy, landing, voluptatum, odio">
     <meta name="robots" content="index,follow">
     <meta name="author" content="Bouncy landing">
-
+    
     <link rel="apple-touch-icon" sizes="180x180" href="./media/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./media/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./media/favicon/favicon-16x16.png">
@@ -21,7 +20,7 @@
     <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-
+    
 
 <div class="wrapper">
   <header class="header">
@@ -30,15 +29,15 @@
       <h1 class="header-logo">Bouncy</h1>
       <nav class="header-nav">
         <ul>
-          <li><a href="#intro" class="header-nav__link yankor">Hello</a></li>
-          <li><a href="#about" class="header-nav__link yankor">About</a></li>
-          <li><a href="#services" class="header-nav__link yankor">Services</a></li>
-          <li><a href="#portfolio" class="header-nav__link yankor">Portfolio</a></li>
-          <li><a href="#team" class="header-nav__link yankor">Team</a></li>
-          <li><a href="#contact" class="header-nav__link yankor">Contact</a></li>
+          <li><a href="#intro" title="Hello" class="header-nav__link yankor">Hello</a></li>
+          <li><a href="#about" title="About" class="header-nav__link yankor">About</a></li>
+          <li><a href="#services" title="Services" class="header-nav__link yankor">Services</a></li>
+          <li><a href="#portfolio" title="Portfolio" class="header-nav__link yankor">Portfolio</a></li>
+          <li><a href="#team" title="Team" class="header-nav__link yankor">Team</a></li>
+          <li><a href="#contact" title="Contact" class="header-nav__link yankor">Contact</a></li>
         </ul>
       </nav>
-      <button class="burger">
+      <button title="menu" class="burger">
         <span></span>
         <span></span>
         <span></span>
@@ -48,13 +47,14 @@
 </header>
   <main class="main">
     <article>
-      <section class="intro" id="intro" data-src="./media/image/intro/intro-bg.jpg">
+      <section class="intro" id="intro" data-orig-bg-image="./media/image/intro/intro-bg.jpg">
+  <!-- <section class="intro" id="intro" data-orig-bg-image="./media/image/intro/intro-bg.jpg"> -->
   <div class="container">
     <div class="intro-inner">
       <h2 class="intro-title">We Are Code Cafe</h2>
       <p class="intro-subTitle">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
     </div>
-    <a href="#about" class="intro-btn__down yankor">
+    <a href="#about" title="go to about" class="intro-btn__down yankor">
       <img src="./media/image/global-icons/arrow.png" alt="Button" />
     </a>
   </div>
@@ -87,7 +87,7 @@
             saepe eveniet beatae voluptatum architecto quod?
           </span>
         </p>
-        <button class="about-content__btn">
+        <button title="read more" class="about-content__btn">
           Read More
         </button>
       </div>
@@ -113,16 +113,17 @@
           <button
             class="services-tab__btn tab-btn active tab-btn-active"
             data-target-id="0"
+            title="tab 1"
           >
             <img
               src="./media/image/global-icons/heart-icon.svg"
               alt="icon heart"
             />
           </button>
-          <button class="services-tab__btn tab-btn" data-target-id="1">
+          <button title="tab 2" class="services-tab__btn tab-btn" data-target-id="1">
             <img src="./media/image/global-icons/mouse.svg" alt="icon mouse" />
           </button>
-          <button class="services-tab__btn tab-btn" data-target-id="2">
+          <button title="tab 3" class="services-tab__btn tab-btn" data-target-id="2">
             <img src="./media/image/global-icons/bulb.svg" alt="icon bulb" />
           </button>
         </div>
@@ -133,7 +134,7 @@
             <div class="services-tab__block1">
               <h4 class="services-tab__content-title">Creative Ideas</h4>
               <p class="services-tab__block">
-                At <a href="#" class="link">vero</a> eos et accusamus et iusto
+                At <a href="#" title="link vero" class="link">vero</a> eos et accusamus et iusto
                 odio dignissimos <span class="text-bold">ducimus</span> qui
                 blanditiis praesentium voluptatum deleniti atque corrupti quos
                 dolores
@@ -145,7 +146,7 @@
                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                 blanditiis praesentium voluptatum deleniti atque
                 <span class="text-bold">corrupti quos</span> dolores et quas
-                molestias <a href="#" class="link">excepturi</a> sint occaecati
+                molestias <a href="#" title="link vero" class="link">excepturi</a> sint occaecati
                 cupiditate non provident,
                 <span class="text-bold">similique</span> sunt in culpa qui
                 officia deserunt mollitia animi, id est laborum et dolorum fuga.
@@ -158,7 +159,7 @@
             <div class="services-tab__block1">
               <h4 class="services-tab__content-title">Creative Ideas 2</h4>
               <p class="services-tab__block">
-                At <a href="#" class="link">vero</a> eos et accusamus et iusto
+                At <a href="#" title="link vero" class="link">vero</a> eos et accusamus et iusto
                 odio dignissimos <span class="text-bold">ducimus</span> Lorem
                 ipsum, dolor sit amet consectetur adipisicing elit. At qui
                 accusantium temporibus pariatur quaerat dignissimos similique
@@ -251,16 +252,15 @@
   </div>
 </section>
 
-      <section class="news" id="news" data-src="./media/image/news/news-bg.jpg">
+      <section class="news" id="news" data-orig-bg-image="./media/image/news/news-bg.jpg">
   <div class="container">
     <div class="news-inner">
-
-      <h3 class="news-title">At vero eos et <span class="news-bold">accusamus</span>  et iusto odio dignissimos ducimus qui blanditiis </h3>
+      <h3 class="news-title">At vero eos et <span class="news-bold">accusamus</span> et iusto odio dignissimos ducimus qui blanditiis</h3>
       <a href="#contactform" class="news-submit yankor">Submit Now</a>
-
     </div>
   </div>
 </section>
+
       <section class="details">
   <div class="container">
     <h2 class="details-title">Details Services</h2>
@@ -274,7 +274,7 @@
         <div class="details-description__item">
           <h4 class="details-description__item-title">Graphic Design</h4>
           <p class="details-description__item-text">
-            At vero eos et accusamus et <a href="#" class="link">iusto</a> odio
+            At vero eos et accusamus et <a href="#" title="iusto" class="link">iusto</a> odio
             dignissimos <span class="text-bold">ducimus</span> qui blanditiis
             praesentium voluptatum deleniti
           </p>
@@ -283,7 +283,7 @@
         <div class="details-description__item">
           <p class="details-description__item-text">
             quos dolores et quas molestias excepturi sint occaecati cupiditate
-            non provident, <a href="#" class="link">similique sunt</a> in culpa
+            non provident, <a href="#" title="iusto" class="link">similique sunt</a> in culpa
             qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
           </p>
         </div>
@@ -322,14 +322,14 @@
   </div>
 </section>
 
-      <section class="impressed" id="impressed" data-src="./media/image/impressed/impressed-bg.jpg">
+      <section class="impressed" id="impressed" data-orig-bg-image="./media/image/impressed/impressed-bg.jpg">
   <div class="container">
     <div class="impressed-inner">
       <div class="impressed-info">
         <h3 class="impressed-info__title">Impressed ?</h3>
         <p class="impressed-info__description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias</p>
         <p class="impressed-info__author">- Abdullah Noman</p>
-        <p class="impressed-info__text">Creatice Director, <a href="#" class="link">Code Cafe</a></p>
+        <p class="impressed-info__text">Creatice Director, <a href="#" title="iusto" class="link">Code Cafe</a></p>
       </div>
 
       <div class="impressed-img">
@@ -345,21 +345,21 @@
     <h3 class="portfolio-subtitle">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</h3>
     <nav>
       <ul class="portfolio-menu__filter">
-        <li class="portfolio-menu__filter-btn" data-filter="All">All Works</li>
-        <li class="portfolio-menu__filter-btn" data-filter="Print">Print</li>
-        <li class="portfolio-menu__filter-btn" data-filter="Identity">Identity</li>
-        <li class="portfolio-menu__filter-btn" data-filter="Branding">Branding</li>
-        <li class="portfolio-menu__filter-btn" data-filter="Web">Web</li>
-        <li class="portfolio-menu__filter-btn" data-filter="HTML">HTML</li>
-        <li class="portfolio-menu__filter-btn" data-filter="Wordpress">Wordpress</li>
+        <li class="portfolio-menu__filter-btn" title="show category All" data-filter="All">All Works</li>
+        <li class="portfolio-menu__filter-btn" title="show category Print" data-filter="Print">Print</li>
+        <li class="portfolio-menu__filter-btn" title="show category Identity" data-filter="Identity">Identity</li>
+        <li class="portfolio-menu__filter-btn" title="show category Branding" data-filter="Branding">Branding</li>
+        <li class="portfolio-menu__filter-btn" title="show category Web" data-filter="Web">Web</li>
+        <li class="portfolio-menu__filter-btn" title="show category HTML" data-filter="HTML">HTML</li>
+        <li class="portfolio-menu__filter-btn" title="show category Wordpress" data-filter="Wordpress">Wordpress</li>
       </ul>
     </nav>
     <div class="portfolio-items">
       <div class="portfolio-item Print">
         <div class="portfolio-item__img">
           <img src="./media/image/portfolio/portfolio-1.jpg" alt="Image" />
-          <button class="portfolio-showBlockHover"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
-          <button class="portfolio-close">&times;</button>
+          <button class="portfolio-showBlockHover" title="show info card"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
+          <button class="portfolio-close" title="close info card">&times;</button>
         </div>
         <div class="portfolio-item__hover">
           <h4 class="portfolio-item__hover-title">TITLE HERE</h4>
@@ -381,8 +381,8 @@
       <div class="portfolio-item Identity">
         <div class="portfolio-item__img">
           <img src="./media/image/portfolio/portfolio-2.jpg" alt="Image" />
-          <button class="portfolio-showBlockHover"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
-          <button class="portfolio-close">&times;</button>
+          <button class="portfolio-showBlockHover" title="show info card"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
+          <button class="portfolio-close" title="close info card">&times;</button>
         </div>
         <div class="portfolio-item__hover">
           <h4 class="portfolio-item__hover-title">TITLE HERE</h4>
@@ -401,8 +401,8 @@
       <div class="portfolio-item Print">
         <div class="portfolio-item__img">
           <img src="./media/image/portfolio/portfolio-3.jpg" alt="Image" />
-          <button class="portfolio-showBlockHover"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
-          <button class="portfolio-close">&times;</button>
+          <button class="portfolio-showBlockHover" title="show info card"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
+          <button class="portfolio-close" title="close info card">&times;</button>
         </div>
         <div class="portfolio-item__hover">
           <h4 class="portfolio-item__hover-title">TITLE HERE</h4>
@@ -421,8 +421,8 @@
       <div class="portfolio-item HTML">
         <div class="portfolio-item__img">
           <img src="./media/image/portfolio/portfolio-4.jpg" alt="Image" />
-          <button class="portfolio-showBlockHover"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
-          <button class="portfolio-close">&times;</button>
+          <button class="portfolio-showBlockHover" title="show info card"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
+          <button class="portfolio-close" title="close info card">&times;</button>
         </div>
         <div class="portfolio-item__hover">
           <h4 class="portfolio-item__hover-title">TITLE HERE</h4>
@@ -441,8 +441,8 @@
       <div class="portfolio-item Identity">
         <div class="portfolio-item__img">
           <img src="./media/image/portfolio/portfolio-5.jpg" alt="Image" />
-          <button class="portfolio-showBlockHover"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
-          <button class="portfolio-close">&times;</button>
+          <button class="portfolio-showBlockHover" title="show info card"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
+          <button class="portfolio-close" title="close info card">&times;</button>
         </div>
         <div class="portfolio-item__hover">
           <h4 class="portfolio-item__hover-title">TITLE HERE</h4>
@@ -461,8 +461,8 @@
       <div class="portfolio-item Branding">
         <div class="portfolio-item__img">
           <img src="./media/image/portfolio/portfolio-6.jpg" alt="Image" />
-          <button class="portfolio-showBlockHover"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
-          <button class="portfolio-close">&times;</button>
+          <button class="portfolio-showBlockHover" title="show info card"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
+          <button class="portfolio-close" title="close info card">&times;</button>
         </div>
         <div class="portfolio-item__hover">
           <h4 class="portfolio-item__hover-title">TITLE HERE</h4>
@@ -481,8 +481,8 @@
       <div class="portfolio-item Branding">
         <div class="portfolio-item__img">
           <img src="./media/image/portfolio/portfolio-7.jpg" alt="Image" />
-          <button class="portfolio-showBlockHover"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
-          <button class="portfolio-close">&times;</button>
+          <button class="portfolio-showBlockHover" title="show info card"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
+          <button class="portfolio-close" title="close info card">&times;</button>
         </div>
         <div class="portfolio-item__hover">
           <h4 class="portfolio-item__hover-title">TITLE HERE</h4>
@@ -501,8 +501,8 @@
       <div class="portfolio-item Branding">
         <div class="portfolio-item__img">
           <img src="./media/image/portfolio/portfolio-8.jpg" alt="Image" />
-          <button class="portfolio-showBlockHover"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
-          <button class="portfolio-close">&times;</button>
+          <button class="portfolio-showBlockHover" title="show info card"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
+          <button class="portfolio-close" title="close info card">&times;</button>
         </div>
         <div class="portfolio-item__hover">
           <h4 class="portfolio-item__hover-title">TITLE HERE</h4>
@@ -521,8 +521,8 @@
       <div class="portfolio-item Wordpress">
         <div class="portfolio-item__img">
           <img src="./media/image/portfolio/portfolio-9.jpg" alt="Image" />
-          <button class="portfolio-showBlockHover"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
-          <button class="portfolio-close">&times;</button>
+          <button class="portfolio-showBlockHover" title="show info card"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
+          <button class="portfolio-close" title="close info card">&times;</button>
         </div>
         <div class="portfolio-item__hover">
           <h4 class="portfolio-item__hover-title">TITLE HERE</h4>
@@ -541,8 +541,8 @@
       <div class="portfolio-item Web">
         <div class="portfolio-item__img">
           <img src="./media/image/portfolio/portfolio-10.jpg" alt="Image" />
-          <button class="portfolio-showBlockHover"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
-          <button class="portfolio-close">&times;</button>
+          <button class="portfolio-showBlockHover" title="show info card"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
+          <button class="portfolio-close" title="close info card">&times;</button>
         </div>
         <div class="portfolio-item__hover">
           <h4 class="portfolio-item__hover-title">TITLE HERE</h4>
@@ -561,8 +561,8 @@
       <div class="portfolio-item Web">
         <div class="portfolio-item__img">
           <img src="./media/image/portfolio/portfolio-11.jpg" alt="Image" />
-          <button class="portfolio-showBlockHover"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
-          <button class="portfolio-close">&times;</button>
+          <button class="portfolio-showBlockHover" title="show info card"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
+          <button class="portfolio-close" title="close info card">&times;</button>
         </div>
         <div class="portfolio-item__hover">
           <h4 class="portfolio-item__hover-title">TITLE HERE</h4>
@@ -581,8 +581,8 @@
       <div class="portfolio-item Branding">
         <div class="portfolio-item__img">
           <img src="./media/image/portfolio/portfolio-12.jpg" alt="Image" />
-          <button class="portfolio-showBlockHover"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
-          <button class="portfolio-close">&times;</button>
+          <button class="portfolio-showBlockHover" title="show info card"><img src="./media/image/portfolio/hand.svg" alt="hand action" /></button>
+          <button class="portfolio-close" title="close info card">&times;</button>
         </div>
         <div class="portfolio-item__hover">
           <h4 class="portfolio-item__hover-title">TITLE HERE</h4>
@@ -598,9 +598,9 @@
         </div>
       </div>
     </div>
-    <div class="portfolio-start" id="portfolio-start" data-src="./media/image/portfolio/portfolio-start_bg.jpg">
+    <div class="portfolio-start" id="portfolio-start" data-orig-bg-image="./media/image/portfolio/portfolio-start_bg.jpg">
       <h4 class="portfolio-start__title">At vero eos et <span class="text-bold">accusamus</span> et iusto odio <span class="text-bold">dignissimos</span> ducimus qui blanditiis</h4>
-      <button class="portfolio-start__btn" id="portfolio-start__btn">Start Project</button>
+      <button title="start button" class="portfolio-start__btn" id="portfolio-start__btn">Start Project</button>
     </div>
   </div>
 </section>
@@ -766,10 +766,10 @@
   </div>
 </section>
 
-      <section class="talk" id="talk" data-src="./media/image/talk/talk-bg.jpg">
+      <section class="talk" id="talk" data-orig-bg-image="./media/image/talk/talk-bg.jpg">
   <div class="container">
     <h2 class="talk-title">Already Loved Us? Let’s talk!</h2>
-    <a href="#contact" class="talk-contact yankor">Contact Us</a>
+    <a href="#contact" title="contact us" class="talk-contact yankor">Contact Us</a>
   </div>
 </section>
 
@@ -884,7 +884,7 @@
           <li>Free Hosting</li>
         </ul>
       </div>
-      <button class="price-card__start" id="price-card__start">Let’s Start</button>
+      <button title="Lets start" class="price-card__start" id="price-card__start">Let’s Start</button>
     </div>
     <!-- 3 -->
     <div class="price-card">
@@ -898,17 +898,18 @@
   </div>
 </section>
 
-      <section class="subscribe" id="subscribe" data-src="./media/image/subscribe/subscribe-bg.jpg">
+      <section class="subscribe" id="subscribe" data-orig-bg-image="./media/image/subscribe/subscribe-bg.jpg">
   <div class="container">
     <h2 class="subscribe-title">Subscribe us</h2>
     <h3 class="subscribe-subtitle">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</h3>
-  
+
     <form class="subscribe-form">
-      <input type="email" placeholder="Email Address" class="subscribe-form__input">
-      <button type="submit" class="subscribe-form__btn">SUBMIT</button>
+      <input title="entry field" type="email" placeholder="Email Address" class="subscribe-form__input" />
+      <button title="submit entry field" type="submit" class="subscribe-form__btn">SUBMIT</button>
     </form>
   </div>
 </section>
+
       <section class="contact" id="contact">
   <div class="container">
     <h2 class="contact-title">Contact Us</h2>
@@ -981,18 +982,18 @@
   <div class="container">
     <form class="contactform-form">
       <div class="contactform-form__info">
-        <input type="text" placeholder="Your name" class="contactform-name" />
-        <input
+        <input title="entry field name" type="text" placeholder="Your name" class="contactform-name" />
+        <input title="entry field email"
           type="email"
           placeholder="Email address"
           class="contactform-email"
         />
-        <input type="text" placeholder="Subject" class="contactform-subject" />
+        <input title="entry field subject" type="text" placeholder="Subject" class="contactform-subject" />
       </div>
       <div class="contactform-form__message">
-        <textarea placeholder="Message"></textarea>
+        <textarea placeholder="Message" title="entry field message"></textarea>
       </div>
-      <button type="submit" class="contactform-submit">SUBMIT NOW</button>
+      <button title="submit entry field" type="submit" class="contactform-submit">SUBMIT NOW</button>
     </form>
   </div>
 </section>
@@ -1017,19 +1018,19 @@
     <h3 class="footer-title">Copyright 2015. All rights Reserved</h3>
 
     <nav class="footer-social">
-      <a href="#"
+      <a href="#" title="facebook"
         ><img src="./media/image/global-icons/facebook.svg" alt="facebook"
       /></a>
-      <a href="#"
+      <a href="#" title="twitter"
         ><img src="./media/image/global-icons/twitter.svg" alt="twitter"
       /></a>
-      <a href="#"
+      <a href="#" title="linkedIn"
         ><img src="./media/image/global-icons/linkedin.svg" alt="linkedIn"
       /></a>
-      <a href="#"
+      <a href="#" title="instagram"
         ><img src="./media/image/global-icons/instagramm.svg" alt="instagram"
       /></a>
-      <a href="#"
+      <a href="#" title="vimeo"
         ><img src="./media/image/global-icons/vimeo.svg" alt="vimeo"
       /></a>
     </nav>
@@ -1038,6 +1039,7 @@
 
 </div>
 
+<script async src="js/format_check.js"></script>
 <script defer src="js/main.min.js"></script>
 </body>
 </html>
