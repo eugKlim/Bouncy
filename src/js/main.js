@@ -10,7 +10,6 @@ import getActiveLinkOnScroll from './modules/addActiveScrollInNav.js';
 import changePortfolioHover from './modules/changePortfolioHover.js';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
-import lazyScroll from './modules/lazyLoad.js';
 
 // Variables for filtering and hiding blocks.
 let filterDataHiddenBlock;
@@ -95,7 +94,6 @@ window.addEventListener('resize', function () {
 window.addEventListener('scroll', function () {
   scrollFixedHeader();
   getActiveLinkOnScroll();
-  lazyScroll();
 });
 
 export { filterDataHiddenBlock };

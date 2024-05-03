@@ -194,10 +194,13 @@ function scripts() {
 function addCodeCheckFormatImage() {
   return webpackFunc(['src/js/**/format_check.js'], 'production', 'format_check.js').pipe(uglify()).pipe(dest('dist/js'));
 }
-
+function addCodeLazyLoad() {
+  return webpackFunc(['src/js/**/lazyLoad.js'], 'production', 'lazyLoad.js').pipe(uglify()).pipe(dest('dist/js'));
+}
 function addCodeToProd() {
   addCodeCheckFormatImage();
-  return webpackFunc(['src/js/**/*.js', '!src/js/**/format_check.js'], 'production', 'main.min.js').pipe(uglify()).pipe(dest('dist/js'));
+  addCodeLazyLoad();
+  return webpackFunc(['src/js/**/*.js', '!src/js/**/format_check.js', '!src/js/**/lazyLoad.js'], 'production', 'main.min.js').pipe(uglify()).pipe(dest('dist/js'));
 }
 function watching() {
   watch(['src/scss/vars.scss'], styles);
