@@ -12,27 +12,29 @@ body {
 body.noScroll {
   overflow: hidden;
 }
+img {
+  user-select: none;
+}
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
   background: $color-lightGray;
 }
-
 ::-webkit-scrollbar-thumb {
   background: $color-blackGray;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: $color-darkGreen;
 }
+
 .burger {
   display: none;
 }
 [data-filter] {
   user-select: none;
 }
+
 .tab {
   &-btn {
     &-active {
@@ -293,6 +295,14 @@ body.noScroll {
   }
   &-img {
     text-align: center;
+    background: url('../media/gif/loading.gif');
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: center;
+    & img {
+      width: 215px;
+      height: 350px;
+    }
   }
 }
 
@@ -383,9 +393,16 @@ body.noScroll {
     display: inline-block;
     z-index: 1;
     overflow: hidden;
+    height: 319px;
+    background: url('../media/gif/loading.gif');
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: center;
     & img {
       object-fit: cover;
       object-position: center;
+      width: 100%;
+      height: 319px;
     }
     &__hover {
       @include hoverBlock;
@@ -604,7 +621,13 @@ body.noScroll {
     }
   }
   &-img {
+    width: 412px;
+    height: 338px;
     text-align: right;
+    background: url('../media/gif/loading.gif');
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: center;
     & img {
       margin-top: -30px;
     }
@@ -654,11 +677,17 @@ body.noScroll {
   }
   &-item {
     width: 268px;
+    min-height: 227px;
+    background: url('../media/gif/loading.gif');
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: center;
     margin: 0 auto 17px;
     position: relative;
     @include center-block;
     & img {
       width: 100%;
+      height: 100%;
     }
     & .portfolio-showBlockHover {
       position: absolute;
@@ -790,6 +819,10 @@ body.noScroll {
       height: 364px;
       object-fit: cover;
       object-position: center;
+      background: url('../media/gif/loading.gif');
+      background-repeat: no-repeat;
+      background-size: 60px;
+      background-position: center;
     }
   }
   & .swiper-slide {
@@ -952,6 +985,14 @@ body.noScroll {
     align-items: center;
     padding: 50px 80px 70px;
     background-color: $color-white;
+    &__img {
+      width: 130px;
+      height: 130px;
+      background: url('../media/gif/loading.gif');
+      background-repeat: no-repeat;
+      background-size: 60px;
+      background-position: center;
+    }
     &__info {
       margin-left: 40px;
       &-text {
@@ -974,7 +1015,6 @@ body.noScroll {
 }
 
 .price {
-  background-color: $color-superLightGray;
   padding: 70px 0 40px;
   &-title {
     @include title-style;
@@ -993,7 +1033,7 @@ body.noScroll {
   &-card {
     margin: 0 25px 50px;
     width: 238px;
-    background-color: $color-white;
+    background-color: $color-blackGray;
     &__title {
       font-weight: bold;
       @include title-style;
@@ -1107,6 +1147,14 @@ body.noScroll {
     background-color: $color-white;
     padding-bottom: 20px;
     margin: 0 10px 20px;
+    &__img {
+      width: 287px;
+      height: 145px;
+      background: url('../media/gif/loading.gif');
+      background-repeat: no-repeat;
+      background-size: 60px;
+      background-position: center;
+    }
     & a {
       display: block;
       margin-bottom: 8px;
@@ -1170,6 +1218,14 @@ body.noScroll {
   .container {
     max-width: 1366px;
     padding: 0;
+  }
+  &-item {
+    width: 100%;
+    height: 490px;
+    background: url('../media/gif/loading.gif');
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: center;
   }
   & iframe {
     width: 100%;

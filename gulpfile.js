@@ -10,7 +10,9 @@ const ttf2woff2 = require('gulp-ttf2woff2');
 const avif = require('gulp-avif');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
-const newer = require('gulp-newer');
+// const newer = require('gulp-newer');
+const cache = require('gulp-cache');
+
 const gulpIf = require('gulp-if');
 const path = require('path');
 var plumber = require('gulp-plumber');
@@ -27,16 +29,16 @@ function convertTTFtoWOFF() {
   return src(['src/fonts/*.ttf', 'src/fonts/*.otf'])
     .pipe(plumber())
     .pipe(fonter({ formats: ['woff'] }))
-    .pipe(ttf2woff2())
-    .pipe(newer('dist/fonts'))
+    .pipe(cache(ttf2woff2()))
+    // .pipe(newer('dist/fonts'))
     .pipe(dest('dist/fonts'));
 }
 function convertTTFtoWOFF2() {
   return src(['src/fonts/*.ttf', 'src/fonts/*.otf'])
     .pipe(plumber())
     .pipe(fonter({ formats: ['ttf'] }))
-    .pipe(ttf2woff2())
-    .pipe(newer('dist/fonts'))
+    .pipe(cache(ttf2woff2()))
+    // .pipe(newer('dist/fonts'))
     .pipe(dest('dist/fonts'));
 }
 function fontsStyle() {
@@ -71,31 +73,6 @@ function styles() {
     .pipe(dest('dist/css'))
     .pipe(browserSync.stream());
 }
-function scripts() {
-  return src(['src/js/**/*.js', '!src/js/codeToBuild/**'])
-    .pipe(
-      webpackStream({
-        mode: 'development',
-        output: {
-          filename: 'main.min.js',
-        },
-        module: {
-          rules: [
-            {
-              test: /\.(?:js|mjs|cjs)$/,
-              exclude: /node_modules|bower_components/,
-            },
-          ],
-        },
-      })
-    )
-
-    .pipe(sourcemaps.init())
-    .pipe(uglify())
-    .pipe(sourcemaps.write())
-    .pipe(dest('dist/js'))
-    .pipe(browserSync.stream());
-}
 function html() {
   return src(['src/*.html', '!src/htmlBlocks/**/*.*']).pipe(dest('dist')).pipe(browserSync.stream());
 }
@@ -103,12 +80,17 @@ function cleanDist() {
   return src(['dist']).pipe(clean());
 }
 function imageOptimization() {
-  return src(['src/media/image/**/*.*', '!src/media/image/**/*.svg', '!src/media/image/favicon/**/*.*'])
-    .pipe(avif({ quality: 50 }))
-    .pipe(src(['src/media/image/**/*.*', '!src/media/image/favicon/**/*.*']))
-    .pipe(webp())
+  return src(['src/media/image/**/*.*', '!src/media/image/**/*.svg'])
+    .pipe(avif({ quality: 75 }))
+    .pipe(src(['src/media/image/**/*.*']))
+    .pipe(webp({ quality: 87 }))
     .pipe(src('src/media/image/**/*.*'))
-    .pipe(imagemin())
+
+    .pipe(imagemin([
+      imagemin.mozjpeg({quality: 85, progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+    ]))
+
     .pipe(dest('dist/media/image'));
 }
 function files() {
@@ -169,34 +151,53 @@ function browsersync() {
     },
   });
 }
-function addCodeToProd() {
-  return src(['src/js/**/*.js'])
-    .pipe(
-      webpackStream({
-        mode: 'production',
-        output: {
-          filename: 'main.min.js',
-        },
-        module: {
-          rules: [
-            {
-              test: /\.(?:js|mjs|cjs)$/,
-              exclude: /node_modules|bower_components/,
-              use: {
-                loader: 'babel-loader',
-                options: {
-                  presets: [['@babel/preset-env', { targets: 'defaults' }]],
-                },
-              },
-            },
-          ],
-        },
-      })
-    )
 
-    .pipe(uglify())
-    .pipe(dest('dist/js'))
-    .pipe(browserSync.stream());
+function webpackFunc(srcs, addMode, fileName) {
+  return src(srcs).pipe(
+    webpackStream({
+      mode: addMode,
+      output: {
+        filename: fileName,
+      },
+      module: {
+        rules: [
+          addMode === 'production'
+            ? {
+                test: /\.(?:js|mjs|cjs)$/,
+                exclude: /node_modules|bower_components/,
+                use: {
+                  loader: 'babel-loader',
+                  options: {
+                    presets: [['@babel/preset-env', { targets: 'defaults' }]],
+                  },
+                },
+              }
+            : {
+                test: /\.(?:js|mjs|cjs)$/,
+                exclude: /node_modules|bower_components/,
+              },
+        ],
+      },
+    })
+  );
+}
+
+function scripts() {
+  return webpackFunc(['src/js/**/*.js', '!src/js/codeToBuild/**'], 'development', 'main.min.js')
+  .pipe(sourcemaps.init())
+  .pipe(uglify())
+  .pipe(sourcemaps.write())
+  .pipe(dest('dist/js'))
+  .pipe(browserSync.stream());
+}
+
+function addCodeCheckFormatImage() {
+  return webpackFunc(['src/js/**/format_check.js'], 'production', 'format_check.js').pipe(uglify()).pipe(dest('dist/js'));
+}
+
+function addCodeToProd() {
+  addCodeCheckFormatImage();
+  return webpackFunc(['src/js/**/*.js', '!src/js/**/format_check.js'], 'production', 'main.min.js').pipe(uglify()).pipe(dest('dist/js'));
 }
 function watching() {
   watch(['src/scss/vars.scss'], styles);

@@ -1,5 +1,5 @@
 import * as hiddenBlocksModule from './hiddenBlocks.js';
-import { filterDataHiddenBlock, dataHiddenBlock } from '../main.js';
+import { filterDataHiddenBlock } from '../main.js';
 
 const filterObjects = {
   stateMainBlock: new Set(),
