@@ -70,7 +70,7 @@
 
 # Проверить сайт:
 
-PageSpeed Insights: [ссылка pageSpeed](https://pagespeed.web.dev/analysis/https-eugklim-github-io-Bouncy/epaf1lyrvn?hl=ru&form_factor=desktop)
+PageSpeed Insights: [ссылка pageSpeed](https://pagespeed.web.dev/analysis/https-eugklim-github-io-Bouncy/hcjbgxz2n5?hl=ru&form_factor=desktop)
 
 Валидатор: [ссылка на валидатор](https://validator.w3.org/) 
 
