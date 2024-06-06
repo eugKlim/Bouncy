@@ -10,6 +10,12 @@ import getActiveLinkOnScroll from './modules/addActiveScrollInNav.js';
 import changePortfolioHover from './modules/changePortfolioHover.js';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+import lozad from 'lozad'
+
+// lazy load
+const observer = lozad(); 
+observer.observe();
+// /
 
 // Variables for filtering and hiding blocks.
 let filterDataHiddenBlock;

@@ -7,8 +7,8 @@ const browserSync = require('browser-sync').create();
 const clean = require('gulp-clean');
 const fonter = require('gulp-fonter');
 const ttf2woff2 = require('gulp-ttf2woff2');
-const avif = require('gulp-avif');
-const webp = require('gulp-webp');
+// const avif = require('gulp-avif');
+// const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
 // const newer = require('gulp-newer');
 const cache = require('gulp-cache');
@@ -81,10 +81,10 @@ function cleanDist() {
 }
 function imageOptimization() {
   return src(['src/media/image/**/*.*', '!src/media/image/**/*.svg'])
-    .pipe(avif({ quality: 75 }))
-    .pipe(src(['src/media/image/**/*.*']))
-    .pipe(webp({ quality: 87 }))
-    .pipe(src('src/media/image/**/*.*'))
+    // .pipe(avif({ quality: 75 }))
+    // .pipe(src(['src/media/image/**/*.*']))
+    // .pipe(webp({ quality: 87 }))
+    // .pipe(src('src/media/image/**/*.*'))
 
     .pipe(imagemin([
       imagemin.mozjpeg({quality: 85, progressive: true}),
