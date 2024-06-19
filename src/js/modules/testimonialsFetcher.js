@@ -6,8 +6,6 @@ class TestimonialsFetcher {
   }
 
   async fetchData() {
-    this.testimonialsWrapper.innerHTML = `<img src="../media/image/global-icons/loading.gif" alt="LOADING" class="loading-gif">`;
-
     try {
       const usersResponse = await axios.get(
         'https://jsonplaceholder.typicode.com/users'
@@ -52,7 +50,7 @@ class TestimonialsFetcher {
             <img class="lozad"
               data-src="${image}"
               alt="Image"
-              src="./media/image/global-icons/1x1.png">
+              src="./media/image/global-icons/1x1.webp">
           </div>
           <div class="testimonials-slide__info">
             <p class="testimonials-slide__info-text">${comment}</p>
