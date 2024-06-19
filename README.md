@@ -77,23 +77,6 @@
 <br>
 
 
-
-
-# Проверить сайт:
-
-PageSpeed Insights: [ссылка pageSpeed](https://pagespeed.web.dev/analysis/https-eugklim-github-io-Bouncy/bijz9knfvb?hl=ru&form_factor=desktop)
-
-Валидатор: [ссылка на валидатор](https://validator.w3.org/) 
-
-
-```ruby
-https://eugklim.github.io/Bouncy/
-```
-
-
-
-<br>
-
 # Установка и запуск проекта:
 
 1. Клонировать репозиторий:
