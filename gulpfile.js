@@ -7,8 +7,7 @@ const browserSync = require('browser-sync').create();
 const clean = require('gulp-clean');
 const fonter = require('gulp-fonter');
 const ttf2woff2 = require('gulp-ttf2woff2');
-// const avif = require('gulp-avif');
-// const webp = require('gulp-webp');
+const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
 // const newer = require('gulp-newer');
 const cache = require('gulp-cache');
@@ -25,26 +24,12 @@ const ghPages = require('gh-pages');
 const { promisify } = require('util');
 const publishToGitHub = promisify(ghPages.publish);
 
-function convertTTFtoWOFF() {
-  return src(['src/fonts/*.ttf', 'src/fonts/*.otf'])
-    .pipe(plumber())
-    .pipe(fonter({ formats: ['woff'] }))
-    .pipe(cache(ttf2woff2()))
-    // .pipe(newer('dist/fonts'))
-    .pipe(dest('dist/fonts'));
-}
-function convertTTFtoWOFF2() {
-  return src(['src/fonts/*.ttf', 'src/fonts/*.otf'])
-    .pipe(plumber())
-    .pipe(fonter({ formats: ['ttf'] }))
-    .pipe(cache(ttf2woff2()))
-    // .pipe(newer('dist/fonts'))
-    .pipe(dest('dist/fonts'));
-}
 function fontsStyle() {
   let fontsFile = 'src/scss/fonts.scss';
   if (!fs.existsSync('src/fonts') || fs.readdirSync('src/fonts').length === 0) {
-    console.log('Отсутствуют шрифты в каталоге src/fonts. Задача fontsStyle не будет выполнена.');
+    console.log(
+      'Отсутствуют шрифты в каталоге src/fonts. Задача fontsStyle не будет выполнена.'
+    );
     return src('src');
   }
   let fontsFiles = fs.readdirSync('dist/fonts');
@@ -56,12 +41,17 @@ function fontsStyle() {
       if (newFileOnly !== fontFileName) {
         let fontName = fontFileName.split('-')[0] || fontFileName;
         let fontWeight = fontFileName.split('-')[1] || fontFileName;
-        fs.appendFileSync(fontsFile, `@font-face{\n\tfont-family: '${fontName} ${fontWeight}';\n\tfont-display: swap;\n\tsrc: url("../fonts/${fontFileName}.woff2") format("woff2"), url("../fonts/${fontFileName}.woff") format("woff");\n\tfont-weight: ${fontWeight};\n\tfont-style: normal;\n}\r\n`);
+        fs.appendFileSync(
+          fontsFile,
+          `@font-face{\n\tfont-family: '${fontName} ${fontWeight}';\n\tfont-display: swap;\n\tsrc: url("../fonts/${fontFileName}.woff2") format("woff2"), url("../fonts/${fontFileName}.woff") format("woff");\n\tfont-weight: ${fontWeight};\n\tfont-style: normal;\n}\r\n`
+        );
         newFileOnly = fontFileName;
       }
     }
   } else {
-    console.log('Файл scss/fonts.scss уже существует. Для обновления файла нужно его удалить!');
+    console.log(
+      'Файл scss/fonts.scss уже существует. Для обновления файла нужно его удалить!'
+    );
   }
   return src('src');
 }
@@ -74,24 +64,31 @@ function styles() {
     .pipe(browserSync.stream());
 }
 function html() {
-  return src(['src/*.html', '!src/htmlBlocks/**/*.*']).pipe(dest('dist')).pipe(browserSync.stream());
+  return src(['src/*.html', '!src/htmlBlocks/**/*.*'])
+    .pipe(dest('dist'))
+    .pipe(browserSync.stream());
 }
 function cleanDist() {
   return src(['dist']).pipe(clean());
 }
+function convertTTFtoWOFF() {
+  return src(['src/fonts/*.ttf', 'src/fonts/*.otf'])
+    .pipe(plumber())
+    .pipe(fonter({ formats: ['woff'] }))
+    .pipe(ttf2woff2())
+    .pipe(dest('dist/fonts'));
+}
+function convertTTFtoWOFF2() {
+  return src(['src/fonts/*.ttf', 'src/fonts/*.otf'])
+    .pipe(plumber())
+    .pipe(fonter({ formats: ['ttf'] }))
+    .pipe(ttf2woff2())
+    .pipe(dest('dist/fonts'));
+}
 function imageOptimization() {
-  return src(['src/media/image/**/*.*', '!src/media/image/**/*.svg'])
-    // .pipe(avif({ quality: 75 }))
-    // .pipe(src(['src/media/image/**/*.*']))
-    // .pipe(webp({ quality: 87 }))
-    // .pipe(src('src/media/image/**/*.*'))
-
-    .pipe(imagemin([
-      imagemin.mozjpeg({quality: 85, progressive: true}),
-      imagemin.optipng({optimizationLevel: 5}),
-    ]))
-
-    .pipe(dest('dist/media/image'));
+  return src(['src/media/**/*.*', '!src/media/**/*.svg', '!src/media/**/*.gif'])
+    .pipe(webp({ quality: 87 }))
+    .pipe(dest('dist/media'));
 }
 function files() {
   return src(['src/files/**/*.*']).pipe(dest('dist/files'));
@@ -133,17 +130,19 @@ function mediaFiles() {
     )
     .pipe(browserSync.stream());
 }
+
 function includeFile() {
-  return src('src/*.html')
+  return src(['src/**/*.html', '!src/Components/**/*.html'])
     .pipe(
       fileInclude({
         prefix: '@@',
-        basepath: 'src/htmlBlocks',
+        basepath: 'src/Components',
       })
     )
     .pipe(dest('dist'))
     .pipe(browserSync.stream());
 }
+
 function browsersync() {
   browserSync.init({
     server: {
@@ -183,24 +182,42 @@ function webpackFunc(srcs, addMode, fileName) {
 }
 
 function scripts() {
-  return webpackFunc(['src/js/**/*.js', '!src/js/codeToBuild/**'], 'development', 'main.min.js')
-  .pipe(sourcemaps.init())
-  .pipe(uglify())
-  .pipe(sourcemaps.write())
-  .pipe(dest('dist/js'))
-  .pipe(browserSync.stream());
+  return webpackFunc(
+    ['src/js/**/*.js', '!src/js/codeToBuild/**'],
+    'development',
+    'main.min.js'
+  )
+    .pipe(sourcemaps.init())
+    .pipe(uglify())
+    .pipe(sourcemaps.write())
+    .pipe(dest('dist/js'))
+    .pipe(browserSync.stream());
 }
 
 function addCodeCheckFormatImage() {
-  return webpackFunc(['src/js/**/format_check.js'], 'production', 'format_check.js').pipe(uglify()).pipe(dest('dist/js'));
+  return webpackFunc(
+    ['src/js/**/format_check.js'],
+    'production',
+    'format_check.js'
+  )
+    .pipe(uglify())
+    .pipe(dest('dist/js'));
 }
 function addCodeLazyLoad() {
-  return webpackFunc(['src/js/**/lazyLoad.js'], 'production', 'lazyLoad.js').pipe(uglify()).pipe(dest('dist/js'));
+  return webpackFunc(['src/js/**/lazyLoad.js'], 'production', 'lazyLoad.js')
+    .pipe(uglify())
+    .pipe(dest('dist/js'));
 }
 function addCodeToProd() {
   addCodeCheckFormatImage();
   addCodeLazyLoad();
-  return webpackFunc(['src/js/**/*.js', '!src/js/**/format_check.js', '!src/js/**/lazyLoad.js'], 'production', 'main.min.js').pipe(uglify()).pipe(dest('dist/js'));
+  return webpackFunc(
+    ['src/js/**/*.js', '!src/js/**/format_check.js', '!src/js/**/lazyLoad.js'],
+    'production',
+    'main.min.js'
+  )
+    .pipe(uglify())
+    .pipe(dest('dist/js'));
 }
 function watching() {
   watch(['src/scss/vars.scss'], styles);
@@ -234,8 +251,40 @@ exports.convertTTFtoWOFF = convertTTFtoWOFF;
 exports.convertTTFtoWOFF2 = convertTTFtoWOFF2;
 exports.includeFile = includeFile;
 
-exports.build = series(cleanDist, html, includeFile, mediaFiles, files, imageOptimization, series(convertTTFtoWOFF, convertTTFtoWOFF2, fontsStyle, styles), scripts, addCodeToProd);
+exports.build = series(
+  cleanDist,
+  html,
+  includeFile,
+  mediaFiles,
+  files,
+  imageOptimization,
+  series(convertTTFtoWOFF, convertTTFtoWOFF2, fontsStyle, styles),
+  scripts,
+  addCodeToProd
+);
 
-exports.default = series(html, includeFile, mediaFiles, files, convertTTFtoWOFF, convertTTFtoWOFF2, fontsStyle, styles, scripts, parallel(browsersync, watching));
+exports.default = series(
+  html,
+  includeFile,
+  mediaFiles,
+  files,
+  convertTTFtoWOFF,
+  convertTTFtoWOFF2,
+  fontsStyle,
+  styles,
+  scripts,
+  parallel(browsersync, watching)
+);
 
-exports.deploy = series(cleanDist, html, includeFile, mediaFiles, files, imageOptimization, series(convertTTFtoWOFF, convertTTFtoWOFF2, fontsStyle, styles), scripts, addCodeToProd, pushToGithubGhPages);
+exports.deploy = series(
+  cleanDist,
+  html,
+  includeFile,
+  mediaFiles,
+  files,
+  imageOptimization,
+  series(convertTTFtoWOFF, convertTTFtoWOFF2, fontsStyle, styles),
+  scripts,
+  addCodeToProd,
+  pushToGithubGhPages
+);

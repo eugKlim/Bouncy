@@ -1,0 +1,25 @@
+.news {
+  background: url('../media/image/news/news-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  &-inner {
+    @include leveling;
+    flex-wrap: wrap;
+    padding: 40px 0;
+  }
+  &-title {
+    @include title-style;
+    color: $color-white;
+    margin: 0;
+  }
+  &-submit {
+    @include btn-style;
+    border-color: $color-white;
+    color: $color-white;
+    padding: 10px 25px;
+    display: inline-block;
+  }
+  &-bold {
+    font-weight: bold;
+  }
+}

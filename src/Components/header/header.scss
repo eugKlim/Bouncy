@@ -1,0 +1,57 @@
+.header {
+  padding: 44px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 990;
+
+  &-inner {
+    @include leveling;
+  }
+  &-logo {
+    @include logo;
+  }
+  &-nav {
+    & ul {
+      display: flex;
+      align-items: center;
+      user-select: none;
+    }
+    & a {
+      padding: 6px 18px;
+      color: $color-white;
+      font-size: 16px;
+      position: relative;
+      border: 1px solid transparent;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        background-color: $color-green;
+        transition: width 0.35s;
+      }
+      &:hover:before {
+        width: 100%;
+      }
+      &.active {
+        border: 1px solid $color-white;
+        border-radius: 40px;
+        &:hover:before {
+          width: 0;
+        }
+      }
+    }
+  }
+  &.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    background-color: $color-darkGreen;
+    padding: 16px 0;
+    animation: slideDown 0.3s ease;
+  }
+}

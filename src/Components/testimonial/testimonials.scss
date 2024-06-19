@@ -1,0 +1,65 @@
+.testimonials {
+  background-color: $color-superLightGray;
+  padding: 70px 0;
+
+  &-title {
+    @include title-style;
+  }
+  &-subtitle {
+    @include subTitle-style;
+  }
+  &-swiper {
+    margin-top: 70px;
+    position: relative;
+    overflow: hidden;
+  }
+  .swiper-pagination {
+    bottom: 10px;
+    &-bullet {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border: 1px solid $color-darkGreen;
+      background-color: transparent;
+      opacity: 1;
+      &-active {
+        background-color: $color-darkGreen;
+      }
+    }
+  }
+  &-slide {
+    display: flex;
+    align-items: center;
+    padding: 50px 80px 70px;
+    background-color: $color-white;
+    &__img {
+      min-width: 130px;
+      max-height: 130px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+    }
+    &__info {
+      margin-left: 40px;
+      &-text {
+        @include subTitle-style;
+        text-align: left;
+        max-width: 100%;
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+      &-author {
+        font-weight: bold;
+        color: $color-green;
+        font-size: 16px;
+        margin: 20px 0 8px;
+      }
+      &-rank {
+        font-size: 14px;
+        color: $color-blackGray;
+      }
+    }
+  }
+}

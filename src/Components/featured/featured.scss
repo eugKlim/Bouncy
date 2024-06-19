@@ -1,0 +1,40 @@
+.featured {
+  padding: 72px 0;
+
+  & .container {
+    max-width: 1366px;
+    padding: 0;
+  }
+  &-title {
+    @include title-style;
+  }
+  &-subTitle {
+    @include subTitle-style;
+  }
+  &-items {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: minmax(300px, 700px) repeat(2, 300px);
+    justify-content: center;
+  }
+  &-item {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    overflow: hidden;
+    height: 319px;
+    & img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 319px;
+    }
+    &__hover {
+      @include hoverBlock;
+    }
+  }
+  .featured-item:hover .featured-item__hover {
+    opacity: 1;
+    visibility: visible;
+  }
+}

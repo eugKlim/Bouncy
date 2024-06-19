@@ -1,6 +1,13 @@
 let hiddenBlocksState = new Set();
 
-function hiddenBlocks(countElShow, breakPoint, filter, mainBlockJsName, mainBlockHtmlClass, classAllItems) {
+function hiddenBlocks(
+  countElShow,
+  breakPoint,
+  filter,
+  mainBlockJsName,
+  mainBlockHtmlClass,
+  classAllItems
+) {
   function overall(allItems) {
     let mainBlockJs = document.querySelector(mainBlockHtmlClass);
     if (window.innerWidth <= breakPoint) {

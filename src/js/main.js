@@ -3,17 +3,28 @@ import * as hiddenBlocksModule from './modules/hiddenBlocks.js';
 import hideText from './modules/hiddenText.js';
 import tabMechanism from './modules/tab.js';
 import burgerMenu from './modules/burgerMenu.js';
-import { filterContent, filterObjects, createFilterOptions, callItems } from './modules/filter.js';
+import {
+  filterContent,
+  filterObjects,
+  createFilterOptions,
+  callItems,
+} from './modules/filter.js';
 import scrollFixedHeader from './modules/fixedHeader.js';
 import smoothScroll from './modules/smoothScroll.js';
 import getActiveLinkOnScroll from './modules/addActiveScrollInNav.js';
 import changePortfolioHover from './modules/changePortfolioHover.js';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
-import lozad from 'lozad'
+import lozad from 'lozad';
+
+// testimonials fetch
+import TestimonialsFetcher from './modules/testimonialsFetcher.js';
+const testimonialsFetcher = new TestimonialsFetcher();
+testimonialsFetcher.fetchData();
+// testimonials fetch
 
 // lazy load
-const observer = lozad(); 
+const observer = lozad();
 observer.observe();
 // /
 
@@ -72,11 +83,22 @@ burgerMenu();
 changePortfolioHover();
 
 // filtering and calling the block hiding function for it.
-filterDataHiddenBlock = [['portfolio', [2, 890, true, 'portfolioItems', '.portfolio-items']]];
-filterContent('.portfolio', '.portfolio-menu__filter', '.portfolio-menu__filter-btn', '.portfolio-items', '.portfolio-item', 0);
+filterDataHiddenBlock = [
+  ['portfolio', [2, 890, true, 'portfolioItems', '.portfolio-items']],
+];
+filterContent(
+  '.portfolio',
+  '.portfolio-menu__filter',
+  '.portfolio-menu__filter-btn',
+  '.portfolio-items',
+  '.portfolio-item',
+  0
+);
 
 // hiding blocks without filtering.
-dataHiddenBlock = [[1, 620, false, 'featuredItems', '.featured-items', '.featured-item']];
+dataHiddenBlock = [
+  [1, 620, false, 'featuredItems', '.featured-items', '.featured-item'],
+];
 function addArgumentsAndCallFunc(blocks, func) {
   blocks.forEach((block) => func(...block));
 }

@@ -1,0 +1,41 @@
+.impressed {
+  background: url('../media/image/impressed/impressed-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &-info {
+    max-width: 600px;
+    padding: 70px 0 80px;
+    color: $color-white;
+    width: 40%;
+    &__title {
+      @include title-style;
+      text-align: left;
+      color: $color-white;
+      letter-spacing: 2px;
+    }
+    &__description {
+      padding: 50px 0;
+      line-height: 25px;
+      color: $color-lightGray;
+    }
+    &__author {
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    &__text {
+      text-transform: uppercase;
+    }
+  }
+  &-img {
+    & img {
+      margin-top: -30px;
+    }
+  }
+}
