@@ -2,6 +2,7 @@
   - JavaScript es6   
   - Html5
   - Scss
+  - Компилятор Gulp
 
 <br>
 
