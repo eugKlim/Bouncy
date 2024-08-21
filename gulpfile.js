@@ -88,7 +88,54 @@ function convertTTFtoWOFF2() {
     .pipe(dest('dist/fonts'));
 }
 
-function imageOptimization() {
+// function imageOptimization() {
+//   return src([
+//     'src/media/image/**/*.*',
+//     '!src/media/image/**/*.svg',
+//     '!src/media/**/*.gif',
+//   ])
+//     .pipe(
+//       avif({
+//         quality: 60,
+//         speed: 6,
+//         chromaSubsampling: '4:4:4',
+//       })
+//     )
+//     .pipe(dest('dist/media/image'))
+
+//     .pipe(
+//       src([
+//         'src/media/image/**/*.*',
+//         '!src/media/image/**/*.svg',
+//         '!src/media/**/*.gif',
+//       ])
+//         .pipe(
+//           webp({
+//             quality: 75,
+//             method: 6,
+//             lossless: false,
+//           })
+//         )
+//         .pipe(dest('dist/media/image'))
+//     )
+
+//     .pipe(
+//       src([
+//         'src/media/image/**/*.*',
+//         '!src/media/image/**/*.svg',
+//         '!src/media/**/*.gif',
+//       ])
+//         .pipe(
+//           imagemin([
+//             imagemin.mozjpeg({ quality: 85, progressive: true }),
+//             imagemin.optipng({ optimizationLevel: 5 }),
+//           ])
+//         )
+//         .pipe(dest('dist/media/image'))
+//     );
+// }
+
+function convertAvif() {
   return src([
     'src/media/image/**/*.*',
     '!src/media/image/**/*.svg',
@@ -101,38 +148,36 @@ function imageOptimization() {
         chromaSubsampling: '4:4:4',
       })
     )
-    .pipe(dest('dist/media/image'))
-
+    .pipe(dest('dist/media/image'));
+}
+function convertWebp() {
+  return src([
+    'src/media/image/**/*.*',
+    '!src/media/image/**/*.svg',
+    '!src/media/**/*.gif',
+  ])
     .pipe(
-      src([
-        'src/media/image/**/*.*',
-        '!src/media/image/**/*.svg',
-        '!src/media/**/*.gif',
-      ])
-        .pipe(
-          webp({
-            quality: 75,
-            method: 6,
-            lossless: false,
-          })
-        )
-        .pipe(dest('dist/media/image'))
+      webp({
+        quality: 75,
+        method: 6,
+        lossless: false,
+      })
     )
-
+    .pipe(dest('dist/media/image'));
+}
+function simpleImageOptimization() {
+  return src([
+    'src/media/image/**/*.*',
+    '!src/media/image/**/*.svg',
+    '!src/media/**/*.gif',
+  ])
     .pipe(
-      src([
-        'src/media/image/**/*.*',
-        '!src/media/image/**/*.svg',
-        '!src/media/**/*.gif',
+      imagemin([
+        imagemin.mozjpeg({ quality: 85, progressive: true }),
+        imagemin.optipng({ optimizationLevel: 5 }),
       ])
-        .pipe(
-          imagemin([
-            imagemin.mozjpeg({ quality: 85, progressive: true }),
-            imagemin.optipng({ optimizationLevel: 5 }),
-          ])
-        )
-        .pipe(dest('dist/media/image'))
-    );
+    )
+    .pipe(dest('dist/media/image'));
 }
 
 function files() {
@@ -270,7 +315,9 @@ exports.scripts = scripts;
 exports.browsersync = browsersync;
 exports.watching = watching;
 exports.html = html;
-exports.imageOptimization = imageOptimization;
+exports.simpleImageOptimization = simpleImageOptimization;
+exports.convertWebp = convertWebp;
+exports.convertAvif = convertAvif;
 exports.files = files;
 exports.fontsStyle = fontsStyle;
 exports.mediaFiles = mediaFiles;
@@ -284,7 +331,9 @@ exports.build = series(
   includeFile,
   mediaFiles,
   files,
-  imageOptimization,
+  simpleImageOptimization,
+  convertWebp,
+  convertAvif,
   series(convertTTFtoWOFF, convertTTFtoWOFF2, fontsStyle, styles),
   scripts,
   addCodeToProd
@@ -309,7 +358,9 @@ exports.deploy = series(
   includeFile,
   mediaFiles,
   files,
-  imageOptimization,
+  simpleImageOptimization,
+  convertWebp,
+  convertAvif,
   series(convertTTFtoWOFF, convertTTFtoWOFF2, fontsStyle, styles),
   scripts,
   addCodeToProd,
