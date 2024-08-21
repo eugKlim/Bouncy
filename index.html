@@ -47,14 +47,40 @@
 </header>
   <main class="main">
     <article>
-      <section class="intro" id="intro">
+      <section
+  class="intro lazy-bg"
+  id="intro"
+  data-bg="../media/image/intro/intro-bg.jpg"
+>
   <div class="container">
     <div class="intro-inner">
       <h2 class="intro-title">We Are Code Cafe</h2>
-      <p class="intro-subTitle">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
+      <p class="intro-subTitle">
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui
+        blanditiis praesentium voluptatum
+      </p>
     </div>
-    <a href="#about" title="go to about" class="intro-btn__down yankor" aria-label="scroll to section about">
-      <img src="./media/image/global-icons/arrow.webp" alt="Button" />
+    <a
+      href="#about"
+      title="go to about"
+      class="intro-btn__down yankor"
+      aria-label="scroll to section about"
+    >
+      <picture class="lazy-picture">
+        <source
+          data-srcset="./media/image/global-icons/arrow.avif"
+          type="image/avif"
+        />
+        <source
+          data-srcset="./media/image/global-icons/arrow.webp"
+          type="image/webp"
+        />
+        <img
+          data-src="./media/image/global-icons/arrow.png"
+          src="./media/image/global-icons/1x1.png"
+          alt="Button"
+        />
+      </picture>
     </a>
   </div>
 </section>
@@ -96,16 +122,26 @@
       </div>
 
       <div class="about-img">
-        <img
-          class="lozad"
-          data-src="./media/image/about/about-img__ipad.webp"
-          alt="Image"
-          src="./media/image/global-icons/1x1.webp" 
-        />
+        <picture class="lazy-picture">
+          <source
+            data-srcset="./media/image/about/about-img__ipad.avif"
+            type="image/avif"
+          />
+          <source
+            data-srcset="./media/image/about/about-img__ipad.webp"
+            type="image/webp"
+          />
+          <img
+            data-src="./media/image/about/about-img__ipad.png"
+            src="./media/image/global-icons/1x1.png"
+            alt="ipad"
+          />
+        </picture>
       </div>
     </div>
   </div>
 </section>
+
       <section class="services" id="services">
   <div class="container">
     <div class="services-inner">
@@ -186,12 +222,21 @@
     <div class="featured-items">
       <div class="featured-item">
         <div class="featured-item__img">
-          <img
-            class="lozad"
-            data-src="./media/image/featured/item1.webp"
-            alt="Image"
-            src="./media/image/global-icons/1x1.webp" 
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/featured/item1.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/featured/item1.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/featured/item1.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="image 1"
+            />
+          </picture>
         </div>
         <div class="featured-item__hover">
           <p>Featured</p>
@@ -200,12 +245,21 @@
 
       <div class="featured-item">
         <div class="featured-item__img">
-          <img
-            class="lozad"
-            data-src="./media/image/featured/item2.webp"
-            alt="Image"
-            src="./media/image/global-icons/1x1.webp" 
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/featured/item2.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/featured/item2.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/featured/item2.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="image 2"
+            />
+          </picture>
         </div>
         <div class="featured-item__hover">
           <p>VINTAGE</p>
@@ -214,12 +268,21 @@
 
       <div class="featured-item">
         <div class="featured-item__img">
-          <img
-            class="lozad"
-            data-src="./media/image/featured/item3.webp"
-            alt="Image"
-            src="./media/image/global-icons/1x1.webp" 
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/featured/item3.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/featured/item3.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/featured/item3.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="image 3"
+            />
+          </picture>
         </div>
         <div class="featured-item__hover">
           <p>Branding</p>
@@ -229,11 +292,20 @@
   </div>
 </section>
 
-      <section class="news" id="news">
+      <section
+  class="news lazy-bg"
+  id="news"
+  data-bg="../media/image/news/news-bg.jpg"
+>
   <div class="container">
     <div class="news-inner">
-      <h3 class="news-title">At vero eos et <span class="news-bold">accusamus</span> et iusto odio dignissimos ducimus qui blanditiis</h3>
-      <a href="#contactform" class="news-submit yankor" aria-label="Submit Now">Submit Now</a>
+      <h3 class="news-title">
+        At vero eos et <span class="news-bold">accusamus</span> et iusto odio
+        dignissimos ducimus qui blanditiis
+      </h3>
+      <a href="#contactform" class="news-submit yankor" aria-label="Submit Now"
+        >Submit Now</a
+      >
     </div>
   </div>
 </section>
@@ -241,17 +313,39 @@
       <section class="details">
   <div class="container">
     <h2 class="details-title">Details Services</h2>
-    <h3 class="details-subtitle">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</h3>
+    <h3 class="details-subtitle">
+      At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+      praesentium
+    </h3>
 
     <div class="details-info">
       <div class="details-descriptions">
         <div class="details-description__item">
           <h4 class="details-description__item-title">Graphic Design</h4>
-          <p class="details-description__item-text">At vero eos et accusamus et <a href="#" title="iusto" class="link" aria-label="link to iusto">iusto</a> odio dignissimos <span class="text-bold">ducimus</span> qui blanditiis praesentium voluptatum deleniti</p>
+          <p class="details-description__item-text">
+            At vero eos et accusamus et
+            <a href="#" title="iusto" class="link" aria-label="link to iusto"
+              >iusto</a
+            >
+            odio dignissimos <span class="text-bold">ducimus</span> qui
+            blanditiis praesentium voluptatum deleniti
+          </p>
         </div>
 
         <div class="details-description__item">
-          <p class="details-description__item-text">quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, <a href="#" title="iusto" class="link" aria-label="link to similique sunt">similique sunt</a> in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+          <p class="details-description__item-text">
+            quos dolores et quas molestias excepturi sint occaecati cupiditate
+            non provident,
+            <a
+              href="#"
+              title="iusto"
+              class="link"
+              aria-label="link to similique sunt"
+              >similique sunt</a
+            >
+            in culpa qui officia deserunt mollitia animi, id est laborum et
+            dolorum fuga.
+          </p>
         </div>
       </div>
 
@@ -288,8 +382,9 @@
 </section>
 
       <section
-  class="impressed"
+  class="impressed lazy-bg"
   id="impressed"
+  data-bg="../media/image/impressed/impressed-bg.jpg"
 >
   <div class="container">
     <div class="impressed-inner">
@@ -314,12 +409,21 @@
       </div>
 
       <div class="impressed-img">
-        <img
-          class="lozad"
-          data-src="./media/image/impressed/display.webp"
-          alt="Image"
-          src="./media/image/global-icons/1x1.webp" 
-        />
+        <picture class="lazy-picture">
+          <source
+            data-srcset="./media/image/impressed/display.avif"
+            type="image/avif"
+          />
+          <source
+            data-srcset="./media/image/impressed/display.webp"
+            type="image/webp"
+          />
+          <img
+            data-src="./media/image/impressed/display.png"
+            src="./media/image/global-icons/1x1.png"
+            alt="image"
+          />
+        </picture>
       </div>
     </div>
   </div>
@@ -395,12 +499,22 @@
     <div class="portfolio-items">
       <div class="portfolio-item Print">
         <div class="portfolio-item__img">
-          <img
-            alt="Image"
-            class="lozad"
-            data-src="./media/image/portfolio/portfolio-1.webp"
-            src="./media/image/global-icons/1x1.webp"
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/portfolio/portfolio-1.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/portfolio/portfolio-1.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/portfolio/portfolio-1.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="Image"
+            />
+          </picture>
+
           <button
             class="portfolio-showBlockHover"
             title="show info card"
@@ -452,12 +566,22 @@
 
       <div class="portfolio-item Identity">
         <div class="portfolio-item__img">
-          <img
-            alt="Image"
-            class="lozad"
-            data-src="./media/image/portfolio/portfolio-2.webp"
-            src="./media/image/global-icons/1x1.webp"
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/portfolio/portfolio-2.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/portfolio/portfolio-2.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/portfolio/portfolio-2.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="Image"
+            />
+          </picture>
+
           <button
             class="portfolio-showBlockHover"
             title="show info card"
@@ -506,12 +630,22 @@
 
       <div class="portfolio-item Print">
         <div class="portfolio-item__img">
-          <img
-            alt="Image"
-            class="lozad"
-            data-src="./media/image/portfolio/portfolio-3.webp"
-            src="./media/image/global-icons/1x1.webp"
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/portfolio/portfolio-3.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/portfolio/portfolio-3.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/portfolio/portfolio-3.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="Image"
+            />
+          </picture>
+
           <button
             class="portfolio-showBlockHover"
             title="show info card"
@@ -560,12 +694,22 @@
 
       <div class="portfolio-item HTML">
         <div class="portfolio-item__img">
-          <img
-            alt="Image"
-            class="lozad"
-            data-src="./media/image/portfolio/portfolio-4.webp"
-            src="./media/image/global-icons/1x1.webp"
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/portfolio/portfolio-4.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/portfolio/portfolio-4.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/portfolio/portfolio-4.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="Image"
+            />
+          </picture>
+
           <button
             class="portfolio-showBlockHover"
             title="show info card"
@@ -614,12 +758,22 @@
 
       <div class="portfolio-item Identity">
         <div class="portfolio-item__img">
-          <img
-            alt="Image"
-            class="lozad"
-            data-src="./media/image/portfolio/portfolio-5.webp"
-            src="./media/image/global-icons/1x1.webp"
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/portfolio/portfolio-5.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/portfolio/portfolio-5.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/portfolio/portfolio-5.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="Image"
+            />
+          </picture>
+
           <button
             class="portfolio-showBlockHover"
             title="show info card"
@@ -668,12 +822,22 @@
 
       <div class="portfolio-item Branding">
         <div class="portfolio-item__img">
-          <img
-            alt="Image"
-            class="lozad"
-            data-src="./media/image/portfolio/portfolio-6.webp"
-            src="./media/image/global-icons/1x1.webp"
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/portfolio/portfolio-6.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/portfolio/portfolio-6.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/portfolio/portfolio-6.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="Image"
+            />
+          </picture>
+
           <button
             class="portfolio-showBlockHover"
             title="show info card"
@@ -722,12 +886,22 @@
 
       <div class="portfolio-item Branding">
         <div class="portfolio-item__img">
-          <img
-            alt="Image"
-            class="lozad"
-            data-src="./media/image/portfolio/portfolio-7.webp"
-            src="./media/image/global-icons/1x1.webp"
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/portfolio/portfolio-7.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/portfolio/portfolio-7.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/portfolio/portfolio-7.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="Image"
+            />
+          </picture>
+
           <button
             class="portfolio-showBlockHover"
             title="show info card"
@@ -776,12 +950,22 @@
 
       <div class="portfolio-item Branding">
         <div class="portfolio-item__img">
-          <img
-            alt="Image"
-            class="lozad"
-            data-src="./media/image/portfolio/portfolio-8.webp"
-            src="./media/image/global-icons/1x1.webp"
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/portfolio/portfolio-8.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/portfolio/portfolio-8.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/portfolio/portfolio-8.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="Image"
+            />
+          </picture>
+
           <button
             class="portfolio-showBlockHover"
             title="show info card"
@@ -830,12 +1014,22 @@
 
       <div class="portfolio-item Wordpress">
         <div class="portfolio-item__img">
-          <img
-            alt="Image"
-            class="lozad"
-            data-src="./media/image/portfolio/portfolio-9.webp"
-            src="./media/image/global-icons/1x1.webp"
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/portfolio/portfolio-9.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/portfolio/portfolio-9.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/portfolio/portfolio-9.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="Image"
+            />
+          </picture>
+
           <button
             class="portfolio-showBlockHover"
             title="show info card"
@@ -884,12 +1078,22 @@
 
       <div class="portfolio-item Web">
         <div class="portfolio-item__img">
-          <img
-            alt="Image"
-            class="lozad"
-            data-src="./media/image/portfolio/portfolio-10.webp"
-            src="./media/image/global-icons/1x1.webp"
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/portfolio/portfolio-10.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/portfolio/portfolio-10.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/portfolio/portfolio-10.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="Image"
+            />
+          </picture>
+
           <button
             class="portfolio-showBlockHover"
             title="show info card"
@@ -938,12 +1142,22 @@
 
       <div class="portfolio-item Web">
         <div class="portfolio-item__img">
-          <img
-            alt="Image"
-            class="lozad"
-            data-src="./media/image/portfolio/portfolio-11.webp"
-            src="./media/image/global-icons/1x1.webp"
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/portfolio/portfolio-11.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/portfolio/portfolio-11.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/portfolio/portfolio-11.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="Image"
+            />
+          </picture>
+
           <button
             class="portfolio-showBlockHover"
             title="show info card"
@@ -986,12 +1200,22 @@
 
       <div class="portfolio-item Branding">
         <div class="portfolio-item__img">
-          <img
-            alt="Image"
-            class="lozad"
-            data-src="./media/image/portfolio/portfolio-12.webp"
-            src="./media/image/global-icons/1x1.webp"
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/portfolio/portfolio-12.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/portfolio/portfolio-12.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/portfolio/portfolio-12.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="Image"
+            />
+          </picture>
+
           <button
             class="portfolio-showBlockHover"
             title="show info card"
@@ -1033,8 +1257,9 @@
       </div>
     </div>
     <div
-      class="portfolio-start"
+      class="portfolio-start lazy-bg"
       id="portfolio-start"
+      data-bg="../media/image/portfolio/portfolio-start_bg.jpg"
     >
       <h4 class="portfolio-start__title">
         At vero eos et <span class="text-bold">accusamus</span> et iusto odio
@@ -1066,12 +1291,21 @@
         <div class="swiper-slide">
           <div class="team-slide">
             <div class="team-slide__img">
-              <img
-                class="lozad"
-                data-src="./media/image/team/team-1.webp"
-                alt="Image"
-                src="./media/image/global-icons/1x1.webp"
-              />
+              <picture class="lazy-picture">
+                <source
+                  data-srcset="./media/image/team/team-1.avif"
+                  type="image/avif"
+                />
+                <source
+                  data-srcset="./media/image/team/team-1.webp"
+                  type="image/webp"
+                />
+                <img
+                  data-src="./media/image/team/team-1.jpg"
+                  src="./media/image/global-icons/1x1.png"
+                  alt="Image"
+                />
+              </picture>
             </div>
 
             <div class="team-slide__info">
@@ -1119,12 +1353,21 @@
         <div class="swiper-slide">
           <div class="team-slide">
             <div class="team-slide__img">
-              <img
-                class="lozad"
-                data-src="./media/image/team/team-2.webp"
-                src="./media/image/global-icons/1x1.webp"
-                alt="Image"
-              />
+              <picture class="lazy-picture">
+                <source
+                  data-srcset="./media/image/team/team-2.avif"
+                  type="image/avif"
+                />
+                <source
+                  data-srcset="./media/image/team/team-2.webp"
+                  type="image/webp"
+                />
+                <img
+                  data-src="./media/image/team/team-2.jpg"
+                  src="./media/image/global-icons/1x1.png"
+                  alt="Image"
+                />
+              </picture>
             </div>
 
             <div class="team-slide__info">
@@ -1172,12 +1415,21 @@
         <div class="swiper-slide">
           <div class="team-slide">
             <div class="team-slide__img">
-              <img
-                class="lozad"
-                data-src="./media/image/team/team-3.webp"
-                alt="Image"
-                src="./media/image/global-icons/1x1.webp"
-              />
+              <picture class="lazy-picture">
+                <source
+                  data-srcset="./media/image/team/team-3.avif"
+                  type="image/avif"
+                />
+                <source
+                  data-srcset="./media/image/team/team-3.webp"
+                  type="image/webp"
+                />
+                <img
+                  data-src="./media/image/team/team-3.jpg"
+                  src="./media/image/global-icons/1x1.png"
+                  alt="Image"
+                />
+              </picture>
             </div>
 
             <div class="team-slide__info">
@@ -1228,7 +1480,7 @@
   </div>
 </section>
 
-      <section class="talk" id="talk">
+      <section class="talk lazy-bg" id="talk" data-bg="../media/image/talk/talk-bg.jpg">
   <div class="container">
     <h2 class="talk-title">Already Loved Us? Let’s talk!</h2>
     <a href="#contact" title="contact us" class="talk-contact yankor" aria-label="Contact Us">Contact Us</a>
@@ -1287,7 +1539,13 @@
           <li>Free Hosting</li>
         </ul>
       </div>
-      <button title="Lets start" class="price-card__start" id="price-card__start">Let’s Start</button>
+      <button
+        title="Lets start"
+        class="price-card__start"
+        id="price-card__start"
+      >
+        Let’s Start
+      </button>
     </div>
     <!-- 3 -->
     <div class="price-card">
@@ -1301,14 +1559,35 @@
   </div>
 </section>
 
-      <section class="subscribe" id="subscribe">
+      <section
+  class="subscribe lazy-bg"
+  id="subscribe"
+  data-bg="../media/image/subscribe/subscribe-bg.jpg"
+>
   <div class="container">
     <h2 class="subscribe-title">Subscribe us</h2>
-    <h3 class="subscribe-subtitle">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</h3>
+    <h3 class="subscribe-subtitle">
+      At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+      praesentium
+    </h3>
 
     <form class="subscribe-form">
-      <input title="entry field" type="email" placeholder="Email Address" class="subscribe-form__input" aria-label="entry email" />
-      <button title="submit entry field" type="submit" class="subscribe-form__btn" id="subscribe-form__btn" aria-label="submit">SUBMIT</button>
+      <input
+        title="entry field"
+        type="email"
+        placeholder="Email Address"
+        class="subscribe-form__input"
+        aria-label="entry email"
+      />
+      <button
+        title="submit entry field"
+        type="submit"
+        class="subscribe-form__btn"
+        id="subscribe-form__btn"
+        aria-label="submit"
+      >
+        SUBMIT
+      </button>
     </form>
   </div>
 </section>
@@ -1325,12 +1604,21 @@
       <!-- 1 -->
       <div class="contact-card">
         <div class="contact-card__img">
-          <img
-            class="lozad"
-            data-src="./media/image/contact/contact-email.webp"
-            alt="Email image"
-            src="./media/image/global-icons/1x1.webp" 
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/contact/contact-email.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/contact/contact-email.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/contact/contact-email.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="Email image"
+            />
+          </picture>
         </div>
         <address class="contact-card__info">
           <p class="contact-card__info-title">EMAIL</p>
@@ -1351,12 +1639,21 @@
       <!-- 2 -->
       <div class="contact-card">
         <div class="contact-card__img">
-          <img
-            class="lozad"
-            data-src="./media/image/contact/contact-address.webp"
-            alt="address image"
-            src="./media/image/global-icons/1x1.webp" 
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/contact/contact-address.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/contact/contact-address.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/contact/contact-address.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="address image"
+            />
+          </picture>
         </div>
         <div class="contact-card__info">
           <p class="contact-card__info-title">OUR OFFICE</p>
@@ -1367,12 +1664,21 @@
       <!-- 3 -->
       <div class="contact-card">
         <div class="contact-card__img">
-          <img
-            class="lozad"
-            data-src="./media/image/contact/contact-phone.webp"
-            alt="phone image"
-            src="./media/image/global-icons/1x1.webp" 
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/contact/contact-phone.avif"
+              type="image/avif"
+            />
+            <source
+              data-srcset="./media/image/contact/contact-phone.webp"
+              type="image/webp"
+            />
+            <img
+              data-src="./media/image/contact/contact-phone.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="phone image"
+            />
+          </picture>
         </div>
         <div class="contact-card__info">
           <p class="contact-card__info-title">PHONE</p>
@@ -1401,19 +1707,43 @@
   <div class="container">
     <form class="contactform-form">
       <div class="contactform-form__info">
-        <input title="entry field name" type="text" placeholder="Your name" class="contactform-name" aria-label="enter your name"/>
-        <input title="entry field email"
+        <input
+          title="entry field name"
+          type="text"
+          placeholder="Your name"
+          class="contactform-name"
+          aria-label="enter your name"
+        />
+        <input
+          title="entry field email"
           type="email"
           placeholder="Email address"
           class="contactform-email"
           aria-label="enter your email"
         />
-        <input title="entry field subject" type="text" placeholder="Subject" class="contactform-subject" aria-label="entry field subject"/>
+        <input
+          title="entry field subject"
+          type="text"
+          placeholder="Subject"
+          class="contactform-subject"
+          aria-label="entry field subject"
+        />
       </div>
       <div class="contactform-form__message">
-        <textarea placeholder="Message" title="entry field message" aria-label="entry field message"></textarea>
+        <textarea
+          placeholder="Message"
+          title="entry field message"
+          aria-label="entry field message"
+        ></textarea>
       </div>
-      <button title="submit entry field" type="submit" class="contactform-submit" aria-label="submit entry field">SUBMIT NOW</button>
+      <button
+        title="submit entry field"
+        type="submit"
+        class="contactform-submit"
+        aria-label="submit entry field"
+      >
+        SUBMIT NOW
+      </button>
     </form>
   </div>
 </section>
