@@ -14,8 +14,8 @@ export default function tabMechanism() {
       elTabBtn.classList.add('tab-btn-active');
       elTabPane.classList.add('tab-pane-show');
     }
-  }
-  
+  };
+
   document.addEventListener('click', (e) => {
     if (e.target && !e.target.closest('.tab-btn')) {
       return;
@@ -23,4 +23,4 @@ export default function tabMechanism() {
     const elTabBtn = e.target.closest('.tab-btn');
     showTab(elTabBtn);
   });
-  }
+}

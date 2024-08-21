@@ -1,5 +1,6 @@
 import * as hiddenBlocksModule from './hiddenBlocks.js';
-import { filterDataHiddenBlock } from '../main.js';
+
+let filterDataHiddenBlock;
 
 const filterObjects = {
   stateMainBlock: new Set(),
@@ -8,7 +9,8 @@ const filterObjects = {
 function createFilterOptions(getNameMainBlock) {
   for (let i = 0; i < filterDataHiddenBlock.length; i++) {
     if (getNameMainBlock === filterDataHiddenBlock[i][0]) {
-      filterObjects[getNameMainBlock].filterAddOptions = filterDataHiddenBlock[i][1];
+      filterObjects[getNameMainBlock].filterAddOptions =
+        filterDataHiddenBlock[i][1];
     }
   }
 }
@@ -16,18 +18,29 @@ function createFilterOptions(getNameMainBlock) {
 function callItems(getNameMainBlock) {
   if (filterObjects[getNameMainBlock].filterCountEl > 2) {
     if (filterObjects.stateMainBlock.has(getNameMainBlock)) {
-      hiddenBlocksModule.hiddenBlocks(...filterObjects[getNameMainBlock].filterAddOptions, filterObjects[getNameMainBlock].filterItems);
+      hiddenBlocksModule.hiddenBlocks(
+        ...filterObjects[getNameMainBlock].filterAddOptions,
+        filterObjects[getNameMainBlock].filterItems
+      );
     }
   }
 }
 
-function filterContent(mainBlock, filterMenu, filterBtn, mainBlockItems, mainBlockContent, startActiveBtn) {
+function filterContent(
+  mainBlock,
+  filterMenu,
+  filterBtn,
+  mainBlockItems,
+  mainBlockContent,
+  startActiveBtn
+) {
   const getMainBlock = document.querySelector(mainBlock);
   const getMenu = getMainBlock.querySelector(filterMenu);
   const getAllFilterBtns = getMainBlock.querySelectorAll(filterBtn);
   const getAllItems = getMainBlock.querySelectorAll(mainBlockContent);
   let getNameMainBlock = mainBlock.substring(1);
-  const getActiveDatasetFilter = getAllFilterBtns[startActiveBtn].dataset.filter;
+  const getActiveDatasetFilter =
+    getAllFilterBtns[startActiveBtn].dataset.filter;
 
   getAllFilterBtns[startActiveBtn].classList.add('active');
 
@@ -48,7 +61,6 @@ function filterContent(mainBlock, filterMenu, filterBtn, mainBlockItems, mainBlo
         let getFilterItems = filterObjects[getNameMainBlock].filterItems;
         filterObjects[getNameMainBlock].filterCountEl = getFilterItems.length;
       } else {
-        console.log('else');
         item.classList.add('hidden');
         item.classList.remove('show-block');
       }
@@ -78,4 +90,26 @@ function filterContent(mainBlock, filterMenu, filterBtn, mainBlockItems, mainBlo
   });
 }
 
-export { filterContent, filterObjects, createFilterOptions, callItems };
+window.addEventListener('resize', function () {
+  let getCurrentBlocks = Array.from(filterObjects.stateMainBlock);
+  for (let blocks of getCurrentBlocks) {
+    if (blocks) {
+      createFilterOptions(blocks);
+      callItems(blocks);
+    }
+  }
+});
+
+// Добавление элементов:
+
+filterDataHiddenBlock = [
+  ['portfolio', [2, 890, true, 'portfolioItems', '.portfolio-items']],
+];
+filterContent(
+  '.portfolio',
+  '.portfolio-menu__filter',
+  '.portfolio-menu__filter-btn',
+  '.portfolio-items',
+  '.portfolio-item',
+  0
+);

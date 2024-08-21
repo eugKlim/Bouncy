@@ -1,11 +1,10 @@
 import axios from 'axios';
 import lozad from 'lozad';
-class TestimonialsFetcher {
-  constructor() {
-    this.testimonialsWrapper = document.querySelector('.testimonials-wrapper');
-  }
 
-  async fetchData() {
+function testimonialsFetcher() {
+  const testimonialsWrapper = document.querySelector('.testimonials-wrapper');
+
+  async function getData() {
     try {
       const usersResponse = await axios.get(
         'https://jsonplaceholder.typicode.com/users'
@@ -22,17 +21,13 @@ class TestimonialsFetcher {
       );
       const images = imageResponse.data.slice(0, 3);
 
-      this.testimonialsWrapper.innerHTML = '';
+      testimonialsWrapper.innerHTML = '';
 
       users.forEach((user, index) => {
         const comment = comments[index].body;
         const image = images[index].thumbnailUrl;
-        const testimonialCard = this.createTestimonialCard(
-          user,
-          comment,
-          image
-        );
-        this.testimonialsWrapper.innerHTML += testimonialCard;
+        const testimonialCard = createTestimonialCard(user, comment, image);
+        testimonialsWrapper.innerHTML += testimonialCard;
       });
 
       const observer = lozad();
@@ -42,7 +37,7 @@ class TestimonialsFetcher {
     }
   }
 
-  createTestimonialCard(user, comment, image) {
+  function createTestimonialCard(user, comment, image) {
     return `
       <div class="swiper-slide">
         <div class="testimonials-slide">
@@ -61,5 +56,7 @@ class TestimonialsFetcher {
       </div>
     `;
   }
+
+  getData();
 }
-export default TestimonialsFetcher;
+testimonialsFetcher();

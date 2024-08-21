@@ -64,4 +64,19 @@ function hiddenBlocks(
   }
 }
 
+// Добавление элементов:
+let dataHiddenBlock;
+
+dataHiddenBlock = [
+  [1, 620, false, 'featuredItems', '.featured-items', '.featured-item'],
+];
+function addArgumentsAndCallFunc(blocks, func) {
+  blocks.forEach((block) => func(...block));
+}
+addArgumentsAndCallFunc(dataHiddenBlock, hiddenBlocks);
+
+window.addEventListener('resize', function () {
+  addArgumentsAndCallFunc(dataHiddenBlock, hiddenBlocks);
+});
+
 export { hiddenBlocksState, hiddenBlocks };

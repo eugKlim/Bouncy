@@ -1,5 +1,6 @@
 const header = document.querySelector('.header');
-export default function smoothScroll() {
+
+function smoothScroll() {
   let allLinkYankor = document.querySelectorAll('a.yankor');
   allLinkYankor.forEach((link) => {
     link.addEventListener('click', function (e) {
@@ -17,3 +18,4 @@ export default function smoothScroll() {
     });
   });
 }
+smoothScroll();

@@ -1,5 +1,6 @@
 const header = document.querySelector('.header');
-export default function scrollFixedHeader() {
+
+function scrollFixedHeader() {
   const intro = document.querySelector('.intro').getBoundingClientRect().bottom;
 
   if (intro <= 100) {
@@ -8,3 +9,7 @@ export default function scrollFixedHeader() {
     header.classList.remove('header-fixed');
   }
 }
+scrollFixedHeader();
+window.addEventListener('scroll', function () {
+  scrollFixedHeader();
+});

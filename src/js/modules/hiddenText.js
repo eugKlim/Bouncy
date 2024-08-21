@@ -1,8 +1,8 @@
-export default function hideText(mainBlock, btn, threeDots) {
-  let getMainBlock = document.querySelector('.'+mainBlock)
+function hideText(mainBlock, btn, threeDots) {
+  let getMainBlock = document.querySelector('.' + mainBlock);
   let getHidenText = getMainBlock.querySelector('.hidden-text');
-  let getBtn = getMainBlock.querySelector('.'+btn)
-  let getThreeDots = getMainBlock.querySelector('.'+threeDots)
+  let getBtn = getMainBlock.querySelector('.' + btn);
+  let getThreeDots = getMainBlock.querySelector('.' + threeDots);
 
   getBtn.addEventListener('click', function () {
     if (getHidenText.classList.contains('show-inline')) {
@@ -16,3 +16,6 @@ export default function hideText(mainBlock, btn, threeDots) {
     }
   });
 }
+
+// Добавление элементов:
+hideText('about', 'about-content__btn', 'three-dots');
