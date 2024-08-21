@@ -9,12 +9,23 @@
     <div class="featured-items">
       <div class="featured-item">
         <div class="featured-item__img">
-          <img
-            class="lozad"
-            data-src="./media/image/featured/item1.webp"
-            alt="Image"
-            src="./media/image/global-icons/1x1.webp" 
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/featured/item1.avif"
+              type="image/avif"
+              srcset="./media/image/global-icons/1x1.png"
+            />
+            <source
+              data-srcset="./media/image/featured/item1.webp"
+              type="image/webp"
+              srcset="./media/image/global-icons/1x1.png"
+            />
+            <img
+              data-src="./media/image/featured/item1.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="image 1"
+            />
+          </picture>
         </div>
         <div class="featured-item__hover">
           <p>Featured</p>
@@ -23,12 +34,23 @@
 
       <div class="featured-item">
         <div class="featured-item__img">
-          <img
-            class="lozad"
-            data-src="./media/image/featured/item2.webp"
-            alt="Image"
-            src="./media/image/global-icons/1x1.webp" 
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/featured/item2.avif"
+              type="image/avif"
+              srcset="./media/image/global-icons/1x1.png"
+            />
+            <source
+              data-srcset="./media/image/featured/item2.webp"
+              type="image/webp"
+              srcset="./media/image/global-icons/1x1.png"
+            />
+            <img
+              data-src="./media/image/featured/item2.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="image 2"
+            />
+          </picture>
         </div>
         <div class="featured-item__hover">
           <p>VINTAGE</p>
@@ -37,12 +59,23 @@
 
       <div class="featured-item">
         <div class="featured-item__img">
-          <img
-            class="lozad"
-            data-src="./media/image/featured/item3.webp"
-            alt="Image"
-            src="./media/image/global-icons/1x1.webp" 
-          />
+          <picture class="lazy-picture">
+            <source
+              data-srcset="./media/image/featured/item3.avif"
+              type="image/avif"
+              srcset="./media/image/global-icons/1x1.png"
+            />
+            <source
+              data-srcset="./media/image/featured/item3.webp"
+              type="image/webp"
+              srcset="./media/image/global-icons/1x1.png"
+            />
+            <img
+              data-src="./media/image/featured/item3.jpg"
+              src="./media/image/global-icons/1x1.png"
+              alt="image 3"
+            />
+          </picture>
         </div>
         <div class="featured-item__hover">
           <p>Branding</p>

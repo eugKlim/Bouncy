@@ -35,12 +35,23 @@
       </div>
 
       <div class="about-img">
-        <img
-          class="lozad"
-          data-src="./media/image/about/about-img__ipad.webp"
-          alt="Image"
-          src="./media/image/global-icons/1x1.webp" 
-        />
+        <picture class="lazy-picture">
+          <source
+            data-srcset="./media/image/about/about-img__ipad.avif"
+            type="image/avif"
+            srcset="./media/image/global-icons/1x1.png"
+          />
+          <source
+            data-srcset="./media/image/about/about-img__ipad.webp"
+            type="image/webp"
+            srcset="./media/image/global-icons/1x1.png"
+          />
+          <img
+            data-src="./media/image/about/about-img__ipad.png"
+            src="./media/image/global-icons/1x1.png"
+            alt="ipad"
+          />
+        </picture>
       </div>
     </div>
   </div>

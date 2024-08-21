@@ -1,6 +1,7 @@
 <section
-  class="impressed"
+  class="impressed lazy-bg"
   id="impressed"
+  data-bg="./media/image/impressed/impressed-bg.jpg"
 >
   <div class="container">
     <div class="impressed-inner">
@@ -25,12 +26,23 @@
       </div>
 
       <div class="impressed-img">
-        <img
-          class="lozad"
-          data-src="./media/image/impressed/display.webp"
-          alt="Image"
-          src="./media/image/global-icons/1x1.webp" 
-        />
+        <picture class="lazy-picture">
+          <source
+            data-srcset="./media/image/impressed/display.avif"
+            type="image/avif"
+            srcset="./media/image/global-icons/1x1.png"
+          />
+          <source
+            data-srcset="./media/image/impressed/display.webp"
+            type="image/webp"
+            srcset="./media/image/global-icons/1x1.png"
+          />
+          <img
+            data-src="./media/image/impressed/display.png"
+            src="./media/image/global-icons/1x1.png"
+            alt="image"
+          />
+        </picture>
       </div>
     </div>
   </div>

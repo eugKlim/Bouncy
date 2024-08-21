@@ -7,7 +7,9 @@ const browserSync = require('browser-sync').create();
 const clean = require('gulp-clean');
 const fonter = require('gulp-fonter');
 const ttf2woff2 = require('gulp-ttf2woff2');
+
 const webp = require('gulp-webp');
+const avif = require('gulp-avif');
 const imagemin = require('gulp-imagemin');
 // const newer = require('gulp-newer');
 const cache = require('gulp-cache');
@@ -85,11 +87,54 @@ function convertTTFtoWOFF2() {
     .pipe(ttf2woff2())
     .pipe(dest('dist/fonts'));
 }
+
 function imageOptimization() {
-  return src(['src/media/**/*.*', '!src/media/**/*.svg', '!src/media/**/*.gif'])
-    .pipe(webp({ quality: 87 }))
-    .pipe(dest('dist/media'));
+  return src([
+    'src/media/image/**/*.*',
+    '!src/media/image/**/*.svg',
+    '!src/media/**/*.gif',
+  ])
+    .pipe(
+      avif({
+        quality: 60,
+        speed: 6,
+        chromaSubsampling: '4:4:4',
+      })
+    )
+    .pipe(dest('dist/media/image'))
+
+    .pipe(
+      src([
+        'src/media/image/**/*.*',
+        '!src/media/image/**/*.svg',
+        '!src/media/**/*.gif',
+      ])
+        .pipe(
+          webp({
+            quality: 75,
+            method: 6,
+            lossless: false,
+          })
+        )
+        .pipe(dest('dist/media/image'))
+    )
+
+    .pipe(
+      src([
+        'src/media/image/**/*.*',
+        '!src/media/image/**/*.svg',
+        '!src/media/**/*.gif',
+      ])
+        .pipe(
+          imagemin([
+            imagemin.mozjpeg({ quality: 85, progressive: true }),
+            imagemin.optipng({ optimizationLevel: 5 }),
+          ])
+        )
+        .pipe(dest('dist/media/image'))
+    );
 }
+
 function files() {
   return src(['src/files/**/*.*']).pipe(dest('dist/files'));
 }
@@ -194,23 +239,7 @@ function scripts() {
     .pipe(browserSync.stream());
 }
 
-function addCodeCheckFormatImage() {
-  return webpackFunc(
-    ['src/js/**/format_check.js'],
-    'production',
-    'format_check.js'
-  )
-    .pipe(uglify())
-    .pipe(dest('dist/js'));
-}
-function addCodeLazyLoad() {
-  return webpackFunc(['src/js/**/lazyLoad.js'], 'production', 'lazyLoad.js')
-    .pipe(uglify())
-    .pipe(dest('dist/js'));
-}
 function addCodeToProd() {
-  addCodeCheckFormatImage();
-  addCodeLazyLoad();
   return webpackFunc(
     ['src/js/**/*.js', '!src/js/**/format_check.js', '!src/js/**/lazyLoad.js'],
     'production',
@@ -220,12 +249,10 @@ function addCodeToProd() {
     .pipe(dest('dist/js'));
 }
 function watching() {
-  watch(['src/scss/vars.scss'], styles);
-  watch(['src/scss/style.scss'], styles);
-  watch(['src/scss/mediaQueries.scss'], styles);
-  watch(['src/js/main.js', 'src/js/modules/**/*.js'], scripts);
+  watch(['src/**/*.scss'], styles);
+  watch(['src/js/main.js', 'src/js/**/*.js'], scripts);
   watch('src/media/**/*.*', mediaFiles);
-  watch('src/htmlBlocks/**/*.html', includeFile, html);
+  watch('src/Components/**/*.html', includeFile, html);
   watch(['src/*.html'], includeFile, html).on('change', browserSync.reload);
 }
 

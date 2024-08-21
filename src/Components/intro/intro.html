@@ -1,11 +1,39 @@
-<section class="intro" id="intro">
+<section
+  class="intro lazy-bg"
+  id="intro"
+  data-bg="./media/image/intro/intro-bg.jpg"
+>
   <div class="container">
     <div class="intro-inner">
       <h2 class="intro-title">We Are Code Cafe</h2>
-      <p class="intro-subTitle">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
+      <p class="intro-subTitle">
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui
+        blanditiis praesentium voluptatum
+      </p>
     </div>
-    <a href="#about" title="go to about" class="intro-btn__down yankor" aria-label="scroll to section about">
-      <img src="./media/image/global-icons/arrow.webp" alt="Button" />
+    <a
+      href="#about"
+      title="go to about"
+      class="intro-btn__down yankor"
+      aria-label="scroll to section about"
+    >
+      <picture class="lazy-picture">
+        <source
+          data-srcset="./media/image/global-icons/arrow.avif"
+          type="image/avif"
+          srcset="./media/image/global-icons/1x1.png"
+        />
+        <source
+          data-srcset="./media/image/global-icons/arrow.webp"
+          type="image/webp"
+          srcset="./media/image/global-icons/1x1.png"
+        />
+        <img
+          data-src="./media/image/global-icons/arrow.png"
+          src="./media/image/global-icons/1x1.png"
+          alt="Button"
+        />
+      </picture>
     </a>
   </div>
 </section>

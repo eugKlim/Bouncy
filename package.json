@@ -38,6 +38,7 @@
     "gulp-uglify-es": "^3.0.0",
     "gulp-version-number": "^0.2.4",
     "gulp-webp": "^4.0.1",
+    "intersection-observer": "^0.12.2",
     "lozad": "^1.16.0",
     "sass": "^1.66.1",
     "swiper": "^11.0.7",
