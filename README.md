@@ -56,14 +56,13 @@
 
 > В этом проекте, многие элементы страницы, сделаны так, чтобы их можно было легко переиспользовать.
 
-[Ссылка на сайт](https://eugklim.github.io/Bouncy/)
+[🔗 Ссылка на сайт](https://eugklim.github.io/Bouncy/)
 
 <br>
 
 # Технологии, Совместимость, Оптимизация:
 
 1. Flexbox.
-
 2. Grid layout.
 3. Применение переменных и миксинов (SCSS).
 4. Семантическая верстка / мета-теги (SEO).
@@ -78,11 +77,13 @@
    - `smooth scroll` добавил через `js` а не через `css`, потому что в старых браузерах, `css` свойство не поддерживается.
 <br>
 
+<br>
+
 # Проверить сайт:
 
-PageSpeed Insights: [ссылка pageSpeed](https://pagespeed.web.dev/analysis/https-eugklim-github-io-Bouncy/m4oj4bc4f8?hl=ru&form_factor=mobile)
+**PageSpeed Insights:** [ссылка pageSpeed](https://pagespeed.web.dev/analysis/https-eugklim-github-io-Bouncy/m4oj4bc4f8?hl=ru&form_factor=mobile)
 
-Валидатор: [ссылка на валидатор](https://validator.w3.org/) 
+**Валидатор:** [ссылка на валидатор](https://validator.w3.org/) 
 
 ```ruby
 https://eugklim.github.io/Bouncy/
@@ -90,6 +91,7 @@ https://eugklim.github.io/Bouncy/
 
 <br>
 
+<br>
 
 # Установка и запуск проекта:
 
