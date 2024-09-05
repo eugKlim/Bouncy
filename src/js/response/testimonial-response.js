@@ -2,6 +2,7 @@ import axios from 'axios';
 
 function testimonialResponse() {
   const testimonialsWrapper = document.querySelector('.testimonials-wrapper');
+  const getUser = 3;
 
   async function getData() {
     try {
@@ -13,12 +14,12 @@ function testimonialResponse() {
       const commentsResponse = await axios.get(
         'https://jsonplaceholder.typicode.com/comments'
       );
-      const comments = commentsResponse.data.slice(0, 3);
+      const comments = commentsResponse.data.slice(0, getUser);
 
       const imageResponse = await axios.get(
         'https://jsonplaceholder.typicode.com/photos'
       );
-      const images = imageResponse.data.slice(0, 3);
+      const images = imageResponse.data.slice(0, getUser);
 
       testimonialsWrapper.innerHTML = '';
 
@@ -39,9 +40,8 @@ function testimonialResponse() {
         <div class="testimonials-slide">
           <div class="testimonials-slide__img">
             <img
-              data-src="${image}"
               alt="Image"
-              src="./media/image/global-icons/1x1.png">
+              src="${image}">
           </div>
           <div class="testimonials-slide__info">
             <p class="testimonials-slide__info-text">${comment}</p>
