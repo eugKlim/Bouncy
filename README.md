@@ -81,7 +81,7 @@
 
 # Проверить сайт:
 
-**PageSpeed Insights:** [ссылка pageSpeed](https://pagespeed.web.dev/analysis/https-eugklim-github-io-Bouncy/m4oj4bc4f8?hl=ru&form_factor=mobile)
+**PageSpeed Insights:** [ссылка pageSpeed](https://pagespeed.web.dev/analysis/https-eugklim-github-io-Bouncy/m4oj4bc4f8?hl=ru&form_factor=desktop)
 
 **Валидатор:** [ссылка на валидатор](https://validator.w3.org/) 
 
