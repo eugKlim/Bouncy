@@ -1,0 +1,58 @@
+@import '../../style/vars.scss';
+
+.about {
+  padding: 80px 0 60px;
+
+  & .container {
+    max-width: 896px;
+    padding: 0 50px;
+  }
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-content {
+    &__title {
+      @include title-style;
+      text-align: left;
+    }
+    &__text {
+      @include subTitle-style;
+      max-width: 470px;
+      margin: 0 0 50px;
+      text-align: left;
+    }
+    &__btn {
+      @include btn-style;
+    }
+  }
+  &-img {
+    & img {
+      width: 215px;
+      height: 350px;
+    }
+  }
+}
+
+@media (max-width: 890px) {
+  .about {
+    &-inner {
+      flex-wrap: wrap-reverse;
+      text-align: center;
+    }
+    &-content {
+      width: 100%;
+      &__title {
+        text-align: center;
+      }
+      &__text {
+        margin: 50px auto 50px;
+        display: block;
+      }
+    }
+    &-img {
+      width: 100%;
+      margin-bottom: 60px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import '../../style/vars.scss';
+.news {
+  background-repeat: no-repeat;
+  background-position: center;
+  background: url('/image/news/news-bg.webp');
+  &-inner {
+    @include leveling;
+    flex-wrap: wrap;
+    padding: 40px 0;
+  }
+  &-title {
+    @include title-style;
+    color: $color-white;
+    margin: 0;
+  }
+  &-submit {
+    @include btn-style;
+    border-color: $color-white;
+    color: $color-white;
+    padding: 10px 25px;
+    display: inline-block;
+  }
+  &-bold {
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 890px) {
+  .news {
+    background: $color-green;
+    &-inner {
+      display: block;
+      text-align: center;
+    }
+    &-submit {
+      margin-top: 30px;
+    }
+  }
+}

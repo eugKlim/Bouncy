@@ -1,0 +1,209 @@
+@import '../../style/vars.scss';
+.portfolio {
+  padding: 70px 0 70px;
+  background-color: $color-superLightGray;
+  &-title {
+    @include title-style;
+  }
+  &-subtitle {
+    @include subTitle-style;
+  }
+  &-menu__filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 70px 0 60px;
+    & li {
+      font-size: 16px;
+      color: $color-blackGray;
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      margin: 0 13px 30px;
+      &.active::before {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: $color-green;
+        position: absolute;
+        bottom: -14px;
+        left: 0;
+      }
+      &.active:hover {
+        color: $color-blackGray;
+      }
+      &:hover {
+        color: $color-green;
+      }
+    }
+  }
+  &-items {
+    columns: 4;
+  }
+  &-item {
+    width: 268px;
+    min-height: 190px;
+    margin: 0 auto 17px;
+    position: relative;
+    @include center-block;
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+    & .portfolio-showBlockHover {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 6px;
+      background-color: $color-green;
+      display: none;
+    }
+    & .portfolio-close {
+      display: none;
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      color: $color-red;
+      font-size: 36px;
+      line-height: 0;
+      z-index: 100;
+    }
+    &__hover {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgb(12, 12, 12, 0.8);
+      position: absolute;
+      padding: 30px;
+      display: grid;
+      place-self: center;
+      align-items: flex-end;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      &-title {
+        @include title-style;
+        text-align: left !important;
+        color: $color-green;
+        position: relative;
+        width: 100%;
+
+        &::before {
+          content: '';
+          width: 40px;
+          height: 2px;
+          background-color: $color-green;
+          position: absolute;
+          bottom: -20px;
+          left: 0;
+        }
+      }
+      &-text {
+        font-size: 12px;
+        line-height: 24px;
+        margin-bottom: 20px;
+      }
+      &-btn {
+        &-link,
+        &-like {
+          background-color: $color-blackGray;
+          border-radius: 50%;
+          line-height: 0;
+          padding: 10px;
+          text-align: left;
+          & img {
+            width: 20px;
+          }
+          &:hover {
+            background-color: $color-darkGreen;
+          }
+        }
+        &-link {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  &-start {
+    background-repeat: no-repeat;
+    padding: 57px 10px;
+    margin-top: 50px;
+    background: url('/image/portfolio/portfolio-start_bg.webp');
+    &__title {
+      @include title-style;
+      color: $color-white;
+    }
+    &__btn {
+      @include btn-style;
+      border-color: $color-white;
+      color: $color-white;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: 890px) {
+  .portfolio {
+    &-item {
+      &__hover {
+        @include hoverBlock;
+        display: grid;
+        place-self: center;
+        align-items: flex-end;
+        overflow-y: auto;
+      }
+      &:hover .portfolio-item__hover {
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .portfolio {
+    &-items {
+      columns: 3;
+      width: 98%;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 890px) {
+  .portfolio {
+    &-items {
+      columns: 2;
+    }
+    &-item {
+      &__hover {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.2s linear;
+        overflow-y: auto;
+      }
+      & .portfolio-showBlockHover {
+        display: block;
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  .portfolio {
+    &-start {
+      background-size: cover;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .portfolio {
+    &-items {
+      columns: 1;
+    }
+  }
+}

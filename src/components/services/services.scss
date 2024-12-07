@@ -1,0 +1,84 @@
+@import '../../style/vars.scss';
+.services {
+  background-color: $color-superLightGray;
+  padding: 73px 0 99px;
+
+  &-title {
+    @include title-style;
+  }
+  &-subTitle {
+    @include subTitle-style;
+    padding: 0 0 40px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &-tab {
+    &__btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & img {
+        width: 25px;
+      }
+    }
+    &__btn {
+      width: 40px;
+      height: 40px;
+      background-color: $color-blackGray;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      & + .services-tab__btn {
+        margin-left: 14px;
+      }
+      &.tab-btn-active {
+        background-color: $color-green;
+      }
+    }
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+      &-title {
+        @include title-style;
+        color: $color-blackGray;
+        margin-bottom: 10px;
+      }
+    }
+    &__block1 {
+      width: 40%;
+      @include subTitle-style;
+      text-align: left;
+    }
+    &__block2 {
+      width: 44%;
+      @include subTitle-style;
+      margin-top: 30px;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .services {
+    padding-bottom: 20px;
+
+    &-tab {
+      &__content {
+        display: block;
+        text-align: center;
+      }
+      &__block1 {
+        margin: 0 auto;
+        width: 100%;
+      }
+      &__block2 {
+        margin: 30px auto 30px;
+        width: 100%;
+      }
+    }
+  }
+}

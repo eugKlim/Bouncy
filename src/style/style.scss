@@ -1,0 +1,180 @@
+@import './vars.scss';
+@import './stylereset.css';
+@import './fonts.scss';
+
+html,
+body {
+  height: 100%;
+  font-family: $font-OpenSans-Regular;
+  color: $color-lightGray;
+}
+body.noScroll {
+  overflow: hidden;
+}
+img {
+  user-select: none;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: $color-lightGray;
+}
+::-webkit-scrollbar-thumb {
+  background: $color-blackGray;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $color-darkGreen;
+}
+
+.burger {
+  display: none;
+}
+[data-filter] {
+  user-select: none;
+}
+
+.tab {
+  &-btn {
+    &-active {
+      pointer-events: none;
+    }
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  &-pane:not(.tab-pane-show) {
+    display: none;
+  }
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  flex: 1 1 auto;
+}
+.container {
+  max-width: 1174px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hidden-text {
+  display: none;
+}
+.show-inline {
+  display: inline-block;
+}
+.show-block {
+  display: block;
+}
+.hidden {
+  display: none !important;
+}
+.swiper-slide {
+  cursor: grab;
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.loading {
+  width: 100%;
+  &-gif {
+    width: 80px;
+    position: relative;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.hidden-block {
+  &-active {
+    overflow: hidden;
+    position: relative;
+    border-radius: 0 0 40px 40px;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      -webkit-box-shadow: 3px -77px 48px 36px rgba(13, 119, 125, 1);
+      -moz-box-shadow: 3px -77px 48px 36px rgba(13, 119, 125, 1);
+      box-shadow: 3px -77px 48px 36px rgba(13, 119, 125, 1);
+      z-index: 10;
+    }
+  }
+  &-btn {
+    @include btn-style;
+    border-color: $color-white;
+    color: $color-white;
+    z-index: 11;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+  }
+}
+
+.popup {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgb(30, 29, 29, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s linear;
+  @include center-block;
+  &-content {
+    max-width: 700px;
+    width: 100%;
+    max-height: 600px;
+    background-color: $color-white;
+    padding: 40px;
+    position: relative;
+    overflow-y: auto;
+    border-radius: 10px;
+    &__close {
+      position: absolute;
+      top: 0;
+      right: 5px;
+      color: $color-red;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      &:hover {
+        color: $color-green;
+      }
+    }
+  }
+  &.popup-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.popup-text {
+  margin-top: 50px;
+  line-height: 25px;
+}
+
+@keyframes slideDown {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
+}

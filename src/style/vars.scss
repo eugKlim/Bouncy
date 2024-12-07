@@ -1,0 +1,94 @@
+$color-white: #fff;
+$color-green: #19bd9a;
+$color-darkGreen: #0d787d;
+$color-blackGray: #333b46;
+$color-lightGray: #5c6878;
+$color-superLightGray: #f3f3f3;
+$color-red: #ff0000;
+
+$font-big-john: 'big john';
+$font-OpenSans-Regular: 'OpenSans Regular';
+$font-SourceSansPro-Black: 'SourceSansPro Black';
+$font-SourceSansPro-Light: 'SourceSansPro Light';
+
+.text-bold {
+  font-weight: bold;
+}
+.link {
+  color: $color-green;
+  font-weight: bold;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin title-style {
+  font-family: $font-SourceSansPro-Light;
+  color: $color-blackGray;
+  font-size: 20px;
+  line-height: 25px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  text-align: center;
+}
+@mixin subTitle-style {
+  font-family: $font-OpenSans-Regular;
+  color: $color-lightGray;
+  font-size: 15px;
+  line-height: 25px;
+  max-width: 450px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@mixin center-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin btn-style {
+  padding: 6px 25px;
+  border-radius: 40px;
+  border: 1px solid $color-blackGray;
+  color: $color-blackGray;
+  font-size: 16px;
+  background: transparent;
+  &:hover {
+    background: $color-green;
+    color: $color-white;
+  }
+}
+
+@mixin hoverBlock {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(12, 12, 12, 0.8);
+  position: absolute;
+  @include center-block;
+  color: $color-white;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: $font-SourceSansPro-Light;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s linear;
+}
+
+@mixin leveling {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: $font-big-john;
+  font-size: 25px;
+  color: $color-white;
+}

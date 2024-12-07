@@ -1,0 +1,16 @@
+<svg id="_facebook" data-name=" facebook" xmlns="http://www.w3.org/2000/svg" width="25.624" height="25.6" viewBox="0 0 25.624 25.6">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3b5998;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <circle id="base" class="cls-1" cx="12.812" cy="12.8" r="12.812"/>
+  <path id="f" class="cls-2" d="M612.558,10341h1.65v-2.4h-1.939c-2.349.1-2.831,1.4-2.873,2.8h0v1.2h-1.6v2.4h1.6v6.4H611.8v-6.4h1.975l0.38-2.4H611.8v-0.7A0.818,0.818,0,0,1,612.558,10341Z" transform="translate(-598.188 -10332.2)"/>
+</svg>

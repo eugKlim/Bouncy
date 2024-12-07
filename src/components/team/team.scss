@@ -1,0 +1,177 @@
+@import '../../style/vars.scss';
+.team {
+  padding: 80px 0;
+  position: relative;
+  &-title {
+    @include title-style;
+  }
+  &-subtitle {
+    @include subTitle-style;
+    margin-bottom: 100px;
+  }
+
+  .splide__pagination {
+    bottom: -70px;
+  }
+  .splide__pagination__page {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid $color-darkGreen;
+    background-color: transparent;
+    opacity: 1;
+    margin: 0 8px;
+    &:hover {
+      background-color: $color-lightGray;
+    }
+    &.is-active {
+      background-color: $color-darkGreen;
+    }
+  }
+
+  &-slide {
+    & img {
+      width: 285px;
+      height: 364px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  & .swiper-slide {
+    padding: 0 20px;
+
+    &:nth-child(1) {
+      .team-slide__indicator {
+        &:nth-child(1) span {
+          width: 80%;
+        }
+        &:nth-child(2) span {
+          width: 65%;
+        }
+        &:nth-child(3) span {
+          width: 75%;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      .team-slide__indicator {
+        &:nth-child(1) span {
+          width: 30%;
+        }
+        &:nth-child(2) span {
+          width: 15%;
+        }
+        &:nth-child(3) span {
+          width: 100%;
+        }
+      }
+    }
+    &:nth-child(3) {
+      .team-slide__indicator {
+        &:nth-child(1) span {
+          width: 81%;
+        }
+        &:nth-child(2) span {
+          width: 67%;
+        }
+        &:nth-child(3) span {
+          width: 39%;
+        }
+      }
+    }
+  }
+
+  &-slide {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    flex-wrap: wrap;
+
+    &__titles {
+      position: relative;
+      &:before {
+        content: '';
+        width: 4px;
+        height: 100%;
+        position: absolute;
+        right: -10px;
+        top: 0;
+        background-color: $color-darkGreen;
+      }
+    }
+    &__title {
+      @include title-style;
+      font-family: $font-OpenSans-Regular;
+      text-align: right;
+      margin-bottom: 0;
+    }
+    &__subtitle {
+      font-style: italic;
+      margin: 10px 0 30px;
+    }
+    &__text {
+      font-size: 16px;
+      color: $color-lightGray;
+      font-family: $font-SourceSansPro-Light;
+      line-height: 25px;
+      max-width: 380px;
+      margin-bottom: 36px;
+    }
+    &__indicator {
+      margin-bottom: 30px;
+      &-line {
+        position: relative;
+        & span {
+          height: 100%;
+          background-color: $color-darkGreen;
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+      &-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 7px;
+      }
+      &-line {
+        width: 100%;
+        height: 4px;
+        background-color: $color-lightGray;
+      }
+    }
+  }
+}
+
+@media (max-width: 890px) {
+  .team {
+    &-slide {
+      &__titles {
+        text-align: center;
+        margin-top: 20px;
+        &::before {
+          display: none;
+        }
+      }
+      &__title {
+        text-align: center;
+      }
+      &__text {
+        margin: 0 auto;
+        text-align: center;
+      }
+      &__img {
+        margin: 0 auto;
+      }
+      &__info {
+        width: 100%;
+      }
+      &__indicators {
+        max-width: 400px;
+        margin: 30px auto 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import '../../style/vars.scss';
+.contact {
+  padding: 70px;
+  background-color: $color-superLightGray;
+  &-title {
+    @include title-style;
+  }
+  &-subtitle {
+    @include subTitle-style;
+  }
+  &-cards {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &-card {
+    text-align: center;
+    background-color: $color-white;
+    padding-bottom: 20px;
+    margin: 0 10px 20px;
+    &__img {
+      width: 287px;
+      height: 145px;
+    }
+    & a {
+      display: block;
+      margin-bottom: 20px;
+    }
+    & p {
+      margin-bottom: 8px;
+    }
+    &__info {
+      &-title {
+        padding: 20px 0;
+      }
+    }
+  }
+}

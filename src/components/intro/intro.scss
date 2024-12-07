@@ -1,0 +1,58 @@
+@import '../../style/vars.scss';
+
+.intro {
+  @include center-block;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 737px;
+  text-align: center;
+  color: $color-white;
+  position: relative;
+  margin: 0 auto;
+  background: url('/image/intro/intro-bg.webp');
+
+  &-title {
+    @include title-style;
+    font-size: 35px;
+    color: $color-white;
+    letter-spacing: 15px;
+    margin-top: 200px;
+    line-height: 50px;
+  }
+  &-subTitle {
+    @include subTitle-style;
+    max-width: 600px;
+    margin: 42px auto 200px;
+    color: $color-white;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 28px;
+  }
+
+  &-btn__down {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $color-green;
+    @include center-block;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    &:hover {
+      background-color: $color-darkGreen;
+    }
+  }
+}
+
+@media (min-width: 890px) {
+  .intro {
+    background-size: cover !important;
+  }
+}
+@media (max-width: 890px) {
+  .intro {
+    background-size: cover !important;
+  }
+}

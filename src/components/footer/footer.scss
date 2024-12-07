@@ -1,0 +1,18 @@
+@import '../../style/vars.scss';
+.footer {
+  padding: 70px 0;
+  text-align: center;
+  &-logo {
+    @include logo;
+    color: $color-blackGray;
+  }
+  &-title {
+    @include subTitle-style;
+    margin: 20px auto;
+  }
+  &-social {
+    & a img {
+      margin: 0 5px;
+    }
+  }
+}

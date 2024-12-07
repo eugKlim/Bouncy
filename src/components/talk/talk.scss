@@ -1,0 +1,24 @@
+@import '../../style/vars.scss';
+.talk {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 90px;
+  background: url('/image/talk/talk-bg.webp');
+  &-title {
+    @include title-style;
+    color: $color-white;
+  }
+  &-contact {
+    @include btn-style;
+    border-color: $color-white;
+    color: $color-white;
+  }
+}
+
+@media (max-width: 700px) {
+  .talk {
+    background-size: cover;
+  }
+}

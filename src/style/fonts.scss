@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'big john';
+  font-display: swap;
+  src: url('/fonts/big-john-regular.woff2') format('woff2'),
+    url('/fonts/big-john-regular.woff') format('woff');
+  font-weight: john;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSans Regular';
+  font-display: swap;
+  src: url('/fonts/OpenSans-Regular.woff2') format('woff2'),
+    url('/fonts/OpenSans-Regular.woff') format('woff');
+  font-weight: Regular;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro Black';
+  font-display: swap;
+  src: url('/fonts/SourceSansPro-Black.woff2') format('woff2'),
+    url('/fonts/SourceSansPro-Black.woff') format('woff');
+  font-weight: Black;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro Light';
+  font-display: swap;
+  src: url('/fonts/SourceSansPro-Light.woff2') format('woff2'),
+    url('/fonts/SourceSansPro-Light.woff') format('woff');
+  font-weight: Light;
+  font-style: normal;
+}
