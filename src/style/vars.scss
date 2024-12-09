@@ -25,11 +25,12 @@ $font-SourceSansPro-Light: 'SourceSansPro Light';
 @mixin title-style {
   font-family: $font-SourceSansPro-Light;
   color: $color-blackGray;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 25px;
   text-transform: uppercase;
   margin-bottom: 40px;
   text-align: center;
+  font-weight: bold;
 }
 @mixin subTitle-style {
   font-family: $font-OpenSans-Regular;

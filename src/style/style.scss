@@ -34,20 +34,6 @@ img {
   user-select: none;
 }
 
-.tab {
-  &-btn {
-    &-active {
-      pointer-events: none;
-    }
-    &:hover {
-      opacity: 0.5;
-    }
-  }
-  &-pane:not(.tab-pane-show) {
-    display: none;
-  }
-}
-
 .wrapper {
   min-height: 100vh;
   display: flex;
