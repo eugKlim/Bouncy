@@ -1,6 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
 import './about.scss';
 const About = () => {
+  const [isHidden, setIsHidden] = useState(true);
+
   return (
     <section className="about" id="about">
       <div className="container">
@@ -15,7 +17,7 @@ const About = () => {
               animi, id est laborum et dolorum fuga. Et harum quidem rerum
               facilis est et expedita distinctio.
               <span className="three-dots">..</span>
-              <span className="hidden-text">
+              <span className={`${isHidden ? 'hidden-text' : ''}`}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Labore, libero? Quas dignissimos, recusandae repellendus omnis
                 possimus perspiciatis consequuntur odit optio vitae, atque animi
@@ -34,7 +36,8 @@ const About = () => {
             <button
               title="read more"
               aria-label="read more"
-              className="about-content__btn"
+              className={`${isHidden ? '' : 'hidden'} about-content__btn`}
+              onClick={() => setIsHidden(false)}
             >
               Read More
             </button>

@@ -1,6 +1,19 @@
-import React from 'react';
-
 import './services.scss';
+
+const ServicesDb = [
+  {
+    image: '/image/global-icons/heart-icon.svg',
+    title: 'Tab 1',
+  },
+  {
+    image: '/image/global-icons/mouse.svg',
+    title: 'Tab 2',
+  },
+  {
+    image: '/image/global-icons/bulb.svg',
+    title: 'Tab 3',
+  },
+];
 
 const Services = () => {
   return (
@@ -13,35 +26,18 @@ const Services = () => {
             blanditiis praesentium
           </h3>
 
-          <div className="services-tab tab" id="tab-1">
+          <div className="services-tab tab">
             <div className="services-tab__btns tab-nav">
-              <button
-                className="services-tab__btn tab-btn active tab-btn-active"
-                data-target-id="0"
-                title="tab 1"
-                aria-label="tab 1"
-              >
-                <img
-                  src="/image/global-icons/heart-icon.svg"
-                  alt="icon heart"
-                />
-              </button>
-              <button
-                title="tab 2"
-                aria-label="tab 2"
-                className="services-tab__btn tab-btn"
-                data-target-id="1"
-              >
-                <img src="/image/global-icons/mouse.svg" alt="icon mouse" />
-              </button>
-              <button
-                title="tab 3"
-                aria-label="tab 3"
-                className="services-tab__btn tab-btn"
-                data-target-id="2"
-              >
-                <img src="/image/global-icons/bulb.svg" alt="icon bulb" />
-              </button>
+              {ServicesDb.map((item, index) => (
+                <button
+                  className="services-tab__btn tab-btn active tab-btn-active"
+                  aria-label={item.title}
+                  key={index}
+                >
+                  <img src={item.image} alt={item.title} />
+                  {item.title}
+                </button>
+              ))}
             </div>
 
             <div className="tab-content">
