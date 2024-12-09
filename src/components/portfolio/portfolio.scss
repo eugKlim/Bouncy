@@ -20,6 +20,9 @@
       position: relative;
       display: inline-block;
       margin: 0 13px 30px;
+      &.active {
+        color: $color-green;
+      }
       &.active::before {
         content: '';
         width: 100%;
