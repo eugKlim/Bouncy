@@ -1,75 +1,73 @@
+import { useEffect, useState } from 'react';
 import './header.scss';
+import useScrollSizeWindow from '../../hooks/useScrollSizeWindow';
+
+const NavDb = [
+  {
+    title: 'Hello',
+  },
+  {
+    title: 'About',
+  },
+  {
+    title: 'Services',
+  },
+  {
+    title: 'Portfolio',
+  },
+  {
+    title: 'Team',
+  },
+  {
+    title: 'Contact',
+  },
+];
+
 const Header = () => {
+  const [isActiveBurger, setIsActiveBurger] = useState(false);
+  const howScrollY = useScrollSizeWindow();
+
+  const toggleBurger = () => {
+    setIsActiveBurger(!isActiveBurger);
+  };
+
+  const [isFixedHeader, setIsFixedHeader] = useState(false);
+  useEffect(() => {
+    if (howScrollY >= 800) {
+      setIsFixedHeader(true);
+    } else {
+      setIsFixedHeader(false);
+    }
+  }, [howScrollY]);
+
   return (
-    <header className="header">
+    <header className={`${isFixedHeader && 'header-fixed'} header`}>
       <div className="container">
         <div className="header-inner">
           <h1 className="header-logo">Bouncy</h1>
-          <nav className="header-nav">
-            <ul>
-              <li>
-                <a
-                  href="#intro"
-                  title="Hello"
-                  className="header-nav__link yankor"
-                  aria-label="link to section Hello"
-                >
-                  Hello
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  title="About"
-                  className="header-nav__link yankor"
-                  aria-label="link to section About"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  title="Services"
-                  className="header-nav__link yankor"
-                  aria-label="link to section Services"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#portfolio"
-                  title="Portfolio"
-                  className="header-nav__link yankor"
-                  aria-label="link to section Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#team"
-                  title="Team"
-                  className="header-nav__link yankor"
-                  aria-label="link to section Team"
-                >
-                  Team
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  title="Contact"
-                  className="header-nav__link yankor"
-                  aria-label="link to section Contact"
-                >
-                  Contact
-                </a>
-              </li>
+          <nav
+            className={`${isActiveBurger && 'active'} header-nav`}
+            onClick={() => toggleBurger()}
+          >
+            <ul className={`${isActiveBurger && 'active'}`}>
+              {NavDb.map((item, index) => (
+                <li key={index}>
+                  <a
+                    className="header-nav__link"
+                    aria-label={`link to section ${item.title}`}
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </nav>
-          <button title="menu" className="burger" aria-label="menu button">
+          <button
+            title="menu"
+            className={`${isActiveBurger && 'active'} burger`}
+            aria-label="menu button"
+            onClick={() => toggleBurger()}
+          >
             <span></span>
             <span></span>
             <span></span>

@@ -24,7 +24,6 @@
       }
     }
     &__btn {
-      // width: 510px;
       min-width: 100px;
       height: 60px;
       background-color: $color-blackGray;
@@ -34,6 +33,7 @@
       align-items: center;
       flex-direction: column;
       text-transform: uppercase;
+      color: #fff;
       & + .services-tab__btn {
         margin-left: 14px;
       }

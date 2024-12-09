@@ -79,8 +79,11 @@
         background-color: rgba(35, 35, 35, 0.9);
         top: 0;
         left: 0;
-        position: absolute;
+        position: fixed;
         transition: 0.3s linear;
+        ul {
+          transform: translateX(0) !important;
+        }
       }
       & ul {
         transform: translateX(-100%) !important;
@@ -151,5 +154,14 @@
         opacity: 0;
       }
     }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
   }
 }
