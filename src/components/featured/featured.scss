@@ -19,6 +19,8 @@
     justify-content: center;
   }
   &-item {
+    user-select: none;
+    cursor: default;
     position: relative;
     display: inline-block;
     z-index: 1;

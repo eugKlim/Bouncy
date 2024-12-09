@@ -1,4 +1,19 @@
 import './featured.scss';
+
+const FeaturedDb = [
+  {
+    title: 'Featured',
+    image: '/image/featured/item1.webp',
+  },
+  {
+    title: 'VINTAGE',
+    image: '/image/featured/item2.webp',
+  },
+  {
+    title: 'Branding',
+    image: '/image/featured/item3.webp',
+  },
+];
 const Featured = () => {
   return (
     <section className="featured">
@@ -10,32 +25,16 @@ const Featured = () => {
         </h3>
 
         <div className="featured-items">
-          <div className="featured-item">
-            <div className="featured-item__img">
-              <img src="/image/featured/item1.webp" alt="image 1" />
+          {FeaturedDb.map((item, index) => (
+            <div className="featured-item" key={index}>
+              <div className="featured-item__img">
+                <img src={item.image} alt={`image ${item.title}`} />
+              </div>
+              <div className="featured-item__hover">
+                <p>{item.title}</p>
+              </div>
             </div>
-            <div className="featured-item__hover">
-              <p>Featured</p>
-            </div>
-          </div>
-
-          <div className="featured-item">
-            <div className="featured-item__img">
-              <img src="/image/featured/item2.webp" alt="image 2" />
-            </div>
-            <div className="featured-item__hover">
-              <p>VINTAGE</p>
-            </div>
-          </div>
-
-          <div className="featured-item">
-            <div className="featured-item__img">
-              <img src="/image/featured/item3.webp" alt="image 3" />
-            </div>
-            <div className="featured-item__hover">
-              <p>Branding</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

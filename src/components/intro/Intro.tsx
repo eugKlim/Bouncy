@@ -1,6 +1,7 @@
 import './intro.scss';
-
+import useSmoothScroll from '../../hooks/useSmoothScroll';
 const Intro = () => {
+  const smoothScroll = useSmoothScroll();
   return (
     <section className="intro " id="intro">
       <div className="container">
@@ -11,14 +12,14 @@ const Intro = () => {
             blanditiis praesentium voluptatum
           </p>
         </div>
-        <a
-          href="#about"
+        <button
           title="go to about"
-          className="intro-btn__down yankor"
+          className="intro-btn__down"
           aria-label="scroll to section about"
+          onClick={() => smoothScroll('about')}
         >
           <img src="/image/global-icons/arrow.webp" alt="Button" />
-        </a>
+        </button>
       </div>
     </section>
   );

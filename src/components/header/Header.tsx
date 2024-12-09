@@ -33,7 +33,7 @@ const Header = () => {
 
   const [isFixedHeader, setIsFixedHeader] = useState(false);
   useEffect(() => {
-    if (howScrollY >= 800) {
+    if (howScrollY >= 600) {
       setIsFixedHeader(true);
     } else {
       setIsFixedHeader(false);
