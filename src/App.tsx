@@ -1,44 +1,38 @@
-import './style/vars.scss';
-import Intro from './components/intro/Intro';
-import Header from './components/header/Header';
-import About from './components/about/About';
-import Services from './components/services/Services';
-import Featured from './components/featured/Featured';
-import News from './components/news/News';
-import Details from './components/details/Details';
-import Impressed from './components/impressed/Impressed';
-import Portfolio from './components/portfolio/Portfolio';
-import Team from './components/team/Team';
-import Talk from './components/talk/Talk';
-import Price from './components/price/Price';
-import Subscribe from './components/subscribe/Subscribe';
-import Contact from './components/contact/Contact';
-import ContactForm from './components/contact-form/Contact-Form';
-import Footer from './components/footer/Footer';
-import Map from './components/map/Map';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 
-function App() {
+import HomePage from './pages/HomePage';
+import Header from './components/header/Header';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import PortfolioPage from './pages/PortfolioPage';
+import ServicesPage from './pages/ServicesPage';
+import TeamPage from './pages/TeamPage';
+import NotFoundPage from './pages/NotFoundPage';
+import ScrollToTop from './utils/ScrollToTop';
+const App = () => {
   return (
     <div>
-      <Header />
-      <Intro />
-      <About />
-      <Services />
-      <Featured />
-      <News />
-      <Details />
-      <Impressed />
-      <Portfolio />
-      <Team />
-      <Talk />
-      <Price />
-      <Subscribe />
-      <Contact />
-      <ContactForm />
-      <Map />
-      <Footer />
+      <Router>
+        <ScrollToTop />
+        <Header />
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;

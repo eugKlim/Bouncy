@@ -2,17 +2,14 @@
 @import './stylereset.css';
 @import './fonts.scss';
 
-html,
 body {
   height: 100%;
   font-family: $font-OpenSans-Regular;
   color: $color-lightGray;
+  overflow-y: scroll;
 }
 body.noScroll {
   overflow: hidden;
-}
-img {
-  user-select: none;
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -74,4 +71,8 @@ img {
   &:active {
     cursor: grabbing;
   }
+}
+
+.page {
+  padding-top: 84px;
 }

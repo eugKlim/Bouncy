@@ -1,0 +1,15 @@
+@import '../style/vars.scss';
+
+.not-found {
+  @include center-block;
+  height: 100vh;
+  & h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 23px;
+    margin-bottom: 20px;
+  }
+  & p {
+    color: red;
+  }
+}

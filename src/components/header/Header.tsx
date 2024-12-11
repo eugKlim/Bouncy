@@ -1,31 +1,40 @@
 import { useEffect, useState } from 'react';
 import './header.scss';
 import useScrollSizeWindow from '../../hooks/useScrollSizeWindow';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const NavDb = [
   {
     title: 'Hello',
+    link: 'home',
   },
   {
     title: 'About',
+    link: 'about',
   },
   {
     title: 'Services',
+    link: 'services',
   },
   {
     title: 'Portfolio',
+    link: 'portfolio',
   },
   {
     title: 'Team',
+    link: 'team',
   },
   {
     title: 'Contact',
+    link: 'contact',
   },
 ];
 
 const Header = () => {
   const [isActiveBurger, setIsActiveBurger] = useState(false);
   const howScrollY = useScrollSizeWindow();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/home';
 
   const toggleBurger = () => {
     setIsActiveBurger(!isActiveBurger);
@@ -41,7 +50,11 @@ const Header = () => {
   }, [howScrollY]);
 
   return (
-    <header className={`${isFixedHeader && 'header-fixed'} header`}>
+    <header
+      className={`${isFixedHeader && 'header-fixed'} ${
+        isHomePage ? '' : 'bg-test'
+      } header`}
+    >
       <div className="container">
         <div className="header-inner">
           <h1 className="header-logo">Bouncy</h1>
@@ -52,12 +65,13 @@ const Header = () => {
             <ul className={`${isActiveBurger && 'active'}`}>
               {NavDb.map((item, index) => (
                 <li key={index}>
-                  <a
+                  <NavLink
+                    to={`/${item.link}`}
                     className="header-nav__link"
                     aria-label={`link to section ${item.title}`}
                   >
                     {item.title}
-                  </a>
+                  </NavLink>
                 </li>
               ))}
             </ul>
