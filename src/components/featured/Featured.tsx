@@ -14,6 +14,7 @@ const FeaturedDb = [
     image: '/image/featured/item3.webp',
   },
 ];
+
 const Featured = () => {
   return (
     <section className="featured">

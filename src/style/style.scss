@@ -58,8 +58,16 @@ img {
 .show-block {
   display: block;
 }
+.show-transition-block {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
 .hidden {
   display: none !important;
+}
+.hidden-transition-block {
+  opacity: 0;
+  visibility: hidden;
 }
 .swiper-slide {
   cursor: grab;

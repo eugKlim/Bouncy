@@ -2,7 +2,7 @@
 
 .services {
   background-color: $color-superLightGray;
-  padding: 73px 0 40px;
+  padding: 73px 0 70px;
 
   &-title {
     @include title-style;
@@ -19,6 +19,8 @@
     &__btns {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
       align-items: center;
       & img {
         width: 25px;
@@ -40,9 +42,6 @@
       &:hover {
         background: $color-darkGreen;
       }
-      & + .services-tab__btn {
-        margin-left: 14px;
-      }
     }
   }
   &-panel {
@@ -57,15 +56,15 @@
   &-tab {
     max-width: 600px;
     text-align: center;
-    margin: 0 auto 0;
+    margin: 0 auto;
     & h4 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       margin-bottom: 28px;
     }
     & p {
       line-height: 30px;
-      font-size: 17px;
+      font-size: 16px;
     }
   }
 }
@@ -73,5 +72,12 @@
 @media (max-width: 700px) {
   .services {
     padding-bottom: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .services {
+    &-tabs {
+      padding: 20px 0;
+    }
   }
 }

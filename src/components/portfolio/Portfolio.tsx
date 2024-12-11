@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import './portfolio.scss';
 
+import useHoverMobile from '../../hooks/useHoverMobile';
+import HoverMobileToggle from '../hoverMobileToggle/HoverMobileToggle';
+
 type IPortfolioItemsDb = {
   category: string;
   image: string;
@@ -79,9 +82,11 @@ const PortfolioItemsDb: IPortfolioItemsDb[] = [
 ];
 
 const Portfolio = () => {
+  const { openOrHiddenHover, hoverMobileState } = useHoverMobile({
+    dataItems: PortfolioItemsDb,
+  });
   const [activeNav, setActiveNav] = useState(0);
   const [selectCategory, setSelectCategory] = useState<IPortfolioItemsDb[]>([]);
-
   const getCategory = (userCategory: string, index: number) => {
     setActiveNav(index);
 
@@ -126,22 +131,23 @@ const Portfolio = () => {
               <div className="portfolio-item__img">
                 <img src={item.image} alt="Image" />
 
-                <button
-                  className="portfolio-showBlockHover"
-                  title="show info card"
-                  aria-label="open info"
-                >
-                  <img src="/image/portfolio/hand.svg" alt="hand action" />
-                </button>
-                <button
-                  className="portfolio-close"
-                  title="close info card"
-                  aria-label="close info"
-                >
-                  &times;
-                </button>
+                {!hoverMobileState[index] && (
+                  <HoverMobileToggle
+                    index={index}
+                    hoverMobileState={hoverMobileState}
+                    openOrHiddenHover={openOrHiddenHover}
+                    isOpen={true}
+                  />
+                )}
               </div>
-              <div className="portfolio-item__hover">
+              {/* hover */}
+              <div
+                className={`${
+                  hoverMobileState[index]
+                    ? 'show-transition-block'
+                    : 'hidden-transition-block'
+                } portfolio-item__hover`}
+              >
                 <h4 className="portfolio-item__hover-title">TITLE HERE</h4>
                 <p className="portfolio-item__hover-text">
                   At vero eos et accusamus et iusto odio dignissimos ducimus
@@ -169,10 +175,21 @@ const Portfolio = () => {
                     />
                   </button>
                 </p>
+
+                {hoverMobileState[index] && (
+                  <HoverMobileToggle
+                    index={index}
+                    hoverMobileState={hoverMobileState}
+                    openOrHiddenHover={openOrHiddenHover}
+                    isOpen={false}
+                  />
+                )}
               </div>
+              {/* / */}
             </div>
           ))}
         </div>
+
         <div className="portfolio-start " id="portfolio-start">
           <h4 className="portfolio-start__title">
             At vero eos et <span className="text-bold">accusamus</span> et iusto

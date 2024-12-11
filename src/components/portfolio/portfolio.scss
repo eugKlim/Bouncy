@@ -85,8 +85,6 @@
       display: grid;
       place-self: center;
       align-items: flex-end;
-      opacity: 0 !important;
-      visibility: hidden !important;
       &-title {
         @include title-style;
         text-align: left !important;
