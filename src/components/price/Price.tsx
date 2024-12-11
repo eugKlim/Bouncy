@@ -1,6 +1,12 @@
+import { useState } from 'react';
 import './price.scss';
+import Popup from '../Popup/Popup';
 
 const Price = () => {
+  const [popupIsOpen, setPopupIsOpen] = useState(false);
+  const openPopup = () => setPopupIsOpen(true);
+  const closePopup = () => setPopupIsOpen(false);
+
   return (
     <section className="price">
       <h2 className="price-title">Our Price</h2>
@@ -29,13 +35,25 @@ const Price = () => {
               <li>Free Hosting</li>
             </ul>
           </div>
+          {/*  */}
+          <Popup isOpen={popupIsOpen} onRequestClose={closePopup}>
+            <h6 className='price-popup__title'>LETS START</h6>
+            <p className='price-popup__text'>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
+              nulla architecto laudantium unde officiis atque repellendus,
+              corrupti a quaerat consectetur alias deleniti. Delectus
+              consequuntur laborum, cum quasi explicabo ab voluptatem?
+            </p>
+          </Popup>
           <button
             title="Lets start"
             className="price-card__start"
             id="price-card__start"
+            onClick={openPopup}
           >
             Let’s Start
           </button>
+          {/*  */}
         </div>
         <div className="price-card">
           <h4 className="price-card__title">EXCLUSIVE</h4>

@@ -1,0 +1,71 @@
+.popup {
+  width: 100%;
+  border-radius: 12px;
+  max-height: 500px;
+  &-close-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 10px;
+    background-color: #9d0909;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 0 0 20px;
+    &:hover {
+      background-color: #f50b0b;
+    }
+  }
+  &-content {
+    padding: 30px 20px;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+  z-index: 999;
+}
+
+.modal-overlay-open {
+  opacity: 1;
+}
+
+.modal-overlay-close {
+  opacity: 0;
+}
+
+html.dark .modal-content {
+  background-color: rgb(51 65 85);
+}
+.modal-content {
+  position: relative;
+  background: white;
+  padding: 4px;
+  width: 500px;
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.modal-content-open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-content-close {
+  transform: translateY(-50px);
+  opacity: 0;
+}
