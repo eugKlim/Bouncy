@@ -48,7 +48,7 @@
 <br>
 
 
-[🔗 Ссылка на сайт](https://eugklim.github.io/Bouncy/)
+[🔗 Ссылка на сайт](https://bouncyy.vercel.app/home)
 
 <br>
 
