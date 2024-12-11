@@ -15,3 +15,9 @@
     background: $color-green;
   }
 }
+
+@media (min-width: 870px) {
+  .hoverMobileBtn {
+    display: none;
+  }
+}

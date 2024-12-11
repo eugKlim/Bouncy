@@ -1,9 +1,8 @@
 @import '../../style/vars.scss';
 .impressed {
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
   background: url('/image/impressed/impressed-bg.webp');
   background-repeat: no-repeat;
+  background-size: cover;
   &-inner {
     display: flex;
     justify-content: space-between;
@@ -76,11 +75,11 @@
     }
   }
 }
-@media (min-width: 890px) {
-  .impressed {
-    background-size: cover !important;
-  }
-}
+// @media (min-width: 890px) {
+//   .impressed {
+//     background-size: cover !important;
+//   }
+// }
 
 @media (max-width: 700px) {
   .impressed {

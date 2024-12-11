@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './portfolio.scss';
 
 import useHoverMobile from '../../hooks/useHoverMobile';
 import HoverMobileToggle from '../hoverMobileToggle/HoverMobileToggle';
+import useWindowWidth from '../../hooks/useWindowWidth';
 
 type IPortfolioItemsDb = {
   category: string;
@@ -82,24 +83,53 @@ const PortfolioItemsDb: IPortfolioItemsDb[] = [
 ];
 
 const Portfolio = () => {
+  const width = useWindowWidth();
   const { openOrHiddenHover, hoverMobileState } = useHoverMobile({
     dataItems: PortfolioItemsDb,
   });
+
   const [activeNav, setActiveNav] = useState(0);
   const [selectCategory, setSelectCategory] = useState<IPortfolioItemsDb[]>([]);
   const getCategory = (userCategory: string, index: number) => {
     setActiveNav(index);
+    setIsHideBlock(false);
 
-    if (userCategory != 'All Works') setSelectCategory([]);
+    if (userCategory == 'All Works') return setHideBlocks(PortfolioItemsDb);
 
     const filterData = PortfolioItemsDb.filter(
       (item) => item.category === userCategory
     );
     setSelectCategory(filterData);
+    setHideBlocks(selectCategory);
   };
 
   const itemsData =
     selectCategory.length !== 0 ? selectCategory : PortfolioItemsDb;
+
+  // Скрытие блоков на тел
+  const [isHideBlock, setIsHideBlock] = useState(false);
+  const [hideBlocks, setHideBlocks] = useState(itemsData);
+
+  useEffect(() => {
+    setHideBlocks(itemsData);
+  }, [itemsData]);
+
+  const toggleHideBLock = () => {
+    setHideBlocks(itemsData);
+    setIsHideBlock(false);
+  };
+
+  useEffect(() => {
+    if (width <= 890) {
+      setIsHideBlock(true);
+      setHideBlocks(itemsData.length === 2 ? itemsData : itemsData.slice(0, 2));
+    } else {
+      setIsHideBlock(false);
+      setHideBlocks(itemsData);
+    }
+  }, [width]);
+
+  //
 
   return (
     <section className="portfolio" id="portfolio">
@@ -125,8 +155,10 @@ const Portfolio = () => {
             ))}
           </ul>
         </nav>
-        <div className="portfolio-items">
-          {itemsData.map((item, index) => (
+        <div
+          className={`${isHideBlock && 'hidden-block-active'} portfolio-items`}
+        >
+          {hideBlocks.map((item, index) => (
             <div className={`portfolio-item ${item.category}`} key={index}>
               <div className="portfolio-item__img">
                 <img src={item.image} alt="Image" />
@@ -188,6 +220,12 @@ const Portfolio = () => {
               {/* / */}
             </div>
           ))}
+          <button
+            className={`${!isHideBlock && 'hidden'} hidden-block-btn`}
+            onClick={toggleHideBLock}
+          >
+            SHOW MORE
+          </button>
         </div>
 
         <div className="portfolio-start " id="portfolio-start">
