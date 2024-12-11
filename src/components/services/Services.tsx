@@ -43,7 +43,6 @@ const Services = () => {
               {ServicesDbBtn.map((item, index) => (
                 <Tab
                   className="services-tab__btn"
-                  // className="services-tab__btn tab-btn active tab-btn-active"
                   aria-label={item.title}
                   key={index}
                 >

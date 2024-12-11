@@ -16,28 +16,37 @@ import Contact from '../components/contact/Contact';
 import ContactForm from '../components/contact-form/Contact-Form';
 import Footer from '../components/footer/Footer';
 import Map from '../components/map/Map';
+import { Helmet } from 'react-helmet-async';
 
 const HomePage = () => {
   return (
-    <div>
-      <Header />
-      <Intro />
-      <About />
-      <Services />
-      <Featured />
-      <News />
-      <Details />
-      <Impressed />
-      <Portfolio />
-      <Team />
-      <Talk />
-      <Price />
-      <Subscribe />
-      <Contact />
-      <ContactForm />
-      <Map />
-      <Footer />
-    </div>
+    <>
+      <Helmet>
+        <title>BOUNCY - Home</title>
+        <meta name="description" content="BOUNCY lorem description" />
+        <meta name="keywords" content="BOUNCY, page, react, About" />
+        <meta name="author" content="BOUNCY" />
+      </Helmet>
+      <div>
+        <Header />
+        <Intro />
+        <About />
+        <Services />
+        <Featured />
+        <News />
+        <Details />
+        <Impressed />
+        <Portfolio />
+        <Team />
+        <Talk />
+        <Price />
+        <Subscribe />
+        <Contact />
+        <ContactForm />
+        <Map />
+        <Footer />
+      </div>
+    </>
   );
 };
 

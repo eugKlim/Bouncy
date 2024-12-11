@@ -6,7 +6,6 @@
 
 .header {
   padding: 30px 0;
-  // padding: 44px 0;
   position: absolute;
   width: 100%;
   z-index: 990;
@@ -16,6 +15,7 @@
   }
   &-logo {
     @include logo;
+    cursor: pointer;
   }
   &-nav {
     & ul {

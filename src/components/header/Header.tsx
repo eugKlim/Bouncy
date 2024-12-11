@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './header.scss';
 import useScrollSizeWindow from '../../hooks/useScrollSizeWindow';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 const NavDb = [
   {
@@ -31,9 +31,10 @@ const NavDb = [
 ];
 
 const Header = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [isActiveBurger, setIsActiveBurger] = useState(false);
   const howScrollY = useScrollSizeWindow();
-  const location = useLocation();
   const isHomePage = location.pathname === '/home';
 
   const toggleBurger = () => {
@@ -57,7 +58,9 @@ const Header = () => {
     >
       <div className="container">
         <div className="header-inner">
-          <h1 className="header-logo">Bouncy</h1>
+          <h1 className="header-logo" onClick={() => navigate('/home')}>
+            Bouncy
+          </h1>
           <nav
             className={`${isActiveBurger && 'active'} header-nav`}
             onClick={() => toggleBurger()}
