@@ -1,4 +1,3 @@
-import React from 'react';
 import './impressed.scss';
 const Impressed = () => {
   return (

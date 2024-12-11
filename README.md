@@ -1,50 +1,77 @@
-# React + TypeScript + Vite
+# Проект написан на:
+  - React
+  - TypeScript
+  - Scss
+  - Компилятор Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<br>
 
-Currently, two official plugins are available:
+# Что реализовано в этом проекте?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Шапка сайта (header):
+   - При скролле header становится фиксированным.
+   - Выдаётся визуальный актив роутсу, на котором находишься.
 
-## Expanding the ESLint configuration
+2. Реализована плавный скрол `smooth scroll`.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+3. Реализована функционал скрытия текста.
 
-- Configure the top-level `parserOptions` property like this:
+4. Функция скрытия блоков, для планшетов/телефонов. Если в главном блоке, карточек больше 2х, то применятся скрытие, и добавляется кнопка `show more` с лёгким фоновым, затухающим затемнением, под ней. Чтобы не отображать большую ленту фото, которые не интересны пользователю.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+5. Табы.
+
+6. Фильтрация по категориям. При клике на категорию(на тел/планшетах) `кнопка show more` скроется(речь о `Функция скрытия блоков`), и покажется весь контент выбранной вами категории. 
+
+7. Попап.
+
+8. Splide slider.
+
+9. Бургер-меню.
+
+10. На телефонах/планшетах hover активен сразу, на телефонах можно будет активировать hover, при нажатии на кнопку.
+
+11. Интегрирован Google Maps.
+
+12. Адаптация (Media Queries) для телефонов/планшетов.
+
+13. Masonry сетка.
+
+14. Все фото в `webp` формате А для иконок формат `svg`.
+
+15. Если на элементе, класс active, то к нему hover применятся не будет.
+
+16. Сео оптимизация `react-helmet`, и теги для скрин ридеров (accessibility).
+
+
+<br>
+
+<br>
+
+
+[🔗 Ссылка на сайт](https://eugklim.github.io/Bouncy/)
+
+<br>
+
+<br>
+
+<br>
+
+# Установка и запуск проекта:
+
+1. Клонировать репозиторий:
+
+```ruby
+git clone https://github.com/eugKlim/Bouncy.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Установить зависимости:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```ruby
+npm install
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+3. Запустить проект:
+
+```ruby
+npm run dev
 ```
