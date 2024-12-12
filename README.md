@@ -48,7 +48,7 @@
 <br>
 
 
-[🔗 Ссылка на сайт](https://bouncyy.vercel.app/home)
+[🔗 Ссылка на сайт](https://bouncyy.vercel.app/)
 
 <br>
 
