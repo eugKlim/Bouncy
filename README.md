@@ -2,7 +2,6 @@
   - React
   - TypeScript
   - Scss
-  - Компилятор Vite
 
 <br>
 

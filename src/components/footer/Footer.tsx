@@ -18,10 +18,7 @@ const Footer = () => {
             <img src="/image/global-icons/linkedin.svg" alt="linkedIn" />
           </a>
           <a href="#" title="instagram" aria-label="link to instagram">
-            <img
-              src="/image/global-icons/instagramm.svg"
-              alt="instagram"
-            />
+            <img src="/image/global-icons/instagramm.svg" alt="instagram" />
           </a>
           <a href="#" title="vimeo" aria-label="link to vimeo">
             <img src="/image/global-icons/vimeo.svg" alt="vimeo" />

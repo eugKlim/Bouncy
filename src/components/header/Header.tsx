@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import './header.scss';
 import useScrollSizeWindow from '../../hooks/useScrollSizeWindow';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import './header.scss';
 
 const NavDb = [
   {
@@ -33,7 +33,7 @@ const NavDb = [
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [isActiveBurger, setIsActiveBurger] = useState(false);
+  const [isActiveBurger, setIsActiveBurger] = useState<boolean>(false);
   const howScrollY = useScrollSizeWindow();
   const isHomePage = location.pathname === '/home';
 
@@ -41,7 +41,7 @@ const Header = () => {
     setIsActiveBurger(!isActiveBurger);
   };
 
-  const [isFixedHeader, setIsFixedHeader] = useState(false);
+  const [isFixedHeader, setIsFixedHeader] = useState<boolean>(false);
   useEffect(() => {
     if (howScrollY >= 600) {
       setIsFixedHeader(true);

@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
-import './featured.scss';
 import useWindowWidth from '../../hooks/useWindowWidth';
+import './featured.scss';
+
+interface IFeaturedDb {
+  title: string;
+  image: string;
+}
 
 const FeaturedDb = [
   {
@@ -21,8 +26,8 @@ const Featured = () => {
   const width = useWindowWidth();
 
   // скрытие блоков на тел
-  const [isHideBlock, setIsHideBlock] = useState(false);
-  const [hideBlocks, setHideBlocks] = useState(FeaturedDb);
+  const [isHideBlock, setIsHideBlock] = useState<boolean>(false);
+  const [hideBlocks, setHideBlocks] = useState<IFeaturedDb[]>(FeaturedDb);
 
   const toggleHideBLock = () => {
     setHideBlocks(FeaturedDb);

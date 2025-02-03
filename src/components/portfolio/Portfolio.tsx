@@ -88,7 +88,7 @@ const Portfolio = () => {
     dataItems: PortfolioItemsDb,
   });
 
-  const [activeNav, setActiveNav] = useState(0);
+  const [activeNav, setActiveNav] = useState<number>(0);
   const [selectCategory, setSelectCategory] = useState<IPortfolioItemsDb[]>([]);
   const getCategory = (userCategory: string, index: number) => {
     setActiveNav(index);
@@ -107,8 +107,8 @@ const Portfolio = () => {
     selectCategory.length !== 0 ? selectCategory : PortfolioItemsDb;
 
   // Скрытие блоков на тел
-  const [isHideBlock, setIsHideBlock] = useState(false);
-  const [hideBlocks, setHideBlocks] = useState(itemsData);
+  const [isHideBlock, setIsHideBlock] = useState<boolean>(false);
+  const [hideBlocks, setHideBlocks] = useState<IPortfolioItemsDb[]>(itemsData);
 
   useEffect(() => {
     setHideBlocks(itemsData);

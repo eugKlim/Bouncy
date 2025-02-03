@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const useScrollSizeWindow = () => {
-  const [howScrollY, setHowScrollY] = useState(0);
+  const [howScrollY, setHowScrollY] = useState<number>(0);
 
   useEffect(() => {
     const handleScroll = () => {

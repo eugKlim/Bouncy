@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './about.scss';
 const About = () => {
-  const [isHidden, setIsHidden] = useState(true);
+  const [isHidden, setIsHidden] = useState<boolean>(true);
 
   return (
     <section className="about" id="about">

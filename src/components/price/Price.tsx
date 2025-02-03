@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import './price.scss';
 import Popup from '../Popup/Popup';
+import './price.scss';
 
 const Price = () => {
-  const [popupIsOpen, setPopupIsOpen] = useState(false);
+  const [popupIsOpen, setPopupIsOpen] = useState<boolean>(false);
   const openPopup = () => setPopupIsOpen(true);
   const closePopup = () => setPopupIsOpen(false);
 
@@ -37,8 +37,8 @@ const Price = () => {
           </div>
           {/*  */}
           <Popup isOpen={popupIsOpen} onRequestClose={closePopup}>
-            <h6 className='price-popup__title'>LETS START</h6>
-            <p className='price-popup__text'>
+            <h6 className="price-popup__title">LETS START</h6>
+            <p className="price-popup__text">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
               nulla architecto laudantium unde officiis atque repellendus,
               corrupti a quaerat consectetur alias deleniti. Delectus
