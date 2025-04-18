@@ -20,21 +20,25 @@ import NotFoundPage from './pages/NotFoundPage';
 const App = () => {
   return (
     <HelmetProvider>
-      <Router>
-        <ScrollToTop />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/team" element={<TeamPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <div className="wrapper">
+        <Router>
+          <ScrollToTop />
+          <Header />
+          <main className="main">
+            <Routes>
+              <Route path="/" element={<Navigate to="/home" />} />
+              <Route path="/home" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/portfolio" element={<PortfolioPage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/team" element={<TeamPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </main>
+          <Footer />
+        </Router>
+      </div>
     </HelmetProvider>
   );
 };

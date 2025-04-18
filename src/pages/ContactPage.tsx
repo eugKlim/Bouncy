@@ -10,11 +10,8 @@ const ContactPage = () => {
         <meta name="keywords" content="BOUNCY, page, react, About" />
         <meta name="author" content="BOUNCY" />
       </Helmet>
-      <div
-        className="page"
-        style={{ backgroundColor: '#f3f3f3', height: '100vh' }}
-      >
-        <Contact />f
+      <div className="page" style={{ backgroundColor: '#f3f3f3' }}>
+        <Contact />
       </div>
     </>
   );
