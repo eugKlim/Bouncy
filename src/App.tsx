@@ -7,6 +7,7 @@ import {
 import { HelmetProvider } from 'react-helmet-async';
 
 import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 import ScrollToTop from './utils/ScrollToTop';
 
 import HomePage from './pages/HomePage';
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="/team" element={<TeamPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        <Footer />
       </Router>
     </HelmetProvider>
   );

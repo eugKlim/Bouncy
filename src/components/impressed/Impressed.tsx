@@ -13,7 +13,7 @@ const Impressed = () => {
             </p>
             <p className="impressed-info__author">- Abdullah Noman</p>
             <p className="impressed-info__text">
-              Creatice Director, {' '}
+              Creatice Director,{' '}
               <a
                 href="#"
                 title="Code Cafe"
@@ -26,7 +26,12 @@ const Impressed = () => {
           </div>
 
           <div className="impressed-img">
-            <img src="/image/impressed/display.webp" alt="image" />
+            <img
+              src="/image/impressed/display.webp"
+              alt="image"
+              width="412"
+              height="338"
+            />
           </div>
         </div>
       </div>

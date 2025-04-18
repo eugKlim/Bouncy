@@ -1,4 +1,4 @@
-@import '../style/vars.scss';
+@use '../style/vars.scss' as *;
 
 .not-found {
   @include center-block;

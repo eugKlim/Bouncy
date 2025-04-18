@@ -1,4 +1,4 @@
-@import '../../style/vars.scss';
+@use '../../style/vars.scss' as *;
 .map {
   .container {
     max-width: 1366px;

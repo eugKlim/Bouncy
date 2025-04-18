@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Masonry from 'react-masonry-css';
 import './portfolio.scss';
 
 import useHoverMobile from '../../hooks/useHoverMobile';
@@ -8,6 +9,7 @@ import useWindowWidth from '../../hooks/useWindowWidth';
 type IPortfolioItemsDb = {
   category: string;
   image: string;
+  imageSize: number[];
 };
 
 const PortfolioDbNav = [
@@ -35,50 +37,62 @@ const PortfolioItemsDb: IPortfolioItemsDb[] = [
   {
     category: 'Print',
     image: '/image/portfolio/portfolio-1.webp',
+    imageSize: [268, 358], // width, height
   },
   {
     category: 'Identity',
     image: '/image/portfolio/portfolio-2.webp',
+    imageSize: [268, 277],
   },
   {
     category: 'Print',
     image: '/image/portfolio/portfolio-3.webp',
+    imageSize: [268, 298],
   },
   {
     category: 'HTML',
     image: '/image/portfolio/portfolio-4.webp',
+    imageSize: [268, 358],
   },
   {
     category: 'Identity',
     image: '/image/portfolio/portfolio-5.webp',
+    imageSize: [268, 358],
   },
   {
     category: 'Branding',
     image: '/image/portfolio/portfolio-6.webp',
+    imageSize: [268, 341],
   },
   {
     category: 'Branding',
     image: '/image/portfolio/portfolio-7.webp',
+    imageSize: [268, 371],
   },
   {
     category: 'Branding',
     image: '/image/portfolio/portfolio-8.webp',
+    imageSize: [268, 267],
   },
   {
     category: 'Branding',
     image: '/image/portfolio/portfolio-9.webp',
+    imageSize: [268, 207],
   },
   {
     category: 'Wordpress',
     image: '/image/portfolio/portfolio-10.webp',
+    imageSize: [268, 354],
   },
   {
     category: 'Web',
     image: '/image/portfolio/portfolio-11.webp',
+    imageSize: [268, 253],
   },
   {
     category: 'Web',
     image: '/image/portfolio/portfolio-12.webp',
+    imageSize: [268, 298],
   },
 ];
 
@@ -158,68 +172,85 @@ const Portfolio = () => {
         <div
           className={`${isHideBlock && 'hidden-block-active'} portfolio-items`}
         >
-          {hideBlocks.map((item, index) => (
-            <div className={`portfolio-item ${item.category}`} key={index}>
-              <div className="portfolio-item__img">
-                <img src={item.image} alt="Image" />
-
-                {!hoverMobileState[index] && (
-                  <HoverMobileToggle
-                    index={index}
-                    hoverMobileState={hoverMobileState}
-                    openOrHiddenHover={openOrHiddenHover}
-                    isOpen={true}
+          <Masonry
+            breakpointCols={{
+              default: 4,
+              1100: 3,
+              890: 2,
+              620: 1,
+            }}
+            className="portfolio-masonry-grid"
+            columnClassName="portfolio-masonry-grid_column"
+          >
+            {hideBlocks.map((item, index) => (
+              <div className={`portfolio-item ${item.category}`} key={index}>
+                <div className="portfolio-item__img">
+                  <img
+                    src={item.image}
+                    alt="Image"
+                    width={item.imageSize[0]}
+                    height={item.imageSize[1]}
+                    loading="lazy"
                   />
-                )}
-              </div>
-              {/* hover */}
-              <div
-                className={`${
-                  hoverMobileState[index]
-                    ? 'show-transition-block'
-                    : 'hidden-transition-block'
-                } portfolio-item__hover`}
-              >
-                <h4 className="portfolio-item__hover-title">TITLE HERE</h4>
-                <p className="portfolio-item__hover-text">
-                  At vero eos et accusamus et iusto odio dignissimos ducimus
-                  quiblanditiis praesentium
-                </p>
-                <p className="portfolio-item__hover-btns">
-                  <button
-                    title="Share"
-                    className="portfolio-item__hover-btn-link"
-                    aria-label="share btn"
-                  >
-                    <img
-                      src="/image/global-icons/link-icon.svg"
-                      alt="Icon link"
-                    />
-                  </button>
-                  <button
-                    title="Like"
-                    className="portfolio-item__hover-btn-like"
-                    aria-label="like"
-                  >
-                    <img
-                      src="/image/global-icons/heart-icon.svg"
-                      alt="Icon like"
-                    />
-                  </button>
-                </p>
 
-                {hoverMobileState[index] && (
-                  <HoverMobileToggle
-                    index={index}
-                    hoverMobileState={hoverMobileState}
-                    openOrHiddenHover={openOrHiddenHover}
-                    isOpen={false}
-                  />
-                )}
+                  {!hoverMobileState[index] && (
+                    <HoverMobileToggle
+                      index={index}
+                      hoverMobileState={hoverMobileState}
+                      openOrHiddenHover={openOrHiddenHover}
+                      isOpen={true}
+                    />
+                  )}
+                </div>
+                {/* hover */}
+                <div
+                  className={`${
+                    hoverMobileState[index]
+                      ? 'show-transition-block'
+                      : 'hidden-transition-block'
+                  } portfolio-item__hover`}
+                >
+                  <h4 className="portfolio-item__hover-title">TITLE HERE</h4>
+                  <p className="portfolio-item__hover-text">
+                    At vero eos et accusamus et iusto odio dignissimos ducimus
+                    quiblanditiis praesentium
+                  </p>
+                  <p className="portfolio-item__hover-btns">
+                    <button
+                      title="Share"
+                      className="portfolio-item__hover-btn-link"
+                      aria-label="share btn"
+                    >
+                      <img
+                        src="/image/global-icons/link-icon.svg"
+                        alt="Icon link"
+                      />
+                    </button>
+                    <button
+                      title="Like"
+                      className="portfolio-item__hover-btn-like"
+                      aria-label="like"
+                    >
+                      <img
+                        src="/image/global-icons/heart-icon.svg"
+                        alt="Icon like"
+                      />
+                    </button>
+                  </p>
+
+                  {hoverMobileState[index] && (
+                    <HoverMobileToggle
+                      index={index}
+                      hoverMobileState={hoverMobileState}
+                      openOrHiddenHover={openOrHiddenHover}
+                      isOpen={false}
+                    />
+                  )}
+                </div>
+                {/* / */}
               </div>
-              {/* / */}
-            </div>
-          ))}
+            ))}
+          </Masonry>
           <button
             className={`${!isHideBlock && 'hidden'} hidden-block-btn`}
             onClick={toggleHideBLock}

@@ -1,5 +1,5 @@
-@import '../../style/vars.scss';
-@import '../../style/vars.scss';
+@use '../../style/vars.scss' as *;
+@use '../../style/vars.scss' as *;
 .bg-test {
   background: $color-darkGreen;
 }

@@ -26,7 +26,7 @@ const ServicesDbTab = [
     text: '2 GoodDay Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti obcaecati iste similique architecto aut dolorem nam, tenetur incidunt, labore officiis quia sit maiores, mollitia dignissimos cum? Nisi amet facilis explicabo quisquam, doloremque tempora? Neque maxime natus mollitia itaque modi facere qui nisi fugiat quidem consequuntur! Quasi delectus, ut ullam omnis veritatis, voluptatem enim deserunt in consectetur soluta esse quo sit!',
   },
   {
-    title: '3 Hello 3',
+    title: '3 Hello',
     text: '3 Hello Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti obcaecati iste similique architecto aut dolorem nam, tenetur incidunt, labore officiis quia sit maiores, mollitia dignissimos cum? Nisi amet facilis explicabo quisquam, doloremque tempora? Neque maxime natus mollitia itaque modi facere qui nisi fugiat quidem consequuntur! Quasi delectus, ut ullam omnis veritatis, voluptatem enim deserunt in consectetur soluta esse quo sit!',
   },
 ];
@@ -46,7 +46,12 @@ const Services = () => {
                   aria-label={item.title}
                   key={index}
                 >
-                  <img src={item.image} alt={item.title} />
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    width="25"
+                    height="25"
+                  />
                   {item.title}
                 </Tab>
               ))}

@@ -18,7 +18,12 @@ const Intro = () => {
           aria-label="scroll to section about"
           onClick={() => smoothScroll('about')}
         >
-          <img src="/image/global-icons/arrow.webp" alt="Button" />
+          <img
+            src="/image/global-icons/arrow.webp"
+            alt="Button"
+            width="12"
+            height="7"
+          />
         </button>
       </div>
     </section>

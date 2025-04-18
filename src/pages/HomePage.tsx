@@ -1,22 +1,27 @@
+import { lazy, Suspense } from 'react';
 import '../style/vars.scss';
-import Intro from '../components/intro/Intro';
+
+import { Helmet } from 'react-helmet-async';
+
 import Header from '../components/header/Header';
+import Intro from '../components/intro/Intro';
 import About from '../components/about/About';
 import Services from '../components/services/Services';
-import Featured from '../components/featured/Featured';
-import News from '../components/news/News';
-import Details from '../components/details/Details';
-import Impressed from '../components/impressed/Impressed';
-import Portfolio from '../components/portfolio/Portfolio';
-import Team from '../components/team/Team';
-import Talk from '../components/talk/Talk';
-import Price from '../components/price/Price';
-import Subscribe from '../components/subscribe/Subscribe';
-import Contact from '../components/contact/Contact';
-import ContactForm from '../components/contact-form/Contact-Form';
-import Footer from '../components/footer/Footer';
-import Map from '../components/map/Map';
-import { Helmet } from 'react-helmet-async';
+
+const Featured = lazy(() => import('../components/featured/Featured'));
+const News = lazy(() => import('../components/news/News'));
+const Details = lazy(() => import('../components/details/Details'));
+const Impressed = lazy(() => import('../components/impressed/Impressed'));
+const Portfolio = lazy(() => import('../components/portfolio/Portfolio'));
+const Team = lazy(() => import('../components/team/Team'));
+const Talk = lazy(() => import('../components/talk/Talk'));
+const Price = lazy(() => import('../components/price/Price'));
+const Subscribe = lazy(() => import('../components/subscribe/Subscribe'));
+const Contact = lazy(() => import('../components/contact/Contact'));
+const ContactForm = lazy(
+  () => import('../components/contact-form/Contact-Form')
+);
+const Map = lazy(() => import('../components/map/Map'));
 
 const HomePage = () => {
   return (
@@ -32,19 +37,20 @@ const HomePage = () => {
         <Intro />
         <About />
         <Services />
-        <Featured />
-        <News />
-        <Details />
-        <Impressed />
-        <Portfolio />
-        <Team />
-        <Talk />
-        <Price />
-        <Subscribe />
-        <Contact />
-        <ContactForm />
-        <Map />
-        <Footer />
+        <Suspense fallback={null}>
+          <Featured />
+          <News />
+          <Details />
+          <Impressed />
+          <Portfolio />
+          <Team />
+          <Talk />
+          <Price />
+          <Subscribe />
+          <Contact />
+          <ContactForm />
+          <Map />
+        </Suspense>
       </div>
     </>
   );

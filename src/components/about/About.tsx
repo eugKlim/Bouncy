@@ -44,7 +44,12 @@ const About = () => {
           </div>
 
           <div className="about-img">
-            <img src="/image/about/about-img__ipad.webp" alt="ipad" />
+            <img
+              src="/image/about/about-img__ipad.webp"
+              alt="ipad"
+              width="215"
+              height="350"
+            />
           </div>
         </div>
       </div>

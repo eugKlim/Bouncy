@@ -1,4 +1,4 @@
-@import '../../style/vars.scss';
+@use '../../style/vars.scss' as *;
 .hoverMobileBtn {
   position: absolute;
   padding: 10px;

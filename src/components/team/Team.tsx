@@ -64,6 +64,9 @@ const Team = () => {
                         <img
                           src={`/image/team/${item.image}.webp`}
                           alt="Image"
+                          width="285"
+                          height="364"
+                          loading="lazy"
                         />
                       </div>
 

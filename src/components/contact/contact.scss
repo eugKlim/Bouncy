@@ -1,4 +1,4 @@
-@import '../../style/vars.scss';
+@use '../../style/vars.scss' as *;
 .contact {
   padding: 70px;
   background-color: $color-superLightGray;

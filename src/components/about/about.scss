@@ -1,4 +1,4 @@
-@import '../../style/vars.scss';
+@use '../../style/vars.scss' as *;
 
 .about {
   padding: 80px 0 60px;

@@ -1,6 +1,6 @@
-@import './vars.scss';
-@import './stylereset.css';
-@import './fonts.scss';
+@use './vars.scss' as *;
+@use './stylereset.css' as *;
+@use './fonts.scss' as *;
 
 body {
   height: 100%;
