@@ -41,11 +41,10 @@
 
 15. Если на элементе, класс active, то к нему hover применятся не будет.
 
-16. Сео оптимизация `react-helmet`, и теги для скрин ридеров (accessibility).
+16. Сео оптимизация `react-helmet`, и теги для скрин ридеров (accessibility) / open graph.
 
-17. Мета теги / open graph.
+17. code splitting, lazy loading.
 
-18. Для производительности добавлен code splitting
 
 <br>
 
