@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
-import '../style/not-found.scss';
+import './not-found.scss';
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
@@ -10,13 +10,13 @@ const NotFoundPage = () => {
     }, 3000);
     return () => clearTimeout(timer);
   }, [navigate]);
+
   return (
     <div>
       <div className="page not-found container">
-        <h2>Такой страницы здесь нет!</h2>
+        <h2>There is no such page here!</h2>
         <p>
-          Перехожу на <NavLink to="/">главную страницу</NavLink> через 3
-          секунды...
+          Going to <NavLink to="/">home page</NavLink> in 3 seconds...
         </p>
       </div>
     </div>

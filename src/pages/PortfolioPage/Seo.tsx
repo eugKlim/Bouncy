@@ -1,7 +1,6 @@
-import Portfolio from '../components/portfolio/Portfolio';
 import { Helmet } from 'react-helmet-async';
 
-const PortfolioPage = () => {
+const Seo = () => {
   return (
     <>
       <Helmet>
@@ -10,11 +9,8 @@ const PortfolioPage = () => {
         <meta name="keywords" content="BOUNCY, page, react, About" />
         <meta name="author" content="BOUNCY" />
       </Helmet>
-      <div className="page">
-        <Portfolio />
-      </div>
     </>
   );
 };
 
-export default PortfolioPage;
+export default Seo;

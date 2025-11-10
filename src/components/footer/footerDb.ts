@@ -1,0 +1,42 @@
+export const socialLinksDb = [
+  {
+    id: 1,
+    href: '#',
+    title: 'facebook',
+    ariaLabel: 'link to facebook',
+    iconSrc: '/image/global-icons/facebook.svg',
+    alt: 'facebook',
+  },
+  {
+    id: 2,
+    href: '#',
+    title: 'twitter',
+    ariaLabel: 'link to twitter',
+    iconSrc: '/image/global-icons/twitter.svg',
+    alt: 'twitter',
+  },
+  {
+    id: 3,
+    href: '#',
+    title: 'linkedIn',
+    ariaLabel: 'link to linkedIn',
+    iconSrc: '/image/global-icons/linkedin.svg',
+    alt: 'linkedIn',
+  },
+  {
+    id: 4,
+    href: '#',
+    title: 'instagram',
+    ariaLabel: 'link to instagram',
+    iconSrc: '/image/global-icons/instagramm.svg',
+    alt: 'instagram',
+  },
+  {
+    id: 5,
+    href: '#',
+    title: 'vimeo',
+    ariaLabel: 'link to vimeo',
+    iconSrc: '/image/global-icons/vimeo.svg',
+    alt: 'vimeo',
+  },
+];

@@ -1,4 +1,5 @@
 import './impressed.scss';
+
 const Impressed = () => {
   return (
     <section className="impressed " id="impressed">

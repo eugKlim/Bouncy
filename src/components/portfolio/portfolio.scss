@@ -22,7 +22,7 @@
       display: inline-block;
       margin: 0 13px 30px;
       &.active {
-        color: $color-green;
+        color: $color-green !important;
       }
       &.active::before {
         content: '';

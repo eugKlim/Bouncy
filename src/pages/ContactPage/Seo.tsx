@@ -1,20 +1,16 @@
-import Services from '../components/services/Services';
 import { Helmet } from 'react-helmet-async';
 
-const ServicesPage = () => {
+const Seo = () => {
   return (
     <>
       <Helmet>
-        <title>BOUNCY - Services</title>
+        <title>BOUNCY - Contact</title>
         <meta name="description" content="BOUNCY lorem description" />
         <meta name="keywords" content="BOUNCY, page, react, About" />
         <meta name="author" content="BOUNCY" />
       </Helmet>
-      <div className="page" style={{ backgroundColor: '#f3f3f3' }}>
-        <Services />
-      </div>
     </>
   );
 };
 
-export default ServicesPage;
+export default Seo;

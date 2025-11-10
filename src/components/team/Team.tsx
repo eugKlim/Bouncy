@@ -1,36 +1,8 @@
-// @ts-ignore
+import './team.scss';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import './team.scss';
-
+import { teamSlidesDb } from './teamDb';
 const Team = () => {
-  const TeamSlidesDb = [
-    {
-      image: 'team-1',
-      name: 'Abdullah Noman',
-      work: ' Creative Director, Code Cafe 1',
-      branding: 80,
-      webDesign: 65,
-      userInterface: 75,
-    },
-    {
-      image: 'team-2',
-      name: 'Emma Thompson',
-      work: ' Creative Director, Code Cafe 2',
-      branding: 30,
-      webDesign: 15,
-      userInterface: 100,
-    },
-    {
-      image: 'team-3',
-      name: 'Benjamin Walker',
-      work: 'Creative Director, Code Cafe 3',
-      branding: 81,
-      webDesign: 67,
-      userInterface: 39,
-    },
-  ];
-
   return (
     <section className="team" id="team">
       <div className="container">
@@ -56,7 +28,7 @@ const Team = () => {
               }}
               aria-label="Splide Slider"
             >
-              {TeamSlidesDb.map((item, index) => (
+              {teamSlidesDb.map((item, index) => (
                 <SplideSlide key={index}>
                   <div className="swiper-slide">
                     <div className="team-slide">

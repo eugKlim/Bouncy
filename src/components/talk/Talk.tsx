@@ -1,6 +1,7 @@
 import './talk.scss';
 import useSmoothScroll from '../../hooks/useSmoothScroll';
 const smoothScroll = useSmoothScroll();
+
 const Talk = () => {
   return (
     <section className="talk " id="talk">

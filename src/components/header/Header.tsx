@@ -1,54 +1,60 @@
-import { useEffect, useState } from 'react';
+import './header.scss';
+import { useEffect, useState, memo, useCallback } from 'react';
 import useScrollSizeWindow from '../../hooks/useScrollSizeWindow';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import './header.scss';
+import { menuDb } from './menu';
 
-const NavDb = [
-  {
-    title: 'Hello',
-    link: 'home',
-  },
-  {
-    title: 'About',
-    link: 'about',
-  },
-  {
-    title: 'Services',
-    link: 'services',
-  },
-  {
-    title: 'Portfolio',
-    link: 'portfolio',
-  },
-  {
-    title: 'Team',
-    link: 'team',
-  },
-  {
-    title: 'Contact',
-    link: 'contact',
-  },
-];
+const Navigation = memo(
+  ({
+    isActiveBurger,
+    toggleBurger,
+  }: {
+    isActiveBurger: boolean;
+    toggleBurger: () => void;
+  }) => (
+    <nav
+      className={`${isActiveBurger && 'active'} header-nav`}
+      onClick={toggleBurger}
+    >
+      <ul className={`${isActiveBurger && 'active'}`}>
+        {menuDb.map((item, index) => (
+          <li key={index}>
+            <NavLink
+              to={item.link}
+              className="header-nav__link"
+              aria-label={`link to section ${item.title}`}
+            >
+              {item.title}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+);
 
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [isActiveBurger, setIsActiveBurger] = useState<boolean>(false);
   const howScrollY = useScrollSizeWindow();
   const isHomePage = location.pathname === '/home';
-
-  const toggleBurger = () => {
-    setIsActiveBurger(!isActiveBurger);
-  };
-
+  const [isActiveBurger, setIsActiveBurger] = useState<boolean>(false);
   const [isFixedHeader, setIsFixedHeader] = useState<boolean>(false);
+
+  const toggleBurger = useCallback(() => {
+    setIsActiveBurger((prev) => !prev);
+  }, []);
+
+  const handleLogoClick = useCallback(() => {
+    navigate('/home');
+  }, [navigate]);
+
   useEffect(() => {
-    if (howScrollY >= 600) {
-      setIsFixedHeader(true);
-    } else {
-      setIsFixedHeader(false);
+    const shouldFixHeader = howScrollY >= 600;
+    if (shouldFixHeader !== isFixedHeader) {
+      setIsFixedHeader(shouldFixHeader);
     }
-  }, [howScrollY]);
+  }, [howScrollY, isFixedHeader]);
 
   return (
     <header
@@ -58,32 +64,20 @@ const Header = () => {
     >
       <div className="container">
         <div className="header-inner">
-          <h1 className="header-logo" onClick={() => navigate('/home')}>
+          <h1 className="header-logo" onClick={handleLogoClick}>
             Bouncy
           </h1>
-          <nav
-            className={`${isActiveBurger && 'active'} header-nav`}
-            onClick={() => toggleBurger()}
-          >
-            <ul className={`${isActiveBurger && 'active'}`}>
-              {NavDb.map((item, index) => (
-                <li key={index}>
-                  <NavLink
-                    to={`/${item.link}`}
-                    className="header-nav__link"
-                    aria-label={`link to section ${item.title}`}
-                  >
-                    {item.title}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </nav>
+
+          <Navigation
+            isActiveBurger={isActiveBurger}
+            toggleBurger={toggleBurger}
+          />
+
           <button
             title="menu"
             className={`${isActiveBurger && 'active'} burger`}
             aria-label="menu button"
-            onClick={() => toggleBurger()}
+            onClick={toggleBurger}
           >
             <span></span>
             <span></span>
@@ -95,4 +89,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

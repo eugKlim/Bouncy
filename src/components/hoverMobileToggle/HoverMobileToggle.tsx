@@ -1,7 +1,13 @@
 import './hoverMobileToggle.scss';
-import { IHoverMobileToggle } from '../../types/types';
 
-const HoverMobileToggle: React.FC<IHoverMobileToggle> = ({
+interface Iprops {
+  index: number;
+  hoverMobileState: boolean[];
+  openOrHiddenHover: (index: number) => void;
+  isOpen: boolean;
+}
+
+const HoverMobileToggle: React.FC<Iprops> = ({
   index,
   hoverMobileState,
   openOrHiddenHover,

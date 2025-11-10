@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './about.scss';
+
 const About = () => {
   const [isHidden, setIsHidden] = useState<boolean>(true);
 

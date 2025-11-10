@@ -1,5 +1,6 @@
-@use './vars.scss' as *;
 @use './stylereset.css' as *;
+@use './vars.scss' as *;
+@use './loader.scss' as *;
 @use './fonts.scss' as *;
 
 body {
@@ -11,6 +12,7 @@ body {
 body.noScroll {
   overflow: hidden;
 }
+
 ::-webkit-scrollbar {
   width: 10px;
 }

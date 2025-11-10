@@ -32,7 +32,11 @@ const useHoverMobile = ({ dataItems }: IUseHoverMobile) => {
     });
   };
 
-  return { hoverMobileState, openOrHiddenHover };
+  const clearState = () => {
+    setHoverMobileState(dataItems.map(() => false));
+  };
+
+  return { hoverMobileState, openOrHiddenHover, clearState };
 };
 
 export default useHoverMobile;

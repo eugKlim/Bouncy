@@ -1,20 +1,16 @@
-import Contact from '../components/contact/Contact';
 import { Helmet } from 'react-helmet-async';
 
-const ContactPage = () => {
+const Seo = () => {
   return (
     <>
       <Helmet>
-        <title>BOUNCY - Contact</title>
+        <title>BOUNCY - About</title>
         <meta name="description" content="BOUNCY lorem description" />
         <meta name="keywords" content="BOUNCY, page, react, About" />
         <meta name="author" content="BOUNCY" />
       </Helmet>
-      <div className="page" style={{ backgroundColor: '#f3f3f3' }}>
-        <Contact />
-      </div>
     </>
   );
 };
 
-export default ContactPage;
+export default Seo;

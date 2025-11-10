@@ -1,5 +1,11 @@
 import './details.scss';
 const Details = () => {
+  const indicatorsDb = [
+    { percent: '80%', title: 'Branding' },
+    { percent: '75%', title: 'Web Design' },
+    { percent: '60%', title: 'UI/UX' },
+  ];
+
   return (
     <section className="details">
       <div className="container">
@@ -49,32 +55,16 @@ const Details = () => {
           </div>
 
           <div className="details-indicators">
-            <div className="details-indicators__item">
-              <div className="details-indicators__circle">
-                <div className="details-indicators__block">
-                  <p className="details-indicators__number">80%</p>
+            {indicatorsDb.map(({ percent, title }) => (
+              <div className="details-indicators__item" key={title}>
+                <div className="details-indicators__circle">
+                  <div className="details-indicators__block">
+                    <p className="details-indicators__number">{percent}</p>
+                  </div>
                 </div>
+                <div className="details-indicators__title">{title}</div>
               </div>
-              <div className="details-indicators__title">Branding</div>
-            </div>
-
-            <div className="details-indicators__item">
-              <div className="details-indicators__circle">
-                <div className="details-indicators__block">
-                  <p className="details-indicators__number">75%</p>
-                </div>
-              </div>
-              <div className="details-indicators__title">Web Design</div>
-            </div>
-
-            <div className="details-indicators__item">
-              <div className="details-indicators__circle">
-                <div className="details-indicators__block">
-                  <p className="details-indicators__number">60%</p>
-                </div>
-              </div>
-              <div className="details-indicators__title">UI/UX</div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

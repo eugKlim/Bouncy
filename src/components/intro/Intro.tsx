@@ -1,5 +1,6 @@
 import './intro.scss';
 import useSmoothScroll from '../../hooks/useSmoothScroll';
+
 const Intro = () => {
   const smoothScroll = useSmoothScroll();
   return (
