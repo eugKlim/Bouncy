@@ -24,7 +24,7 @@ const Portfolio = () => {
   }, [width, portfolioItemsDb]);
 
   return (
-    <section className="portfolio" id="portfolio">
+    <section className="portfolio page-dark" id="portfolio">
       <div className="container">
         <h2 className="portfolio-title">THE PORTFOLIO</h2>
         <h3 className="portfolio-subtitle">

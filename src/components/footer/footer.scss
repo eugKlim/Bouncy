@@ -19,3 +19,11 @@
     }
   }
 }
+
+html.dark {
+  .footer {
+    &-title {
+      color: $color-superLightGray;
+    }
+  }
+}

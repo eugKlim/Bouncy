@@ -19,6 +19,7 @@
     background-color: $color-white;
     padding-bottom: 20px;
     margin: 0 10px 20px;
+
     &__img {
       width: 287px;
       height: 145px;
@@ -34,6 +35,14 @@
       &-title {
         padding: 20px 0;
       }
+    }
+  }
+}
+
+html.dark {
+  .contact {
+    &-card {
+      background-color: rgb(66, 66, 66) !important;
     }
   }
 }

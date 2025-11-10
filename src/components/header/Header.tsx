@@ -4,6 +4,8 @@ import useScrollSizeWindow from '../../hooks/useScrollSizeWindow';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { menuDb } from './menu';
 
+import { useTheme } from '../../providers/ThemeProvider';
+
 const Navigation = memo(
   ({
     isActiveBurger,
@@ -40,6 +42,7 @@ const Header = () => {
   const isHomePage = location.pathname === '/home';
   const [isActiveBurger, setIsActiveBurger] = useState<boolean>(false);
   const [isFixedHeader, setIsFixedHeader] = useState<boolean>(false);
+  const { handleToggleTheme, theme } = useTheme();
 
   const toggleBurger = useCallback(() => {
     setIsActiveBurger((prev) => !prev);
@@ -68,21 +71,32 @@ const Header = () => {
             Bouncy
           </h1>
 
-          <Navigation
-            isActiveBurger={isActiveBurger}
-            toggleBurger={toggleBurger}
-          />
+          <div className="header-left">
+            <Navigation
+              isActiveBurger={isActiveBurger}
+              toggleBurger={toggleBurger}
+            />
 
-          <button
-            title="menu"
-            className={`${isActiveBurger && 'active'} burger`}
-            aria-label="menu button"
-            onClick={toggleBurger}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+            <select
+              className="header-theme"
+              onChange={(e) => handleToggleTheme(e.target.value)}
+              value={theme}
+            >
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+
+            <button
+              title="menu"
+              className={`${isActiveBurger && 'active'} burger`}
+              aria-label="menu button"
+              onClick={toggleBurger}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
       </div>
     </header>

@@ -2,7 +2,7 @@ import './subscribe.scss';
 
 const Subscribe = () => {
   return (
-    <section className="subscribe " id="subscribe">
+    <section className="subscribe  page-dark" id="subscribe">
       <div className="container">
         <h2 className="subscribe-title">Subscribe us</h2>
         <h3 className="subscribe-subtitle">

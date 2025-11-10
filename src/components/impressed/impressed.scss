@@ -65,3 +65,9 @@
     background-size: cover;
   }
 }
+
+html.dark {
+  .impressed-info__description {
+    color: $color-superLightGray;
+  }
+}

@@ -46,6 +46,7 @@
 
 17. code splitting, lazy loading.
 
+18. Темная/Светлая темы.
 
 <br>
 

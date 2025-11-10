@@ -175,3 +175,16 @@
     }
   }
 }
+
+html.dark {
+  .swiper-slide {
+    .team-slide {
+      &__title {
+        color: $color-white;
+      }
+      &__text {
+        color: $color-superLightGray;
+      }
+    }
+  }
+}

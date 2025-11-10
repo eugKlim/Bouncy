@@ -2,7 +2,7 @@ import './footer.scss';
 import { socialLinksDb } from './footerDb';
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer page-dark">
       <div className="container">
         <h2 className="footer-logo">Bouncy</h2>
         <h3 className="footer-title">Copyright 2025. All rights Reserved</h3>

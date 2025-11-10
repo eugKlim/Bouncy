@@ -4,7 +4,7 @@ import '@splidejs/react-splide/css';
 import { teamSlidesDb } from './teamDb';
 const Team = () => {
   return (
-    <section className="team" id="team">
+    <section className="team page-dark" id="team">
       <div className="container">
         <h2 className="team-title">THE TEAM</h2>
         <h3 className="team-subtitle">

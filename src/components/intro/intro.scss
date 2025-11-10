@@ -15,7 +15,7 @@
   &-title {
     @include title-style;
     font-size: 35px;
-    color: $color-white;
+    color: $color-white !important;
     letter-spacing: 15px;
     margin-top: 200px;
     line-height: 50px;

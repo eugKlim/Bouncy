@@ -2,7 +2,7 @@ import './impressed.scss';
 
 const Impressed = () => {
   return (
-    <section className="impressed " id="impressed">
+    <section className="impressed page-dark " id="impressed">
       <div className="container">
         <div className="impressed-inner">
           <div className="impressed-info">

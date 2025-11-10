@@ -11,7 +11,6 @@ interface IFeaturedDb {
 const Featured = () => {
   const width = useWindowWidth();
 
-  // скрытие блоков на тел
   const [isHideBlock, setIsHideBlock] = useState<boolean>(false);
   const [hideBlocks, setHideBlocks] = useState<IFeaturedDb[]>(FeaturedDb);
 
@@ -31,13 +30,12 @@ const Featured = () => {
       setHideBlocks(FeaturedDb);
     }
   }, [width]);
-  //
 
   return (
-    <section className="featured">
+    <section className="featured page-dark">
       <div className="container">
         <h2 className="featured-title">FEATURED PROJECTS</h2>
-        <h3 className="featured-subTitle">
+        <h3 className="featured-subtitle">
           At vero eos et accusamus et iusto odio dignissimos ducimus qui
           blanditiis praesentium
         </h3>

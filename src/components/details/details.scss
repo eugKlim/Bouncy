@@ -172,3 +172,19 @@
     }
   }
 }
+
+html.dark {
+  .details {
+    &-description__item-title {
+      color: $color-white;
+    }
+    &-indicators {
+      &__number {
+        color: $color-blackGray;
+      }
+      &__title {
+        color: $color-superLightGray;
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@
 @use './vars.scss' as *;
 @use './loader.scss' as *;
 @use './fonts.scss' as *;
+@use './darkTheme.scss' as *;
 
 body {
   height: 100%;
@@ -78,4 +79,8 @@ body.noScroll {
 
 .page {
   padding-top: 84px;
+}
+
+select {
+  cursor: pointer;
 }

@@ -7,7 +7,7 @@ const Details = () => {
   ];
 
   return (
-    <section className="details">
+    <section className="details page-dark">
       <div className="container">
         <h2 className="details-title">Details Services</h2>
         <h3 className="details-subtitle">

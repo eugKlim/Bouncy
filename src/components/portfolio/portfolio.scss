@@ -190,9 +190,6 @@
 
 @media (max-width: 890px) {
   .portfolio {
-    &-items {
-      // columns: 2;
-    }
     &-item {
       &__hover {
         opacity: 0;
@@ -214,10 +211,13 @@
   }
 }
 
-@media (max-width: 620px) {
+html.dark {
   .portfolio {
-    &-items {
-      // columns: 1;
+    &-menu__filter-btn {
+      color: $color-white;
+      &:hover {
+        color: $color-lightGray;
+      }
     }
   }
 }

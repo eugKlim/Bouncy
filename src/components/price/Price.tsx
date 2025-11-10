@@ -8,7 +8,7 @@ const Price = () => {
   const closePopup = () => setPopupIsOpen(false);
 
   return (
-    <section className="price">
+    <section className="price page-dark">
       <h2 className="price-title">Our Price</h2>
       <h3 className="price-subtitle">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui

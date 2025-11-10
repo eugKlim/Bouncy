@@ -3,7 +3,7 @@ import { inputsDb } from './inputsDb';
 
 const ContactForm = () => {
   return (
-    <section className="contactform" id="contactform">
+    <section className="contactform page-dark" id="contactform">
       <div className="container">
         <form className="contactform-form">
           <div className="contactform-form__info">

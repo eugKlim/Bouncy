@@ -1,5 +1,6 @@
 @use '../../style/vars.scss' as *;
 @use '../../style/hiddenBlock.scss' as *;
+
 .featured {
   padding: 72px 0;
 
@@ -10,7 +11,7 @@
   &-title {
     @include title-style;
   }
-  &-subTitle {
+  &-subtitle {
     @include subTitle-style;
   }
   &-items {

@@ -4,7 +4,7 @@ import { servicesDbTab, servicesDbBtn } from './servicesDb';
 
 const Services = () => {
   return (
-    <section className="services" id="services">
+    <section className="services page-dark" id="services">
       <div className="container">
         <div className="services-inner">
           <h2 className="services-title">SERVICES ABOUT BOUNCY</h2>

@@ -3,7 +3,7 @@ import './news.scss';
 const News = () => {
   const smoothScroll = useSmoothScroll();
   return (
-    <section className="news " id="news">
+    <section className="news" id="news">
       <div className="container">
         <div className="news-inner">
           <h3 className="news-title">

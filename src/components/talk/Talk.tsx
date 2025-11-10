@@ -4,7 +4,7 @@ const smoothScroll = useSmoothScroll();
 
 const Talk = () => {
   return (
-    <section className="talk " id="talk">
+    <section className="talk  page-dark" id="talk">
       <div className="container">
         <h2 className="talk-title">Already Loved Us? Let’s talk!</h2>
         <button

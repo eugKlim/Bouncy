@@ -1,0 +1,36 @@
+@use './vars.scss' as *;
+
+html.dark {
+  background: #181717;
+
+  & .page-dark:nth-child(even) {
+    background: #181717;
+  }
+  & .page-dark:nth-child(odd) {
+    background: #202020;
+  }
+  & h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #dad6d6;
+  }
+  & p {
+    color: #fff;
+  }
+  & button {
+    color: #fff !important;
+  }
+  & input::placeholder,
+  textarea::placeholder {
+    color: #bdb6b6;
+  }
+  & input,
+  textarea {
+    background: #474747;
+  }
+  & [class*='subtitle'] {
+    color: #a8a8a8 !important;
+  }
+}

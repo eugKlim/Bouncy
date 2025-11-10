@@ -86,3 +86,14 @@
     }
   }
 }
+
+html.dark {
+  .price-card__info {
+    &-services {
+      color: $color-superLightGray;
+    }
+    &-time {
+      color: $color-superLightGray;
+    }
+  }
+}

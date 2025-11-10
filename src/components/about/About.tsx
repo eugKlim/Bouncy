@@ -5,7 +5,7 @@ const About = () => {
   const [isHidden, setIsHidden] = useState<boolean>(true);
 
   return (
-    <section className="about" id="about">
+    <section className="about page-dark" id="about">
       <div className="container">
         <div className="about-inner">
           <div className="about-content">
