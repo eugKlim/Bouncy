@@ -22,6 +22,7 @@
     flex-direction: row;
   }
   &-nav {
+    margin-right: 12px;
     & ul {
       display: flex;
       align-items: center;
@@ -78,9 +79,6 @@
 }
 @media (max-width: 890px) {
   .header {
-    &-inner {
-      align-items: flex-start;
-    }
     &-theme {
       margin-right: 60px;
     }
