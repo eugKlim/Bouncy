@@ -1,4 +1,4 @@
-# Проект написан на:
+# The project is written in:
 
 - React
 - TypeScript
@@ -7,74 +7,75 @@
 
 <br>
 
-# Что реализовано в этом проекте?
+# What’s implemented in this project?
 
-1. Шапка сайта (header):
+1. Website header:
 
-   - При скролле header становится фиксированным.
-   - Выдаётся визуальный актив роутсу, на котором находишься.
+   * Header becomes fixed on scroll.
+   * Highlights the active route you’re on.
 
-2. Реализована плавный скрол `smooth scroll`.
+2. Smooth scroll implemented.
 
-3. Реализована функционал скрытия текста.
+3. Text hide/show functionality.
 
-4. Функция скрытия блоков, для планшетов/телефонов. Если в главном блоке, карточек больше 2х, то применятся скрытие, и добавляется кнопка `show more` с лёгким фоновым, затухающим затемнением, под ней. Чтобы не отображать большую ленту фото, которые не интересны пользователю.
+4. Block hiding for tablets/phones: if a main block has more than 2 cards, extra content is hidden and a `show more` button appears with a subtle fading overlay, preventing a long photo feed from showing unnecessarily.
 
-5. Табы.
+5. Tabs.
 
-6. Фильтрация по категориям. При клике на категорию(на тел/планшетах) `кнопка show more` скроется(речь о `Функция скрытия блоков`), и покажется весь контент выбранной вами категории.
+6. Category filtering: on tablets/phones, clicking a category hides the extra content (from “block hiding” feature) and displays all items in the selected category.
 
-7. Попап.
+7. Popup modals.
 
 8. Splide slider.
 
-9. Бургер-меню.
+9. Burger menu.
 
-10. На телефонах/планшетах hover активен сразу, на телефонах можно будет активировать hover, при нажатии на кнопку.
+10. On tablets/phones, hover is active immediately; on phones, hover can be triggered by tapping a button.
 
-11. Интегрирован Google Maps.
+11. Google Maps integration.
 
-12. Адаптация (Media Queries) для телефонов/планшетов.
+12. Responsive design (Media Queries) for phones/tablets.
 
-13. Masonry сетка.
+13. Masonry grid layout.
 
-14. Все фото в `webp` формате А для иконок формат `svg`.
+14. All images in `webp` format; icons in `svg`.
 
-15. Если на элементе, класс active, то к нему hover применятся не будет.
+15. If an element has the `active` class, hover effects are disabled.
 
-16. Сео оптимизация `react-helmet`, и теги для скрин ридеров (accessibility) / open graph.
+16. SEO optimization with `react-helmet`, accessibility tags for screen readers, and Open Graph tags.
 
-17. code splitting, lazy loading.
+17. Code splitting and lazy loading.
 
-18. Темная/Светлая темы.
+18. Light/dark themes.
 
-<br>
-
-<br>
-
-[🔗 Ссылка на сайт](https://bouncyy.vercel.app/)
 
 <br>
 
 <br>
 
+[🔗 Link to the website](https://bouncyy.vercel.app/)
+
 <br>
 
-# Установка и запуск проекта:
+<br>
 
-1. Клонировать репозиторий:
+<br>
+
+# Installing and running the project:
+
+1. Clone the repository:
 
 ```ruby
 git clone https://github.com/eugKlim/Bouncy.git
 ```
 
-2. Установить зависимости:
+2. Install dependencies:
 
 ```ruby
 npm install
 ```
 
-3. Запустить проект:
+3. Launch a project:
 
 ```ruby
 npm run dev
